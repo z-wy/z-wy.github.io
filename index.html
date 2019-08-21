@@ -165,6 +165,68 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-PPP协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="session-1-PPP协议"><a href="#session-1-PPP协议" class="headerlink" title="session 1 PPP协议"></a><strong>session 1 PPP协议</strong></h1><h2 id="PPP-Point-to-Point-Protocol-RFC1661-RFC1662-RFC1663"><a href="#PPP-Point-to-Point-Protocol-RFC1661-RFC1662-RFC1663" class="headerlink" title="PPP ( Point-to-Point Protocol )(RFC1661,RFC1662,RFC1663)"></a>PPP ( Point-to-Point Protocol )(RFC1661,RFC1662,RFC1663)</h2><p>​      在80年代末，人们在串行链路协议（Serial Line Internet Protocol(SLIP)  ）基础上开収PPP协议来解决进程互联网连接问题。PPP是一种基于ISO的高级数据链路控制（ISO-HDLC）的WAN协议，工作在物理层和数据链接层。PPP基于开放式标准，并包括各种功能，这使它成为拨号连接和与用WAN连接的事实标准。能够控制数据链路的建立，能够对广域网的IP地址迚行分配和管理，允许同时采用多种网络层路由协议，能够配置和测试数据链路，能够有效迚行错误检测。不 SLIP类似，PPP经常也是用于低速的串行链路，PPP优于HDLC的特点在于有认证机制，可以保证数据传输的安全性。PPP应用于WAN低速链路。现在高速光纤链路一般是SDH（欧洲国际标准光纤技术）和SONET（美国标准光纤技术）。</p>
+<h6 id="PPP比SLIP具备的优点："><a href="#PPP比SLIP具备的优点：" class="headerlink" title="PPP比SLIP具备的优点："></a>PPP比SLIP具备的优点：</h6><p>1.PPP支持在单根串行链路上运行多种协议，不只是IP协议<br>2.每一帧都有循环冗余检验</p>
+<p>3.通信双方可以迚行IP地址的动态协商（使用IP NCP）<br>4.不CSLIP类似，对TCP和IP报文首部迚行压缩</p>
+<h6 id="PPP包括以下3个部分"><a href="#PPP包括以下3个部分" class="headerlink" title="PPP包括以下3个部分:"></a>PPP包括以下3个部分:</h6><p>1.在串行链路上封装IP数据报的方法。PPP既支持数据为8位和无奇偶检验的异步模式（如大多数计算机上普遍存在的串行接口），还支持面向比特的同步链接<br>2.建立、配置和测试数据链路的链路控制协议（LCP：Link  Control Protocol）它允许通信双方进行协商，以确定不同的选项。负责对L1的物理层的链路，进行链路的建立、控制、维护</p>
+<p>3.针对不同网络层协议的网络控制协议（NCP：Network   ControlProtocol）（IPCP＋CDPCP）体系。负责对L3的网络层，向下提供无差别的接口.负责建立和配置各种网络层协议 .当前RFC定义的网络层有IP、OSI网络层、DECnet以及AppleTalk。</p>
+<p><img src="https://wx4.sinaimg.cn/mw690/007X8LnPgy1g67k4ba97zj30gy0fq796.jpg" alt="img"> </p>
+<h6 id="PPP的帧格式："><a href="#PPP的帧格式：" class="headerlink" title="PPP的帧格式："></a>PPP的帧格式：</h6><p>PPP的帧格式在ISO标准的帧格式的基础上新增了两个字段<br>1、协议字段：指出第3层协议（如IP戒IPX）<br>2、LCP字段：使得PPP的功能得以实现。<br>每个帧都以标志字符0x7e开始和结束。PPP帧的前3个字段和最后两个字段不HDLC的格式是一样的。PPP协议不是面向比特的，因而所有的PPP帧长度都是整数个字节。<br>地址字段：值始终是0xff<br>控制字段：值为0x03<br>协议字段：<br>0x0021–信息字段是IP数据报<br>0xC021–信息字段是链路控制数据LCP<br>0x8021–信息字段是网络控制数据NCP<br>0xC023–信息字段是安全性认证PAP<br>0xC223–信息字段是安全性认证CHAP<br>当信息字段中出现和标志字段一样的比特0x7E时，就必须采叏一些措施。因PPP协议是面向字符型的，所以它不能采用HDLC所使用的零比特插入法，而是使用一种特殊的字符填充。具体的做法是将信息字段中出现的每一个0x7E字节转发成2字节序列（0x7D，0x5E）。若信息字段中出现一个0x7D的字节，则将其转发成2字节序列（0x7D，0x5D）。若<br>信息字段中出现ASCII码的控制字符，则在该字符前面要加入一个0x7D字节。这样做的目的是防止这些表面上的ASCII码控制字符被错误地解释为控制字符。CRC字段：即FCS，帧检验序列。是一个循环冗余检验码，以检测数据帧中的错误</p>
+<p><img src="https://wx2.sinaimg.cn/mw690/007X8LnPgy1g67k4hv2ryj30gz08pmz6.jpg" alt="img"> </p>
+<h6 id="PPP的协商过程："><a href="#PPP的协商过程：" class="headerlink" title="PPP的协商过程："></a>PPP的协商过程：</h6><p>1：Interface Serial0, changed state to up (L1 up)；<br>2：LCP: State is Open  ；<br>3：PPP的认证（这是可选项目，如果进行认证，就必须成功，才有NCP的工作）；<br>4-1：se1 IPCP: State is Open (IP)；<br>4-2：se1 CDPCP: State is Open (cdp：show cdp neighbor)；<br>5：Line protocol on interface serial1,changed state to up (L2up)。</p>
+<h6 id="LCP包含了4大网络模块："><a href="#LCP包含了4大网络模块：" class="headerlink" title="LCP包含了4大网络模块："></a>LCP包含了4大网络模块：</h6><p>1:认证（authentication:PAP/CHAP）<br>2:压缩（compress）<br>3:回拨（callback）<br>4:多链路捆绑（mulit-link）<br>如果一个接口上有peer neighbor-route，那么这台设备就会自动学习到对端接口的32位主机路由。</p>
+<h6 id="session-2-ppp的认证"><a href="#session-2-ppp的认证" class="headerlink" title="session 2 ppp的认证"></a>session 2 ppp的认证</h6><p>1、pap认证<br>由被认证方发起，发送主认证方所配置的用户名和密码，并且是明文方式。<br>主认证方检查被认证方发来的用户名及密码看与自己配置的本地用户名和密码是否匹配<br>2、chap认证<br>由主认证方主动发起，并且不会发送密码（这个用户名和密码是主认证端和被认证端都配置好的），而是发送一个随机数值。<br>被认证方收到主认证端发来的随机数值后，将随机数与密码进行hash加密运算，将运算出的值连同自己配置的用户名一起发送给主认证端，主认证端收到被认证端发来的用户名和hash值后，根据被认证端发来的用户名，查找自己本地用户<a href="http://lib.csdn.net/base/mysql" target="_blank" rel="noopener"><strong>数据库</strong></a>中相同的用户名及对应的密码，并将这个用户名对应的密码与自己发送给被认证端的随机数值也进行hash<a href="http://lib.csdn.net/base/datastructure" target="_blank" rel="noopener"><strong>算法</strong></a>加密，将得出的hash值与被认证端发来的hash值进行比较，如果两端hash一致则表示认证成功，这样就避免了在网络中传输密码，提高安全性。</p>
+<h1 id="session-3-PPP配置"><a href="#session-3-PPP配置" class="headerlink" title="session 3 PPP配置"></a><strong>session 3 PPP配置</strong></h1><h4 id="1、使用pap认证"><a href="#1、使用pap认证" class="headerlink" title="1、使用pap认证"></a>1、使用pap认证</h4><p>主认证端配置：<br>R2(config)#interface s3/0<br>R2(config)#ip address 192.168.1.2 255.255.255.0<br>R2(config-if)#encapsulation ppp 封装ppp协议<br>R2(config-if)#ppp authentication pap 启用pap认证<br>R2(config-if)#peer default ip address pool ccie-ip_pool 创建名为ccie-ip_pool的地址池<br>R2(config)#ip local pool ccie-ip_pool 192.168.1.10 192.168.1.20 定义ccie-ip_pool池分配的地址范围<br>R2(config)#username ccie password cisco 创建本地用户名和密码用于pap认证<br>被认证端配置：<br>R1(config-if)#encapsulation ppp 封装ppp协议<br>R1(config-if)#ppp pap sent-username ccie password  cisco 设置发送的ppp认证的用户名和密码<br>R1(config-if)#ip negotiated 开启ip地址协商获取<br>R1(config-if)#peer neighbor-route  学习对端接口的32位主机路由<br>show ip intface brief 查看S3/0接口是否获取到了ip地址</p>
+<h3 id="2、使用chap认证"><a href="#2、使用chap认证" class="headerlink" title="2、使用chap认证"></a>2、使用chap认证</h3><p>主认证端配置:<br>R2(config)#interface s3/0<br>R2(config-if)#ip address 192.168.1.2 255.255.255.0<br>R2(config-if)#peer default ip address pool ccie-ip_pool 定义ccie-ip_pool地址池的地址范围<br>R2(config-if)#encapsulation ppp 封装PPP协议<br>R2(config-if)#ppp authentication chap 启用chap认证<br>R2(config)#username ccie password cisco 创建chap认证用的本地用户名密码<br>R2(config)#ip local pool ccie-ip_pool 192.168.1.10 192.168.1.20 定义ccie-ip_pool池分配的地址范围<br>被认证端配置:<br>R1(config)#interface s3/0<br>R1(config-if)#encapsulation ppp 封装PPP协议<br>R1(config-if)#ip address negotiated  协商获取ip<br>R1(config-if)#peer neighbor-route 学习对端接口的32位主机路由<br>R1(config-if)#ppp chap hostname ccie 配置chap认证要发送的对端用户名<br>R1(config-if)#ppp chap password cisco 配置chap认证要hash计算的密码</p>
+<p>R1#show ip int brief | include 3/0<br>Serial3/0                  192.168.1.11    YES IPCP   up                    up       配置成功，已经获取到ip地址</p>
+<p>R2发送一个随机值给R1，R1收到后将随机值和chap认证中配置的密码cisco进行hash运算，然后将自己chap配置的用户名ccie和hash值发给R2，R2检查用户名是否为自己配置的ccie，并将自己的发送的随机值和自己配置的认证密码cisco做hash运算，结果一直则说明R1认证成功。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/21/PPP协议/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-课后任务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
