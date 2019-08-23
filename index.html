@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="每个眼神都只身荒野">
+  
+
+  
+  
+  
+  
+  
+  
+  <title>zzzzzzzz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="每个眼神都只身荒野">
+<meta property="og:type" content="website">
+<meta property="og:title" content="zzzzzzzz">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="zzzzzzzz">
+<meta property="og:description" content="每个眼神都只身荒野">
+<meta property="og:locale" content="ch">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="zzzzzzzz">
+<meta name="twitter:description" content="每个眼神都只身荒野">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src="//push.zhanzhang.baidu.com/push.js"></script>
+</head></html>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="zzzzzzzz" rel="home">zzzzzzzz</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">aaaaaaa</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main">
+  
+    <article id="post-NAT" class="post-NAT post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/22/NAT/" data-id="cjznjvp1b0000xwo0ded2r52t" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h1 id="NAT"><a href="#NAT" class="headerlink" title="NAT"></a>NAT</h1><p>相关术语：</p>
+<p>内部本地地址</p>
+<p>内部全局地址</p>
+<p>外部本地地址</p>
+<p>外部全局地址</p>
+<h3 id="转换类型："><a href="#转换类型：" class="headerlink" title="转换类型："></a>转换类型：</h3><h2 id="静态NAT"><a href="#静态NAT" class="headerlink" title="静态NAT"></a>静态NAT</h2><p><code>Router(config)#ip nat inside source static local-ip global-ip</code></p>
+<p><code>在内部本地地址和内部全局地址之间建立转换</code></p>
+<p><code>Router(config-if)#ip nat inside</code></p>
+<p><code>将接口标记为连接到内部网络</code></p>
+<p><code>Router(config-if)#ip nat outside</code></p>
+<p><code>将接口标记为连接到外部网络的接口</code></p>
+<h2 id="动态NAT"><a href="#动态NAT" class="headerlink" title="动态NAT"></a><code>动态NAT</code></h2><p><code>Router(config)#ip nat pool name start-ip end-ip {netmask netmask | prefix-length prefix-length}</code> </p>
+<p><code>定义一个本地全局地址的地址池.</code> </p>
+<p><code>Router(config)#access-list access-list-number permit source [source-wildcard]</code> </p>
+<p><code>定义一个标准IP ACL去允许哪些内部本地地址将被转换.</code> </p>
+<p><code>Router(config)#ip nat inside source list access-list-number pool name</code> </p>
+<p><code>建立动态NAT转换</code></p>
+<p><img src="https://wx1.sinaimg.cn/mw690/007X8LnPgy1g68bos4g9nj30i30d675g.jpg" alt="imag"></p>
+<h2 id="端口地址转换（PAT）"><a href="#端口地址转换（PAT）" class="headerlink" title="端口地址转换（PAT）"></a>端口地址转换（PAT）</h2><p>PAT在内部全局地址上使用唯一的源端口号区分各个转换的连接<br>动态PAT可以实现地址复用<br>静态PAT可以实现端口重定向</p>
+<p><code>Router(config)#access-list access-list-number permit source source-wildcard</code></p>
+<p><code>定义一个标准IP ACL去允许哪些内部本地地址将被转换</code></p>
+<p><code>Router(config)#ip nat inside source list access-list-number interface interface overload</code></p>
+<p><code>建立动态源转换</code></p>
+<h5 id="用Show命令显示信息"><a href="#用Show命令显示信息" class="headerlink" title="用Show命令显示信息"></a>用Show命令显示信息</h5><p><code>Router#show ip nat translations</code> </p>
+<p><code>显示活动的转换列表</code> </p>
+<p><code>Router#show ip nat statistics</code> </p>
+<p><code>显示转换统计信息</code></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/08/22/NAT/">
+    <time datetime="2019-08-22T04:13:10.537Z" class="entry-date">
+        2019-08-22
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-QoS技术" class="post-QoS技术 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/22/QoS技术/" data-id="cjznjvp1z0004xwo01njd2koy" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h2 id="1．QoS技术"><a href="#1．QoS技术" class="headerlink" title="1．QoS技术"></a>1．QoS技术</h2><p>QoS（服务质量）是网络的一种安全机制, 是一种用于解决网络延迟和阻塞等问题的技术，包括传输的带宽、传送的时延、数据的丢包率等。在网络中可以通过保证传输的带宽、降低传送的时延、降低数据的丢包率以及时延抖动等措施来提高服务质量。<br>正常情况下，假如网络只用于特定的无时间限制的应用系统，比如Web应用、FTP应用等，那么它不需要QoS。当网络过载或拥塞时，QoS 可以确保重要业务量不受延迟或丢弃，同时可以保证网络的高效运行。</p>
+<h2 id="2．QoS服务模型"><a href="#2．QoS服务模型" class="headerlink" title="2．QoS服务模型"></a>2．QoS服务模型</h2><p>① Best-Effort服务模型：网络尽最大的可能性来发送报文，对时延、可靠性等性能不提供任何保证。<br>② Int-Serv服务模型：明确区分并保证每一个业务流的服务质量，为网络提供最细粒度化的服务质量区分。<br>③ Diff-Serv服务模型：多服务模型，可以满足不同的QoS需求。与Int-Serv不同，它不需要通知网络为每个业务预留资源。Diff-Serv根据每个报文指定的QoS来提供特定的服务。报文的QoS指定方法有多种，如IP包优先级位、报文源地址和目的地址等，网络通过这些信息来进行报文的分类、流量整形、流量监管和排队。Diff-Serv主要用于为一些重要的应用提供端到端的QoS。</p>
+<h2 id="3．QoS的队列算法"><a href="#3．QoS的队列算法" class="headerlink" title="3．QoS的队列算法"></a>3．QoS的队列算法</h2><p>① FIFO：先进先出队列。FIFO不对报文进行分类，按报文到达接口的先后顺序进队，以进队的先后顺序出队。</p>
+<p>② CQ：自定义排队。当在某个端口上配置CQ时，系统将会为这个端口维护17个输出队列，编号为0的队列是系统队列，用户可以指定队列1～16。系统在1～16队列之间循环，每个循环都从当前队列中取出预配置的字节总数，并在移动到下一队列前将这些数据包发送出去。CQ的缺点：CQ是静态配置的，不能自动适应网络情况的不断变化。</p>
+<p>③ PQ：优先权排队。可以配置高（High）、中（Middle）、普通（Normal）、低（Low）四种通信优先级，优先权级别高的通信总会比优先权级别低的通信提前得到服务。</p>
+<p>④ WFQ：加权公平排队。WFQ是一个自动的时序安排方法，对网络的所有通信提供了公平的带宽分配方案。WFQ为数据量少的通信提供比数据量大的通信更高的优先权，同时为并发的文件传输提供链路容量的平衡使用。</p>
+<p>⑤ CBWFQ：基本类型的加权公平排队。CBWFQ能根据用户定义识别出某种类流，并为该条流分配一定的权重</p>
+<h2 id="4．Qos的配置"><a href="#4．Qos的配置" class="headerlink" title="4．Qos的配置"></a>4．Qos的配置</h2><p>QoS配置的4个基本步骤：<br>① 设置ACL匹配应用流量。<br>② 设置class-map匹配相应ACL或者相应端口等。<br>③ 设置policy-map匹配class-map，然后定义规则动作。<br>④ 将policy-map绑定到相应的接口上。</p>
+<p><img src="https://wx3.sinaimg.cn/mw690/007X8LnPgy1g68bgotds8j30h207dweq.jpg" alt="imag"></p>
+<h5 id="（1）CBWFQ配置命令"><a href="#（1）CBWFQ配置命令" class="headerlink" title="（1）CBWFQ配置命令"></a>（1）CBWFQ配置命令</h5><table>
+<thead>
+<tr>
+<th>命令格式</th>
+<th>解释</th>
+<th>配置模式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>fair-queue</td>
+<td>设置端口的队列</td>
+<td>接口配置模式</td>
+</tr>
+<tr>
+<td>service-policy <policy name></policy></td>
+<td>在端口上应用一个策略表</td>
+<td></td>
+</tr>
+<tr>
+<td>class-map <class-map name></class-map></td>
+<td>创建一个分类表，并进入分类表模式</td>
+<td>全局配置模式</td>
+</tr>
+<tr>
+<td>policy-map <policy name></policy></td>
+<td>创建一个策略表，并进入策略表模式</td>
+<td></td>
+</tr>
+<tr>
+<td>class <class-map name></class-map></td>
+<td>建立一个分类表，并进入策略分类表模式</td>
+<td></td>
+</tr>
+</tbody></table>
+<p><code>Router(config)#class-map http_ftp  //创建名为http_ftp分类表，并进入分类表模式</code></p>
+<p><code>Router(config-cmap)#match protocol http //匹配http协议</code></p>
+<p><code>Router(config-cmap)#match protocol ftp  //匹配ftp协议建立</code></p>
+<p><code>Router(config)#policy-map duilie //创建名为duilie的策略表，并进入策略表模式</code></p>
+<p><code>Router(config-pmap)#class http_ftp //建立名为http_ftp分类表</code></p>
+<p><code>Router(config-pmap-c)#bandwidth 512 //设置带宽为512</code></p>
+<p><code>Router(config-pmap-c)#exit</code> </p>
+<p><code>Router(config-pmap)#class class-default  //默认类</code></p>
+<p><code>Router(config-pmap-c)#fair-queue      //设置端口队列</code></p>
+<p><code>Router(config-pmap-c)#int f0/1</code></p>
+<p><code>Router(config-if)#service-policy output duilie 应用队列策略</code></p>
+<p><code>Router#show policy-map   //查看CBWFQ的配置情况</code></p>
+<h5 id="（2）CQ配置命令"><a href="#（2）CQ配置命令" class="headerlink" title="（2）CQ配置命令"></a>（2）CQ配置命令</h5><table>
+<thead>
+<tr>
+<th>命令格式</th>
+<th>解释</th>
+<th>配置模式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>queue-list <list-number></list-number></td>
+<td>自定义列表</td>
+<td>全局配置模式</td>
+</tr>
+<tr>
+<td>custom-queue-list default</td>
+<td>为那些不与任何规则匹配的报文指定一个缺省队列</td>
+<td></td>
+</tr>
+<tr>
+<td>custom-queue-list <list-number></list-number></td>
+<td>将自定义列表应用到接口上</td>
+<td>接口配置模式</td>
+</tr>
+</tbody></table>
+<p><code>Router(config)#access-list 102 permit tcp any any eq ftp</code> </p>
+<p><code>Router(config)#access-list 103 permit tcp any any eq www</code></p>
+<p><code>Router(config)#queue-list 1 protocol ip 1 list 102</code></p>
+<p><code>Router(config)#queue-list 1 protocol ip 2 list 103</code></p>
+<p><code>Router(config-if)#priority-group 1</code></p>
+<p><code>Router#show queueing</code></p>
+<h5 id="（3）PQ配置命令"><a href="#（3）PQ配置命令" class="headerlink" title="（3）PQ配置命令"></a>（3）PQ配置命令</h5><table>
+<thead>
+<tr>
+<th>命令格式</th>
+<th>解释</th>
+<th>配置模式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>priority-list <list-number></list-number></td>
+<td>根据协议类型定义排队的优先级</td>
+<td>全局配置模式</td>
+</tr>
+<tr>
+<td>priority-group <list-number></list-number></td>
+<td>将优先列表应用到接口上</td>
+<td>接口配置模式</td>
+</tr>
+</tbody></table>
+<p><code>Router(config)#ip access-list extended 101</code></p>
+<p><code>Router(config-ext-nacl)#permit tcp any any eq www</code></p>
+<p><code>Router(config)#ip access-list extended 102</code></p>
+<p><code>Router(config-ext-nacl)#permit tcp any any eq ftp</code></p>
+<p><code>Router(config)#priority-list 1 protocol ip high list 101  //根据协议类型排队的优先级</code></p>
+<p><code>Router(config)#priority-list 1 protocol ip low list 102</code></p>
+<p><code>Router(config-if)#priority-group 1 //将优先级列表应用到接口上</code></p>
+<p><code>Router#show queueing   //查看PQ配置情况</code></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/08/22/QoS技术/">
+    <time datetime="2019-08-22T03:59:53.513Z" class="entry-date">
+        2019-08-22
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-PPP协议" class="post-PPP协议 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/21/PPP协议/" data-id="cjznjvp1t0002xwo07jtly5b1" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h1 id="session-1-PPP协议"><a href="#session-1-PPP协议" class="headerlink" title="session 1 PPP协议"></a><strong>session 1 PPP协议</strong></h1><h2 id="PPP-Point-to-Point-Protocol-RFC1661-RFC1662-RFC1663"><a href="#PPP-Point-to-Point-Protocol-RFC1661-RFC1662-RFC1663" class="headerlink" title="PPP ( Point-to-Point Protocol )(RFC1661,RFC1662,RFC1663)"></a>PPP ( Point-to-Point Protocol )(RFC1661,RFC1662,RFC1663)</h2><p>​      在80年代末，人们在串行链路协议（Serial Line Internet Protocol(SLIP)  ）基础上开収PPP协议来解决进程互联网连接问题。PPP是一种基于ISO的高级数据链路控制（ISO-HDLC）的WAN协议，工作在物理层和数据链接层。PPP基于开放式标准，并包括各种功能，这使它成为拨号连接和与用WAN连接的事实标准。能够控制数据链路的建立，能够对广域网的IP地址迚行分配和管理，允许同时采用多种网络层路由协议，能够配置和测试数据链路，能够有效迚行错误检测。不 SLIP类似，PPP经常也是用于低速的串行链路，PPP优于HDLC的特点在于有认证机制，可以保证数据传输的安全性。PPP应用于WAN低速链路。现在高速光纤链路一般是SDH（欧洲国际标准光纤技术）和SONET（美国标准光纤技术）。</p>
+<h6 id="PPP比SLIP具备的优点："><a href="#PPP比SLIP具备的优点：" class="headerlink" title="PPP比SLIP具备的优点："></a>PPP比SLIP具备的优点：</h6><p>1.PPP支持在单根串行链路上运行多种协议，不只是IP协议<br>2.每一帧都有循环冗余检验</p>
+<p>3.通信双方可以迚行IP地址的动态协商（使用IP NCP）<br>4.不CSLIP类似，对TCP和IP报文首部迚行压缩</p>
+<h6 id="PPP包括以下3个部分"><a href="#PPP包括以下3个部分" class="headerlink" title="PPP包括以下3个部分:"></a>PPP包括以下3个部分:</h6><p>1.在串行链路上封装IP数据报的方法。PPP既支持数据为8位和无奇偶检验的异步模式（如大多数计算机上普遍存在的串行接口），还支持面向比特的同步链接<br>2.建立、配置和测试数据链路的链路控制协议（LCP：Link  Control Protocol）它允许通信双方进行协商，以确定不同的选项。负责对L1的物理层的链路，进行链路的建立、控制、维护</p>
+<p>3.针对不同网络层协议的网络控制协议（NCP：Network   ControlProtocol）（IPCP＋CDPCP）体系。负责对L3的网络层，向下提供无差别的接口.负责建立和配置各种网络层协议 .当前RFC定义的网络层有IP、OSI网络层、DECnet以及AppleTalk。</p>
+<p><img src="https://wx4.sinaimg.cn/mw690/007X8LnPgy1g67k4ba97zj30gy0fq796.jpg" alt="imag"></p>
+<h6 id="PPP的帧格式："><a href="#PPP的帧格式：" class="headerlink" title="PPP的帧格式："></a>PPP的帧格式：</h6><p>PPP的帧格式在ISO标准的帧格式的基础上新增了两个字段<br>1、协议字段：指出第3层协议（如IP戒IPX）<br>2、LCP字段：使得PPP的功能得以实现。<br>每个帧都以标志字符0x7e开始和结束。PPP帧的前3个字段和最后两个字段不HDLC的格式是一样的。PPP协议不是面向比特的，因而所有的PPP帧长度都是整数个字节。<br>地址字段：值始终是0xff<br>控制字段：值为0x03<br>协议字段：<br>0x0021–信息字段是IP数据报<br>0xC021–信息字段是链路控制数据LCP<br>0x8021–信息字段是网络控制数据NCP<br>0xC023–信息字段是安全性认证PAP<br>0xC223–信息字段是安全性认证CHAP<br>当信息字段中出现和标志字段一样的比特0x7E时，就必须采叏一些措施。因PPP协议是面向字符型的，所以它不能采用HDLC所使用的零比特插入法，而是使用一种特殊的字符填充。具体的做法是将信息字段中出现的每一个0x7E字节转发成2字节序列（0x7D，0x5E）。若信息字段中出现一个0x7D的字节，则将其转发成2字节序列（0x7D，0x5D）。若<br>信息字段中出现ASCII码的控制字符，则在该字符前面要加入一个0x7D字节。这样做的目的是防止这些表面上的ASCII码控制字符被错误地解释为控制字符。CRC字段：即FCS，帧检验序列。是一个循环冗余检验码，以检测数据帧中的错误</p>
+<p><img src="https://wx2.sinaimg.cn/mw690/007X8LnPgy1g67k4hv2ryj30gz08pmz6.jpg" alt="imag"> </p>
+<h6 id="PPP的协商过程："><a href="#PPP的协商过程：" class="headerlink" title="PPP的协商过程："></a>PPP的协商过程：</h6><p>1：Interface Serial0, changed state to up (L1 up)；<br>2：LCP: State is Open  ；<br>3：PPP的认证（这是可选项目，如果进行认证，就必须成功，才有NCP的工作）；<br>4-1：se1 IPCP: State is Open (IP)；<br>4-2：se1 CDPCP: State is Open (cdp：show cdp neighbor)；<br>5：Line protocol on interface serial1,changed state to up (L2up)。</p>
+<h6 id="LCP包含了4大网络模块："><a href="#LCP包含了4大网络模块：" class="headerlink" title="LCP包含了4大网络模块："></a>LCP包含了4大网络模块：</h6><p>1:认证（authentication:PAP/CHAP）<br>2:压缩（compress）<br>3:回拨（callback）<br>4:多链路捆绑（mulit-link）<br>如果一个接口上有peer neighbor-route，那么这台设备就会自动学习到对端接口的32位主机路由。</p>
+<h6 id="session-2-ppp的认证"><a href="#session-2-ppp的认证" class="headerlink" title="session 2 ppp的认证"></a>session 2 ppp的认证</h6><p>1、pap认证<br>由被认证方发起，发送主认证方所配置的用户名和密码，并且是明文方式。<br>主认证方检查被认证方发来的用户名及密码看与自己配置的本地用户名和密码是否匹配<br>2、chap认证<br>由主认证方主动发起，并且不会发送密码（这个用户名和密码是主认证端和被认证端都配置好的），而是发送一个随机数值。<br>被认证方收到主认证端发来的随机数值后，将随机数与密码进行hash加密运算，将运算出的值连同自己配置的用户名一起发送给主认证端，主认证端收到被认证端发来的用户名和hash值后，根据被认证端发来的用户名，查找自己本地用户<a href="http://lib.csdn.net/base/mysql" target="_blank" rel="noopener"><strong>数据库</strong></a>中相同的用户名及对应的密码，并将这个用户名对应的密码与自己发送给被认证端的随机数值也进行hash<a href="http://lib.csdn.net/base/datastructure" target="_blank" rel="noopener"><strong>算法</strong></a>加密，将得出的hash值与被认证端发来的hash值进行比较，如果两端hash一致则表示认证成功，这样就避免了在网络中传输密码，提高安全性。</p>
+<h1 id="session-3-PPP配置"><a href="#session-3-PPP配置" class="headerlink" title="session 3 PPP配置"></a><strong>session 3 PPP配置</strong></h1><h4 id="1、使用pap认证"><a href="#1、使用pap认证" class="headerlink" title="1、使用pap认证"></a>1、使用pap认证</h4><p>主认证端配置：<br>R2(config)#interface s3/0<br>R2(config)#ip address 192.168.1.2 255.255.255.0<br>R2(config-if)#encapsulation ppp 封装ppp协议<br>R2(config-if)#ppp authentication pap 启用pap认证<br>R2(config-if)#peer default ip address pool ccie-ip_pool 创建名为ccie-ip_pool的地址池<br>R2(config)#ip local pool ccie-ip_pool 192.168.1.10 192.168.1.20 定义ccie-ip_pool池分配的地址范围<br>R2(config)#username ccie password cisco 创建本地用户名和密码用于pap认证<br>被认证端配置：<br>R1(config-if)#encapsulation ppp 封装ppp协议<br>R1(config-if)#ppp pap sent-username ccie password  cisco 设置发送的ppp认证的用户名和密码<br>R1(config-if)#ip negotiated 开启ip地址协商获取<br>R1(config-if)#peer neighbor-route  学习对端接口的32位主机路由<br>show ip intface brief 查看S3/0接口是否获取到了ip地址</p>
+<h3 id="2、使用chap认证"><a href="#2、使用chap认证" class="headerlink" title="2、使用chap认证"></a>2、使用chap认证</h3><p>主认证端配置:<br>R2(config)#interface s3/0<br>R2(config-if)#ip address 192.168.1.2 255.255.255.0<br>R2(config-if)#peer default ip address pool ccie-ip_pool 定义ccie-ip_pool地址池的地址范围<br>R2(config-if)#encapsulation ppp 封装PPP协议<br>R2(config-if)#ppp authentication chap 启用chap认证<br>R2(config)#username ccie password cisco 创建chap认证用的本地用户名密码<br>R2(config)#ip local pool ccie-ip_pool 192.168.1.10 192.168.1.20 定义ccie-ip_pool池分配的地址范围<br>被认证端配置:<br>R1(config)#interface s3/0<br>R1(config-if)#encapsulation ppp 封装PPP协议<br>R1(config-if)#ip address negotiated  协商获取ip<br>R1(config-if)#peer neighbor-route 学习对端接口的32位主机路由<br>R1(config-if)#ppp chap hostname ccie 配置chap认证要发送的对端用户名<br>R1(config-if)#ppp chap password cisco 配置chap认证要hash计算的密码</p>
+<p>R1#show ip int brief | include 3/0<br>Serial3/0                  192.168.1.11    YES IPCP   up                    up       配置成功，已经获取到ip地址</p>
+<p>R2发送一个随机值给R1，R1收到后将随机值和chap认证中配置的密码cisco进行hash运算，然后将自己chap配置的用户名ccie和hash值发给R2，R2检查用户名是否为自己配置的ccie，并将自己的发送的随机值和自己配置的认证密码cisco做hash运算，结果一直则说明R1认证成功。</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/08/21/PPP协议/">
+    <time datetime="2019-08-21T12:13:08.651Z" class="entry-date">
+        2019-08-21
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-课后任务" class="post-课后任务 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/20/课后任务/" data-id="cjznjvp250006xwo0zo3floiy" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p><strong>课后任务</strong></p>
+<p><strong>任务一：熟悉PT面板及配置设备的模式与基本命令</strong></p>
+<p><strong>任务二：Telnet的配置与实现</strong></p>
+<p>（1）硬件的连接</p>
+<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps89A6.tmp.jpg" alt="img"> </p>
+<p>（2）软件的设置</p>
+<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps89A7.tmp.jpg" alt="img"> </p>
+<p>（3）交换机Telnet的配置</p>
+<p>配置特权模式密码和登录密码</p>
+<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps89A8.tmp.jpg" alt="img"> </p>
+<p><strong>远程连接成功</strong></p>
+<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps89B8.tmp.jpg" alt="img"> </p>
+<p>no ip domain-lookup（取消域名搜索）</p>
+<p><strong>任务三：IOS的备份与升级</strong></p>
+<h3 id="1．硬件的连接"><a href="#1．硬件的连接" class="headerlink" title="1．硬件的连接"></a>1．硬件的连接</h3><p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps89C9.tmp.jpg" alt="img"> </p>
+<h3 id="2．软件的设置"><a href="#2．软件的设置" class="headerlink" title="2．软件的设置"></a>2．软件的设置</h3><p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps89CA.tmp.jpg" alt="img"> </p>
+<h3 id="3．交换机的配置"><a href="#3．交换机的配置" class="headerlink" title="3．交换机的配置"></a>3．交换机的配置</h3><p><strong>升级iOS:</strong></p>
+<p><strong>在特权模式下配置</strong></p>
+<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps89DA.tmp.jpg" alt="img"> </p>
+<p><strong>（1）</strong> <strong>先删除镜像文件</strong></p>
+<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps89DB.tmp.jpg" alt="img"> </p>
+<p><strong>不要空格</strong></p>
+<p><strong>（2）</strong> <strong>复制服务器的镜像文件到路由器</strong></p>
+<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps89DC.tmp.jpg" alt="img"> </p>
+<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps89DD.tmp.jpg" alt="img"> </p>
+<p><strong>（3）</strong> <strong>设置启用新的镜像文件</strong></p>
+<p><strong>在全局模式下启用</strong></p>
+<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps89DE.tmp.jpg" alt="img"> </p>
+<p><strong>重启</strong></p>
+<p><strong>（4）</strong> <strong>更新成功</strong></p>
+<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps89DF.tmp.jpg" alt="img"> </p>
+<p><strong>备份iOS：</strong></p>
+<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps89E0.tmp.jpg" alt="img"> </p>
+<p><strong>直接copy配置文件</strong></p>
+<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps89E1.tmp.jpg" alt="img"> </p>
+<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps89F2.tmp.jpg" alt="img"> </p>
+<p><strong>任务四：配置文件的备份与还原</strong></p>
+<p>备份</p>
+<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps89F3.tmp.jpg" alt="img"> </p>
+<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps89F4.tmp.jpg" alt="img"> </p>
+<p>备份成功</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/08/20/课后任务/">
+    <time datetime="2019-08-20T11:17:07.620Z" class="entry-date">
+        2019-08-20
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
+  
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2019/08/22/NAT/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/22/QoS技术/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/21/PPP协议/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/20/课后任务/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2019 zwy
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
