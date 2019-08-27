@@ -66,6 +66,202 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
+    <article id="post-PIX防火墙配置" class="post-PIX防火墙配置 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/26/PIX防火墙配置/" data-id="cjzt5prrh000960o05pa79tdl" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h1 id="PIX防火墙配置"><a href="#PIX防火墙配置" class="headerlink" title="PIX防火墙配置"></a>PIX防火墙配置</h1><h3 id="路由模式"><a href="#路由模式" class="headerlink" title="路由模式"></a>路由模式</h3><p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F0C.tmp.jpg" alt="img"></p>
+<p><code>R1(config)#int e1/0</code></p>
+<p><code>R1(config-if)#ip add 192.168.1.1 255.255.255.0</code></p>
+<p><code>R1(config-if)#n shu</code></p>
+<p><code>R1(config-if)#int e1/1</code></p>
+<p><code>R1(config-if)#ip add 10.0.0.2 255.255.255.252</code></p>
+<p><code>R1(config-if)#no shu</code></p>
+<p><code>R1(config-if)#end</code></p>
+<p><code>R1(config)#ip route 61.1.1.0 255.255.255.0 10.0.0.1 //配置静态路由</code></p>
+<p>`` </p>
+<p><code>R2(config)#int e1/0</code></p>
+<p><code>R2(config-if)#ip add 61.1.1.2 255.255.255.0</code></p>
+<p><code>R2(config-if)#no shu</code></p>
+<p><code>R2(config-if)#exit</code></p>
+<p><code>R2(config)#ip route 0.0.0.0 0.0.0.0 61.1.1.1 //静态路由</code></p>
+<p>`` </p>
+<p><code>pixfirewall(config)# int e1</code></p>
+<p><code>pixfirewall(config-if)# nameif outside //命名为outside</code></p>
+<p><code>INFO: Security level for &quot;outside&quot; set to 0 by default.</code></p>
+<p><code>pixfirewall(config-if)# ip add 61.1.1.1 255.255.255.0</code> </p>
+<p><code>pixfirewall(config-if)# no shu</code></p>
+<p><code>pixfirewall(config-if)# int e0</code></p>
+<p><code>pixfirewall(config-if)# nameif inside//命名为inside</code></p>
+<p><code>INFO: Security level for &quot;inside&quot; set to 100 by default.</code></p>
+<p><code>pixfirewall(config-if)# ip add 10.0.0.1 255.255.255.0</code></p>
+<p><code>pixfirewall(config-if)# no shu</code></p>
+<p><code>pixfirewall(config-if)# end</code></p>
+<p><code>pixfirewall# ping 61.1.1.2</code></p>
+<p><code>Sending 5, 100-byte ICMP Echos to 61.1.1.2, timeout is 2 seconds:</code></p>
+<p><code>!!!!!</code></p>
+<p><code>Success rate is 100 percent (5/5), round-trip min/avg/max = 10/24/50 ms</code></p>
+<p><code>pixfirewall# conf t</code></p>
+<p><code>pixfirewall(config)# route inside 192.168.1.0 255.255.255.0 10.0.0.2 //为端口设置静态路由</code></p>
+<p><code>pixfirewall(config)# route outside 0.0.0.0 0.0.0.0 61.1.1.2</code></p>
+<p><code>pixfirewall(config)# access-list 11 permit icmp any any //做访问控制列表</code></p>
+<p><code>pixfirewall(config)# access-group 11 in inter outside//在outside上应用访问控制列表</code></p>
+<p><code>pixfirewall(config)# nat (inside) ?</code></p>
+<p><code>configure mode commands/options:</code></p>
+<p>  <code>&lt;0-2147483647&gt;  The &lt;nat_id&gt; of this group of hosts/networks. This &lt;nat_id&gt;</code></p>
+<p>​                  <code>will be referenced by the global command to associate a</code></p>
+<p>​                  <code>global pool with the local IP address. &lt;nat_id&gt; &#39;0&#39; is used</code></p>
+<p>​                  <code>to indicate no address translation for local IP. The limit is</code></p>
+<p>​                  <code>65535 with access-lists</code></p>
+<p><code>pixfirewall(config)# nat (inside) 1 192.168.1.0 255.255.255.0</code></p>
+<p><code>pixfirewall(config)# global (?</code></p>
+<p>c<code>onfigure mode commands/options:</code></p>
+<p><code>Current available interface(s):</code></p>
+<p>`` </p>
+<p>  <code>inside   Name of interface Ethernet0</code></p>
+<p>  <code>outside  Name of interface Ethernet1</code></p>
+<p><code>pixfirewall(config)# global (outside) 1 ?</code></p>
+<p>`` </p>
+<p><code>configure mode commands/options:</code></p>
+<p>  <code>WORD       Enter IP address or a range of IP addresses &lt;start_ip&gt;[-&lt;end_ip&gt;]</code></p>
+<p>  <code>interface  Specifies PAT using the IP address at the interface</code></p>
+<p><code>pixfirewall(config)# global (outside) 1 interface</code></p>
+<p>`` </p>
+<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F2C.tmp.jpg" alt="img"> </p>
+<p>外面PING不进去</p>
+<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F2D.tmp.jpg" alt="img"> </p>
+<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F2E.tmp.jpg" alt="img"> </p>
+<h3 id="透明模式配置"><a href="#透明模式配置" class="headerlink" title="透明模式配置"></a>透明模式配置</h3><p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F2F.tmp.jpg" alt="img"> </p>
+<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F30.tmp.jpg" alt="img"> </p>
+<p>配置地址后可以ping通网关</p>
+<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F31.tmp.jpg" alt="img"> </p>
+<p>路由表</p>
+<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F32.tmp.jpg" alt="img"> </p>
+<p><code>R1(config-if)#int e1/1</code></p>
+<p><code>R1(config-if)#ip add 10.0.0.2 255.255.255.248</code></p>
+<p><code>R1(config-if)#no shu</code></p>
+<p><code>R1(config-if)#exit</code></p>
+<p><code>R1(config)#router ospf 1//配置ospf</code></p>
+<p><code>R1(config-router)#network 192.168.1.0 0.0.0.255 area 0</code></p>
+<p><code>R1(config-router)#network 10.0.0.2 0.0.0.0 area 0</code></p>
+<p>`` </p>
+<p><code>R2(config)#int loopback 0</code></p>
+<p><code>R2(config-if)#ip add 61.1.1.1 255.255.255.0</code></p>
+<p><code>R2(config-if)#no shu</code></p>
+<p><code>R2(config-if)#int e1/0</code></p>
+<p><code>R2(config-if)#ip add 10.0.0.1 255.255.255.248</code></p>
+<p><code>R2(config-if)#no shu</code></p>
+<p><code>R2(config-if)#exit</code></p>
+<p><code>R2(config)#router ospf 1//ospf路由</code></p>
+<p><code>R2(config-router)#network 61.1.1.1 0.0.0.0 area 0</code></p>
+<p><code>R2(config-router)#network 10.0.0.1 0.0.0.0 area 0</code></p>
+<p><code>pixfirewall(config)# firewall transparent//设置为透明模式</code></p>
+<p><code>pixfirewall(config)# ip add 10.0.0.3 255.255.255.248</code></p>
+<p><code>pixfirewall(config)# int e0</code></p>
+<p><code>pixfirewall(config-if)# nameif inside</code></p>
+<p><code>INFO: Security level for &quot;inside&quot; set to 100 by default.</code></p>
+<p><code>pixfirewall(config-if)# int e1</code></p>
+<p><code>pixfirewall(config-if)# nameif outside</code></p>
+<p><code>INFO: Security level for &quot;outside&quot; set to 0 by default.</code></p>
+<p><code>pixfirewall(config-if)# no shu</code></p>
+<p><code>pixfirewall(config-if)# int e0</code></p>
+<p><code>pixfirewall(config-if)# no shu</code></p>
+<p><code>pixfirewall(config-if)# exit</code></p>
+<p><code>pixfirewall(config)# access-list aaa extended permit icmp any any //ACL访问控制列表</code></p>
+<p><code>pixfirewall(config)# access-list aaa extended permit ospf  any any//ACL访问控制列表</code></p>
+<p><code>pixfirewall(config)# access-group aaa in interface inside//应用到端口</code></p>
+<p><code>pixfirewall(config)# access-group aaa in interface outside//应用到端口</code></p>
+<p>全网ping通，实现透明模式</p>
+<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F43.tmp.jpg" alt="img"> </p>
+<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F44.tmp.jpg" alt="img"> </p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/08/26/PIX防火墙配置/">
+    <time datetime="2019-08-26T01:19:40.759Z" class="entry-date">
+        2019-08-26
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-GRE（Generic Routing Encapsulation 通用路由封装协议）-VPN" class="post-GRE（Generic Routing Encapsulation 通用路由封装协议）-VPN post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/26/GRE（Generic Routing Encapsulation 通用路由封装协议）-VPN/" data-id="cjzt5prqj000160o04ogh1idi" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h1 id="GRE（Generic-Routing-Encapsulation-通用路由封装协议）"><a href="#GRE（Generic-Routing-Encapsulation-通用路由封装协议）" class="headerlink" title="GRE（Generic Routing Encapsulation 通用路由封装协议）"></a>GRE（Generic Routing Encapsulation 通用路由封装协议）</h1><p>​      GRE是一种最传统的隧道协议，其根本功能就是要实现隧道功能，通过隧道连接的两个远程网络就如同直连，GRE在两个远程网络之间模拟出直连链路，从而使网络间达到直连的效果，为此，GRE需要完成多次封装，总共有3次，换句话说，就是在GRE隧道中传输的数据包都有3个包头，因为我们只谈IP协议，所以GRE中的IP数据包是一层套一层，总共有3个IP地址。GRE在实现隧道时，需要创建虚拟直连链路，GRE实现的虚拟直连链路可以认为是隧道，隧道是模拟链路，所以隧道两端也有IP地址，但隧道需要在公网中找到起点和终点，所以隧道的源和终点分别都以公网IP地址结尾，该链路是通过GRE协议来完成的，隧道传递数据包的过程分为3步：<br><strong>1．接收原始IP数据包当作乘客协议，原始IP数据包包头的IP地址为私有IP地址。</strong><br><strong>2．将原始IP数据包封装进GRE协议，GRE协议称为封装协议（Encapsulation Protocol），封装的包头IP地址为虚拟直连链路两端的IP地址。</strong><br><strong>3．将整个GRE数据包当作数据，在外层封装公网IP包头，也就是隧道的起源和终点，从而路由到隧道终点。</strong></p>
+<p>GRE隧道中传输的数据包格式如下：</p>
+<p><img src="https://wx4.sinaimg.cn/mw690/007X8LnPgy1g6cs98o6spj30dj0hjq3u.jpg" alt="img"> </p>
+<p>注：</p>
+<p>★其中公网IP包头部分也称为传输协议（Transport Protocol）</p>
+<p>★GRE会在原始IP数据包之外，额外多封装24字节或28字节，具体视GRE模式而定。 以下图为例，解释GRE传输数据过程：</p>
+<p><img src="https://wx3.sinaimg.cn/mw690/007X8LnPgy1g6cs9fns1qj30j6078gos.jpg" alt="img"></p>
+<p>GRE要在远程路由器之间创建虚拟直连链路，也就是隧道（Tunnel），如果没有该隧道，GRE不能完成隧道功能，隧道是GRE最基本的功能，也是GRE所有功能；上图环境中，当上海分公司R2将数据包IP地址封装为192.168.1.4发往北京分公司的R4时，GRE操作过程如下：</p>
+<p>1．假设R1与R3的GRE虚拟直连链路（隧道）已经建立，隧道链路两端的地址分别为1.1.1.1和2.2.2.2，隧道两端的起源和终点分别为100.1.1.1和200.1.1.1。</p>
+<p>2．R1收到目标IP为192.168.1.4的数据包后，将原始数据包当作乘客数据包封装进GRE协议中，并且添加GRE包头，包头中源IP为隧道本端地址1.1.1.1，包头中目标IP为隧道对端地址1.1.1.2，从而完成GRE数据包的封装。 </p>
+<p>3．在封装了GRE隧道地址的数据包外面封装GRE隧道起源IP地址，该IP地址为公网地址，即源IP为100.1.1.1，目标IP为隧道终点200.1.1.1，最后将数据包发出去。<br>      数据包被发到Internet之后，所有路由器只根据数据包最外面的公网IP进行转发，也就是只根据公网目标IP地址200.1.1.1来转发，直到数据包到达公网IP的真正目的地后，即到达R3（IP：200.1.1.1）之后，公网IP包头才会被剥开，当R3剥开数据包的公网IP包头后，发现GRE包头，发现目标IP为1.1.1.2，从而得知自己就是GRE隧道的终点，所以继续将GRE包头剥开，最后发现目标IP地址为192.168.1.4，然后将数据包发往192.168.1.4（路由器R4）。 通过以上GRE过程，上海分公司R2直接通过私有IP地址192.168.1.4，最终成功与北京分公司R4通信。</p>
+<h2 id="GRE-VPN配置实例"><a href="#GRE-VPN配置实例" class="headerlink" title="GRE VPN配置实例"></a>GRE VPN配置实例</h2><h4 id="示例1："><a href="#示例1：" class="headerlink" title="示例1："></a>示例1：</h4><p>某个企业的2个站点，都接入到Internet，现在希望2个站点能够互通<br>GRE（Generic Routing Encapsulation)<br>    GRE能够将一种三层协议的报文封装到另一种三层协议的报文中进行传输<br>    GRE是一种隧道能力极强的技术，但它的安全性较差，没有对数据做加密（IPSec则可以加密）原理是将L3层部分当成数据部分，在外层加上一层ip头，数据到达PE1的隧道源端时，查找的目地IP（地址是PE2的隧道目地IP地址），然后就会走tunel 0发送给PE2，PE2收到后拆掉tunel的头部后查看里面的L3层ip头，发现目的地址是自己连接的客户网络site2，就会将数据包交给客户网络site2，从而实现site之间的通信。</p>
+<p><img src="https://wx1.sinaimg.cn/mw690/007X8LnPgy1g6cs958ry4j30j608675h.jpg" alt="img"> </p>
+<p>R1为PE1，R2为P，R3为PE2，两端PC分别模拟客户的两个site，要求进行GREvpn通信</p>
+<h6 id="隧道源端配置："><a href="#隧道源端配置：" class="headerlink" title="隧道源端配置："></a>隧道源端配置：</h6><p><code>PE1(config)#intface f0/0</code><br><code>PE1(config-if)#ip add 192.168.1.1 255.255.255.0</code><br><code>PE1(config)#intface f0/1</code><br><code>PE1(config-if)#ip add 12.1.1.1 255.255.2</code>55.0</p>
+<p><code>router eigrp 1              //ISP内部IGP使用eigrp</code><br><code>network 12.0.0.0</code><br><code>no auto-summary</code></p>
+<p><code>PE1(config)#int tunnel 0</code><br><code>PE1(config-if)#tunnel source 12.1.1.1</code><br><code>PE1(config-if)#tunnel destination 23.1.1.2</code><br><code>PE1(config-if)#ip add 10.0.0.1 255.255.255.0     //用于tunnel隧道接口之间通信，必须在一个网段</code></p>
+<p><code>PE1(config)#ip route 172.16.1.0 255.255.255.0 tunnel 0   //告诉去往172.16.1.0/24的vpn数据包下一跳出接口走隧道</code></p>
+<h6 id="隧道目地端配置："><a href="#隧道目地端配置：" class="headerlink" title="隧道目地端配置："></a>隧道目地端配置：</h6><p><code>PE2(config)#intface f0/1</code><br><code>PE2(config-if)#ip add 172.16.1.1 255.255.255.0</code></p>
+<p><code>PE2(config)#int tunnel 0</code><br><code>PE2(config-if)#tunnel source 23.1.1.2</code><br><code>PE2(config-if)#tunnel destination 12.1.1.1</code><br><code>PE2(config-if)#ip add 10.0.0.2 255.255.255.0</code></p>
+<p><code>PE2(config)#ip route 192.168.1.0 255.255.255.0 tunnel 0</code></p>
+<p><code>R1#show ip route</code><br><code>Codes: C - connected, S - static, R - RIP, M - mobile, B - BGP</code><br>       <code>D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area</code><br>       <code>N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2</code><br>       <code>E1 - OSPF external type 1, E2 - OSPF external type 2</code><br>       <code>i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2</code><br>       <code>ia - IS-IS inter area, * - candidate default, U - per-user static route</code><br>       <code>o - ODR, P - periodic downloaded static route</code><br><code>Gateway of last resort is not set</code><br>     <code>23.0.0.0/24 is subnetted, 1 subnets</code><br><code>D       23.1.1.0 [90/307200] via 12.1.1.2, 01:40:37, FastEthernet0/1</code><br>     <code>172.16.0.0/24 is subnetted, 1 subnets</code><br><code>S       172.16.1.0 is directly connected, Tunnel0</code><br>     <code>10.0.0.0/24 is subnetted, 1 subnets</code><br><code>C       10.0.0.0 is directly connected, Tunnel0</code><br>     <code>12.0.0.0/24 is subnetted, 1 subnets</code><br><code>C       12.1.1.0 is directly connected, FastEthernet0/1</code><br><code>C    192.168.1.0/24 is directly connected, FastEthernet0/0</code></p>
+<p><code>PC1&gt; show ip</code><br><code>NAME        : PC1[1]</code><br><code>IP/MASK     : 192.168.1.10/24</code><br><code>GATEWAY     : 192.168.1.1</code><br><code>DNS         :</code><br><code>MAC         : 00:50:79:66:68:00</code><br><code>LPORT       : 10000</code><br><code>RHOST:PORT  : 172.17.17.243:10001</code><br><code>MTU:        : 1500</code><br><code>PC1&gt; ping 172.16.1.10</code><br><code>172.16.1.10 icmp_seq=1 timeout</code><br><code>172.16.1.10 icmp_seq=2 timeout</code><br><code>84 bytes from 172.16.1.10 icmp_seq=3 ttl=62 time=49.003 ms</code><br><code>84 bytes from 172.16.1.10 icmp_seq=4 ttl=62 time=49.003 ms</code><br><code>84 bytes from 172.16.1.10 icmp_seq=5 ttl=62 time=49.003 ms</code></p>
+<p>`` </p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/08/26/GRE（Generic Routing Encapsulation 通用路由封装协议）-VPN/">
+    <time datetime="2019-08-26T00:42:13.034Z" class="entry-date">
+        2019-08-26
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
     <article id="post-NAT" class="post-NAT post type-post status-publish format-standard hentry">
     <!---->
 
@@ -73,7 +269,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/22/NAT/" data-id="cjznjvp1b0000xwo0ded2r52t" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/22/NAT/" data-id="cjzt5prr9000660o0uadv564y" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -134,7 +330,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/22/QoS技术/" data-id="cjznjvp1z0004xwo01njd2koy" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/22/QoS技术/" data-id="cjzt5prr7000460o0gk3hqnex" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -280,7 +476,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/21/PPP协议/" data-id="cjznjvp1t0002xwo07jtly5b1" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/21/PPP协议/" data-id="cjzt5prq5000060o0qd83zti2" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -329,7 +525,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/20/课后任务/" data-id="cjznjvp250006xwo0zo3floiy" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/20/课后任务/" data-id="cjzt5prr4000260o0gpbdlujc" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -420,6 +616,14 @@
       <ul>
         
           <li>
+            <a href="/2019/08/26/PIX防火墙配置/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/26/GRE（Generic Routing Encapsulation 通用路由封装协议）-VPN/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2019/08/22/NAT/">(no title)</a>
           </li>
         
@@ -429,10 +633,6 @@
         
           <li>
             <a href="/2019/08/21/PPP协议/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/20/课后任务/">(no title)</a>
           </li>
         
       </ul>
