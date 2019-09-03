@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="每个眼神都只身荒野">
+  
+
+  
+  
+  
+  
+  
+  
+  <title>zzzzzzzz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="SQL注入：基础：1． SQL注入的原理：SQL注入漏洞的产生需要满足以下两个条件。 • 参数用户可控：前端传给后端的参数内容是用户可以控制的。 • 参数代入数据库查询：传入的参数拼接到SQL语句，并且带入数据库查询。  2.MySQL与SQL注入相关的知识点：• 在MySQL5.0版本后，MySQL默认在数据库中存放一个‚information_schema‛的数据库，在该库中，我们需要记住三个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="zzzzzzzz">
+<meta property="og:url" content="http://yoursite.com/2019/09/03/WEB渗透/index.html">
+<meta property="og:site_name" content="zzzzzzzz">
+<meta property="og:description" content="SQL注入：基础：1． SQL注入的原理：SQL注入漏洞的产生需要满足以下两个条件。 • 参数用户可控：前端传给后端的参数内容是用户可以控制的。 • 参数代入数据库查询：传入的参数拼接到SQL语句，并且带入数据库查询。  2.MySQL与SQL注入相关的知识点：• 在MySQL5.0版本后，MySQL默认在数据库中存放一个‚information_schema‛的数据库，在该库中，我们需要记住三个">
+<meta property="og:locale" content="ch">
+<meta property="og:image" content="https://wx3.sinaimg.cn/mw690/007X8LnPgy1g6mjy8eb0hj30oh0dq429.jpg">
+<meta property="og:image" content="https://wx3.sinaimg.cn/orj360/007X8LnPgy1g6mk2m9x9jj301c01cjr6.jpg">
+<meta property="og:image" content="https://wx3.sinaimg.cn/orj360/007X8LnPgy1g6mk2m9x9jj301c01cjr6.jpg">
+<meta property="og:image" content="https://wx4.sinaimg.cn/orj360/007X8LnPgy1g6mk2qbjwyj301c01cdfn.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/09/03/WEB渗透/1">
+<meta property="og:image" content="https://wx4.sinaimg.cn/orj360/007X8LnPgy1g6mk2tok8lj301c01cq2q.jpg">
+<meta property="og:image" content="https://wx4.sinaimg.cn/orj360/007X8LnPgy1g6mk2tok8lj301c01cq2q.jpg">
+<meta property="og:image" content="https://wx4.sinaimg.cn/orj360/007X8LnPgy1g6mk2tok8lj301c01cq2q.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/orj360/007X8LnPgy1g6mk2yswo3j301c01cdfo.jpg">
+<meta property="og:image" content="https://wx3.sinaimg.cn/orj360/007X8LnPgy1g6mk3445ihj301c01cmwy.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/mw690/007X8LnPgy1g6mjyaq93oj30og0ieacc.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/orj360/007X8LnPgy1g6mk3cu77bj301c01cglg.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/orj360/007X8LnPgy1g6mk3cu77bj301c01cglg.jpg">
+<meta property="og:image" content="https://wx4.sinaimg.cn/orj360/007X8LnPgy1g6mk3gk2qaj301c01cmwx.jpg">
+<meta property="og:image" content="https://wx4.sinaimg.cn/orj360/007X8LnPgy1g6mk37lbbyj301c01cwea.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw690/007X8LnPgy1g6mjydbe7bj30rl0gs76x.jpg">
+<meta property="og:updated_time" content="2019-09-03T12:03:01.111Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="zzzzzzzz">
+<meta name="twitter:description" content="SQL注入：基础：1． SQL注入的原理：SQL注入漏洞的产生需要满足以下两个条件。 • 参数用户可控：前端传给后端的参数内容是用户可以控制的。 • 参数代入数据库查询：传入的参数拼接到SQL语句，并且带入数据库查询。  2.MySQL与SQL注入相关的知识点：• 在MySQL5.0版本后，MySQL默认在数据库中存放一个‚information_schema‛的数据库，在该库中，我们需要记住三个">
+<meta name="twitter:image" content="https://wx3.sinaimg.cn/mw690/007X8LnPgy1g6mjy8eb0hj30oh0dq429.jpg">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src="//push.zhanzhang.baidu.com/push.js"></script>
+</head></html>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="zzzzzzzz" rel="home">zzzzzzzz</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">aaaaaaa</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-WEB渗透" class="post-WEB渗透 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/09/03/WEB渗透/" data-id="ck03sbjxa000a98o0lctbypi1" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h2 id="SQL注入："><a href="#SQL注入：" class="headerlink" title="SQL注入："></a>SQL注入：</h2><h3 id="基础："><a href="#基础：" class="headerlink" title="基础："></a>基础：</h3><h4 id="1．-SQL注入的原理："><a href="#1．-SQL注入的原理：" class="headerlink" title="1． SQL注入的原理："></a>1． SQL注入的原理：</h4><p>SQL注入漏洞的产生需要满足以下两个条件。</p>
+<p><strong>• 参数用户可控：前端传给后端的参数内容是用户可以控制的。</strong></p>
+<p><strong>• 参数代入数据库查询：传入的参数拼接到SQL语句，并且带入数据库查询。</strong></p>
+<hr>
+<h4 id="2-MySQL与SQL注入相关的知识点："><a href="#2-MySQL与SQL注入相关的知识点：" class="headerlink" title="2.MySQL与SQL注入相关的知识点："></a>2.MySQL与SQL注入相关的知识点：</h4><p><strong>• 在MySQL5.0版本后，MySQL默认在数据库中存放一个‚information_schema‛的数据库，在该库中，我们需要记住三个表名，分别是schemata，tables，columns。</strong></p>
+<p><strong>• Schemata表存储的是该用户创建的所有数据库的库名，需要记住该表中记录数据库名的字段名为schema_name。</strong></p>
+<p><strong>• Tables表存储该用户创建的所有数据库的库名和表名，要记住该表中记录数据库库名和表名的字段分别是table_schema和table_name.</strong></p>
+<p><strong>• Columns表存储该用户创建的所有数据库的库名、表名、字段名，要记住该表中记录数据库库名、表名、字段名为table_schema、table_name、columns_name</strong></p>
+<h4 id="3-函数"><a href="#3-函数" class="headerlink" title="3.函数:"></a>3.函数:</h4><p><strong>• Version()；当前mysql的版本</strong></p>
+<p><strong>• Database();当前网站使用的数据库</strong></p>
+<p><strong>• User();当前MySQL的用户</strong></p>
+<p><strong>• group_concat():查询同类所有数据</strong></p>
+<hr>
+<h4 id="4-注释符号"><a href="#4-注释符号" class="headerlink" title="4. 注释符号"></a>4. 注释符号</h4><p>•  #</p>
+<p>• –空格 空格可以使用+代替</p>
+<p>• /**/</p>
+<h4 id="5-SQL注入漏洞探测方法"><a href="#5-SQL注入漏洞探测方法" class="headerlink" title="5. SQL注入漏洞探测方法"></a>5. SQL注入漏洞探测方法</h4><p><strong>（1）</strong>．整型参数的判断当输入的参数YY为整型时，通常abc.asp中SQL语句大致如下：select * from 表名 where 字段=yy</p>
+<p><strong>（2）</strong>字符串型参数的判断</p>
+<p>当输入的参数YY为字符串时，通常abc.asp中SQL语句大致如下：</p>
+<p>select * from 表名 where 字段=’YY’</p>
+<p><img src="https://wx3.sinaimg.cn/mw690/007X8LnPgy1g6mjy8eb0hj30oh0dq429.jpg" alt="img"> </p>
+<h4 id="6-SQL注入点类型："><a href="#6-SQL注入点类型：" class="headerlink" title="6. SQL注入点类型："></a>6. SQL注入点类型：</h4><p>• 数字型 ID=$ID </p>
+<p>• 字符串型 USERNAME=‘$USERNAME’ </p>
+<p>• 搜索型 text LIKE ‘%{$_GET[‘search’]}</p>
+<h4 id="7-Union注入攻击：在mysql中可以用来查询指定数据"><a href="#7-Union注入攻击：在mysql中可以用来查询指定数据" class="headerlink" title="7. Union注入攻击：在mysql中可以用来查询指定数据"></a>7. Union注入攻击：在mysql中可以用来查询指定数据</h4><p>• Union联合查询思路：</p>
+<p>• <strong>a.</strong>判断是否存在注入点。id=1, id=1’, and 1=1,and 1=2</p>
+<p>• <strong>b.</strong>order by 1-99 语句来查询该数据表的字段数量，如果id=1 order by 1，返回结果和id=1一样， id=1 order by 2返回结果和id=1一样， id=1 order by 3则出现和id=1不同的结果，则可以判断字段数为2。</p>
+<p>• <strong>c.</strong>利用获得的列数使用联合查询，union select 与前面的字段数一样。如union select 1，2。</p>
+<p>• <strong>d.</strong>根据显示内容确定查询语句的位置，利用information_schema依次进行查询schemata，tables，columns 。information_schema.tables</p>
+<h4 id="8-Boolean-注入攻击（盲注）"><a href="#8-Boolean-注入攻击（盲注）" class="headerlink" title="8. Boolean 注入攻击（盲注）"></a>8. Boolean 注入攻击（盲注）</h4><p>• 有些情况下，开发人员屏蔽了报错信息，导致攻击者无法通过报错信息进行注 入的判断。这种情况下的注入，称为盲注。 盲注根据展现方式，分为boolean型盲注和时间型盲注。</p>
+<p>• Boolean是基于真假的判断（true or false）; 不管输入什么，结果都只返回真或假两种情况；通过and 1=1和and 1=2可以发现注入点。</p>
+<p>• Boolean型盲注的关键在于通过表达式结果与已知值进行比对，根据比对结果 判断正确与否。</p>
+<p>• Boolean型盲注的判断方式有：</p>
+<p>• 通过长度判断length():select length(database())&gt;=x </p>
+<p>• 通过字符判断substr():select substr(database(),1,1) =‘s’ </p>
+<p>• 通过ascII码判断:ascii():select ascii(substr(database(),1,1))</p>
+<p>需要利用burpsuite逐字爆破，后面查询语句和联合查询一样。</p>
+<h4 id="9-报错注入攻击"><a href="#9-报错注入攻击" class="headerlink" title="9. 报错注入攻击"></a>9. 报错注入攻击</h4><p>• 在MYSQL中使用一些指定的函数来制造报错，后台没有屏蔽数据库报错信息，在语法发生错误时会输出在前端，从而从报错信息中获取设定的信息。</p>
+<p>• select/insert/update/delete都可以使用报错来获取信息。</p>
+<p>• 常用的爆错函数updataxml()，extractvalue()，floor() </p>
+<p>• 基于函数报错的信息获取(select/insert/update/delete)</p>
+<p>• updataxml()函数是MYSQL对XML文档数据进行查询和修改的XPATH函数；</p>
+<p>• extractvalue()函数也是MYSQL对XML文档数据进行查询的XPATH函数；</p>
+<p>• floor()函数是MYSQL中用来取整的函数。</p>
+<p><img src="https://wx3.sinaimg.cn/orj360/007X8LnPgy1g6mk2m9x9jj301c01cjr6.jpg" alt="img">语法：updatexml(xml_document,Xpathstring,new_value) </p>
+<p>• payload1：updatexml(1,concat(0x7e,(select database()),0x7e),1) </p>
+<p>• payload2： extractvalue(1, concat(0x7e,(select database()),0x7e)) </p>
+<p>• payload3：(select 1 from (select count(<em>),concat(version(),floor(rand(0)</em>2))x from information_schema.tables group by x)a)#</p>
+<p>查询语句和联合查询相同。</p>
+<h3 id="进阶："><a href="#进阶：" class="headerlink" title="进阶："></a>进阶：</h3><h4 id="1-时间盲注攻击"><a href="#1-时间盲注攻击" class="headerlink" title="1. 时间盲注攻击"></a>1. 时间盲注攻击</h4><p>• 时间盲注：利用sleep()或benchmark()等函数让mysql执行时间变长经常与if(expr1,expr2,expr3)语句结合使用，通过页面的响应时间来判断条件是否正确。if(expr1,expr2,expr3)含义是如果expr1是True,则返回expr2,否则返回expr3。</p>
+<p>• 时间型盲注特点：</p>
+<p>• 通过时间回显的延迟作为判断</p>
+<p>• 利用sleep()或benchmark()函数延长mysql的执行时间</p>
+<p>• 与if()搭配使用</p>
+<p><img src="https://wx3.sinaimg.cn/orj360/007X8LnPgy1g6mk2m9x9jj301c01cjr6.jpg" alt="img"><strong>时间盲注常用函数</strong></p>
+<p>• left(m,n) –从左向右截取字符串m返回其前n位</p>
+<p>• substr(m,1,1) –取字符串m的左边第一位起，1字长的字符串</p>
+<p>• ascii(m) –返回字符m的ASCII码</p>
+<p>• if(str1,str2,str3)–如果str1正确就执行str2，否则执行str3 </p>
+<p>• sleep(m)–使程序暂停m秒</p>
+<p>• length(m) –返回字符串m的长度</p>
+<p>• count(column_name) –返回指定列的值的</p>
+<p> <strong>利用：</strong></p>
+<p>• 时间型盲注payload:if(expr1,expr2,expr3) 语义解析：</p>
+<p>• 对expr1进行布尔判断，如果为真，则执行expr2,如果为假，则执行expr3 </p>
+<p>• 常用payload：</p>
+<p><strong>a.</strong>If(length(database())&gt;1,sleep(5),1) 如果数据库名字符长度大于1为真，mysql休眠5秒，如果为假则查询1</p>
+<p><strong>b</strong>.而查询1的结果，大约只有几十毫秒，根据Burp Suite中页面的响应时间，可以判断条件是否正确</p>
+<p>与boolean盲注使用burpsuite方法相同</p>
+<h4 id="2-堆叠查询注入攻击"><a href="#2-堆叠查询注入攻击" class="headerlink" title="2. 堆叠查询注入攻击"></a>2. 堆叠查询注入攻击</h4><p>• 堆叠查询可以执行多条语句，多语句之间使用‛;‛分开。堆叠查询注入就是利用这个特点，在第二个SQL语句中构造自己要执行的语句。首先访问id=1’,页面返回MYSQL错误，再访问id=1’%23,页面返回正常结果。这里可以使用Boolean注入，时间注入，也可以使用另外一种注入方式—堆叠注入。</p>
+<p>• 正常sql语句：Select * from users where id=‘1’;</p>
+<p>• 注入sql语句：Select * from users where id=‘1’;select if(length(database())&gt;5,sleep(5),1)%23;</p>
+<p>• Payload= ‘;select if(length(database())&gt;5,sleep(5),1)%23</p>
+<p>• Payload= ‘;select if(substr(user(),1,1)=‘r’,sleep(3),1)%23 如此句：从堆叠注入语句中可以看出，</p>
+<p>第二条SQL语句(select if(substr(user(),1,1)=‘r’,sleep(3),1)%23就是时间盲注的语句。</p>
+<p>• 堆叠注入和union的区别在于，union后只能跟select，而堆叠后面可以使用insert，update，create，delete等常规数据库语句。 </p>
+<h4 id="3-二次注入"><a href="#3-二次注入" class="headerlink" title="3. 二次注入"></a>3. 二次注入</h4><p>Sql注入存在两个页面，一个提交精心构造的数据在另一个页面执行时会报错。</p>
+<p>（1）攻击者在http请求中提交恶意输入</p>
+<p>（2）恶意输入保存在数据库中</p>
+<p>（3）攻击者提交第二次http请求</p>
+<p>（4）为处理第二次http请求，程序在检索存储在数据库中的恶意输入，构造SQL语句</p>
+<p>（5）如果攻击成功，在第二次请求响应中返回结果</p>
+<h4 id="4-宽字节注入"><a href="#4-宽字节注入" class="headerlink" title="4. 宽字节注入"></a>4. 宽字节注入</h4><p>在进行php 连接mysql 时，当设置”ser character_set_client=gbk” 时会导致一个编码转换的注入问题，也就是熟悉的宽字节注入</p>
+<p>当存在宽字节注入时，%df%27 可把程序中过滤的\ （%5c）吃掉。</p>
+<p>例如：/1.php?id=1存在宽字节注入时，则: /1.php?id=-1’and 1=1%23 单引号会被转义成 &#39;</p>
+<p><strong>（1）正常情况下GPC开启或者使用addslashes函数过滤GET或POST提交的参数时，我们测试输入的’，就会被转义为&#39;;</strong></p>
+<p><strong>（2）若存在宽字节注入，输入%df%27时，经过单引号的转义变成了%df%5c%27，之后再数据库查询语句进行GBK多字节编码，即一个中文占用两个字节，一个英文同样占用两个字节且在汉字编码范围内两个编码为一个汉字。然后MySQL服务器会对查询语句进行GBK编码即%df%5c转换成汉字”運”,单引号逃逸出来，从而绕过转义造成注入漏洞。</strong></p>
+<h4 id="5-cookie注入"><a href="#5-cookie注入" class="headerlink" title="5. cookie注入"></a>5. cookie注入</h4><p>什么都不输入，就有查询页面出现。说明存在cookie，使用burp抓包，修改cookie值为查询语句，就可进行注入。</p>
+<h4 id="6-Base64编码："><a href="#6-Base64编码：" class="headerlink" title="6.Base64编码："></a>6.Base64编码：</h4><p>注入语句用burp或其他工具进行base64编码，再进行正常注入</p>
+<h2 id="SQL注入绕过："><a href="#SQL注入绕过：" class="headerlink" title="SQL注入绕过："></a>SQL注入绕过：</h2><h4 id="•-双写绕过"><a href="#•-双写绕过" class="headerlink" title="• 双写绕过"></a><strong>• 双写绕过</strong></h4><h4 id="•-大小写绕过"><a href="#•-大小写绕过" class="headerlink" title="• 大小写绕过"></a><strong>• 大小写绕过</strong></h4><p>大小写绕过用于只针对小写或大写的关键字匹配技术</p>
+<p>正则表达式/express/i 大小写不敏感即无法绕过，</p>
+<h4 id="•-替换关键字"><a href="#•-替换关键字" class="headerlink" title="• 替换关键字"></a>• 替换关键字</h4><p>这种情况下大小写转化无法绕过，而且正则表达式会替换或删除select、union这些关键字，如果只匹配一次就很容易绕过</p>
+<h4 id="•-编码绕过注入"><a href="#•-编码绕过注入" class="headerlink" title="• 编码绕过注入"></a>• 编码绕过注入</h4><p>十六进制、Unicode编码、URL：由于服务器会自动对URL进行一次URL编码，所以需要把关键字编码两次，这里需要注意的地方是，URL编码需要选择全编码，而不是普通的URL编码。</p>
+<h4 id="•-使用注释"><a href="#•-使用注释" class="headerlink" title="• 使用注释"></a>• 使用注释</h4><p><strong>（1） 普通注释</strong>：//, – , /<strong>/, #, –+,– -, ;，–a；/</strong>/在构造得查询语句中插入注释，规避对空格的依赖或关键字识别;#、–+用于终结语句的查询</p>
+<p><strong>（2） 内联注释：</strong>相比普通注释，内联注释用的更多，它有一个特性/!**/只有MySQL能识别</p>
+<h4 id="•-等价函数与命令"><a href="#•-等价函数与命令" class="headerlink" title="• 等价函数与命令"></a>• 等价函数与命令</h4><p><strong>（1）函数或变量</strong></p>
+<p><code>hex()、bin() ==&gt; ascii()</code></p>
+<p><code>sleep() ==&gt;benchmark()</code></p>
+<p><code>concat_ws()==&gt;group_concat()</code></p>
+<p><code>mid()、substr() ==&gt; substring()</code></p>
+<p><code>@@user ==&gt; user()</code></p>
+<p><code>@@datadir ==&gt; datadir()</code></p>
+<p><strong>（2）符号</strong>：and和or有可能不能使用，或者可以试下&amp;&amp;和||能不能用；还有=不能使用的情况，可以考虑尝试&lt;、&gt;，因为如果不小于又不大于；空格可以使用如下符号表示其作用：%20 %09 %0a %0b %0c %0d %a0 /**/</p>
+<p><strong>（3）生僻函数</strong>：updatexml《==》xmlelement《==》extractvalue</p>
+<h4 id="•特殊符号"><a href="#•特殊符号" class="headerlink" title="•特殊符号"></a>•特殊符号</h4><h4 id="•-HTTP参数控制"><a href="#•-HTTP参数控制" class="headerlink" title="• HTTP参数控制"></a>• HTTP参数控制</h4><h4 id="•-缓冲区溢出"><a href="#•-缓冲区溢出" class="headerlink" title="• 缓冲区溢出"></a>• 缓冲区溢出</h4><h4 id="•-整合绕过"><a href="#•-整合绕过" class="headerlink" title="• 整合绕过"></a>• 整合绕过</h4><h4 id="•-SQL注入修复"><a href="#•-SQL注入修复" class="headerlink" title="• SQL注入修复"></a>• SQL注入修复</h4><h2 id="XSS注入"><a href="#XSS注入" class="headerlink" title="XSS注入"></a>XSS注入</h2><p>XSS：跨站脚本（Cross-Site Scripting），简称为XSS或CSS或跨站脚本攻击，是一种针对网站应用程序的安全漏洞攻击技术，是代码注入的一种。它允许用户将恶意代码注入网页，其他用户在浏览网页时就会受到影响。恶意用户利用XSS代码攻击成功后，可能得到很高的权限(如执行一些操作)、私密网页内容、会话和cookie等各种内容。</p>
+<h4 id="（1）反射性"><a href="#（1）反射性" class="headerlink" title="（1）反射性"></a>（1）反射性</h4><p>非持久型XSS，这种攻击方式往往具有一次性。</p>
+<h4 id="（2）存储型"><a href="#（2）存储型" class="headerlink" title="（2）存储型"></a>（2）存储型</h4><p>持久型XSS，攻击脚本将被永久地存放在目标服务器的数据库或文件中，具有很高的隐蔽性。</p>
+<h4 id="（3）DOM型"><a href="#（3）DOM型" class="headerlink" title="（3）DOM型"></a>（3）DOM型</h4><p>DOM全称Document Object Model，使用DOM可以使程序和脚本能够动态访问和更新文档的内容、结构及样式。DOM型XSS其实是一种特殊类型的反射型XSS，它是基于DOM文档对象模型的一种。漏洞。</p>
+<h4 id="利用流程"><a href="#利用流程" class="headerlink" title="利用流程"></a><img src="https://wx4.sinaimg.cn/orj360/007X8LnPgy1g6mk2qbjwyj301c01cdfn.jpg" alt="img">利用流程</h4><p><strong>a. 用firefox和chrome的右键菜单进入html编辑器或者直接查看网页源代码。</strong></p>
+<p><strong>b. 寻找输入点，在输入点输入特殊字符&lt;&gt;’’等，查看是否存在拦截，并且通过编辑器查看输入后存放的位置。</strong></p>
+<p><strong>c. 发现没有过滤特殊字符后，就要考虑如何构造payload进行xss攻击了。开始分析漏洞页面，构建payload。</strong></p>
+<p><strong>d. 弹窗或其他。构造<input type="text" value=" "><script>alert('xss')</script>“&gt;，所以需要输入”&gt;<script>alert('xss')</script>、<img src="1" onerror="alert(‘xss’)">、</strong></p>
+<p><img src="https://wx4.sinaimg.cn/orj360/007X8LnPgy1g6mk2tok8lj301c01cq2q.jpg" alt="img">利用网站生成攻击语句获取cookie或其他。<a href="http://xsshs.cn" target="_blank" rel="noopener">http://xsshs.cn</a></p>
+<p><img src="https://wx4.sinaimg.cn/orj360/007X8LnPgy1g6mk2tok8lj301c01cq2q.jpg" alt="img">利用cookie：到burp抓包，修改cookie值后放包，可以无验证登录。</p>
+<p><img src="https://wx4.sinaimg.cn/orj360/007X8LnPgy1g6mk2tok8lj301c01cq2q.jpg" alt="img">常用语句：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;scrip&gt;alert(/xss/)&lt;/scrip&gt;</span><br><span class="line">&lt;img src=x onerror=alert(/xss/)&gt;</span><br><span class="line">&lt;svg onload=alert(xss/)&gt;</span><br><span class="line">&lt;a href=javascript:alert(/xss/)&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="xss修复建议"><a href="#xss修复建议" class="headerlink" title="xss修复建议"></a><img src="https://wx1.sinaimg.cn/orj360/007X8LnPgy1g6mk2yswo3j301c01cdfo.jpg" alt="img">xss修复建议</h4><p>因为XSS漏洞涉及输入和输出两部分，所以其修复也分为两种。</p>
+<p><strong>（1）过滤输入的数据：包括<code>““” “&lt;“ “&gt;” “on”</code>等非法字符。</strong></p>
+<p><strong>（2）对输出到页面的数据进行相应的编码转换：包括HTML实体编码，JavaScript 编码等。</strong></p>
+<h2 id="CRSF攻击"><a href="#CRSF攻击" class="headerlink" title="CRSF攻击"></a>CRSF攻击</h2><p>crsf（Cross-site request forgery）跨站请求伪造，也被称为“One Click Attack”或者Session Riding，通常缩写为CSRF或者XSRF，是一种对网站的恶意利用。尽管听起来像跨站脚本（<a href="https://baike.baidu.com/item/XSS" target="_blank" rel="noopener">XSS</a>），但它与XSS非常不同，XSS利用站点内的信任用户，而CSRF则通过伪装成受信任用户的请求来利用受信任的网站。与<a href="https://baike.baidu.com/item/XSS" target="_blank" rel="noopener">XSS</a>攻击相比，CSRF攻击往往不大流行（因此对其进行防范的资源也相当稀少）和难以防范，所以被认为比<a href="https://baike.baidu.com/item/XSS" target="_blank" rel="noopener">XSS</a>更具危险性。</p>
+<p><em>CSRF攻击原理比较简单，其中Web A为存在CSRF漏洞的网站，Web B为攻击者构建的恶意网站，User C为Web A网站的合法用户。</em> </p>
+<p><strong><em>a. 用户C打开浏览器，访问受信任网站A，输入用户名和密码请求登录网站A；</em></strong></p>
+<p><strong><em>b. 在用户信息通过验证后，网站A产生Cookie信息并返回给浏览器，此时用户登录网站A成功，可以正常发送请求到网站A；</em></strong></p>
+<p><strong><em>c.用户未退出网站A之前，在同一浏览器中，打开一个TAB页访问网站B；</em></strong></p>
+<p><strong><em>d.网站B接收到用户请求后，返回一些攻击性代码，并发出一个请求要求访问第三方站点A；</em></strong> <strong><em>网站B对网站A发出一个请求的同时，浏览器也会把网站A产生Cookie信息带上)–相当于浏览器访问网站A—这是user信息被盗用的关键</em></strong></p>
+<p><strong><em>e.浏览器在接收到这些攻击性代码后，根据网站B的请求，在用户不知情的情况下携带Cookie信息，向网站A发出请求。网站A并不知道该请求其实是由B发起的，所以会根据用户C的Cookie信息以C的权限处理该请求，导致来自网站B的恶意代码被执行。</em></strong></p>
+<h4 id="CSRF漏洞防御"><a href="#CSRF漏洞防御" class="headerlink" title="CSRF漏洞防御"></a><img src="https://wx3.sinaimg.cn/orj360/007X8LnPgy1g6mk3445ihj301c01cmwy.jpg" alt="img">CSRF漏洞防御</h4><p><strong>（1） 服务端的防御：目前业界服务器端防御CSRF攻击主要有三种策略：验证HTTP Referer字段，在请求地址中添加token并验证，在HTTP头中自定义属性并验证。下面分别对这三种策略进行简要介绍。</strong></p>
+<p><strong>（2） 用户端的防御：对于普通用户来说，都学习并具备网络安全知识以防御网络攻击是不现实的。但若用户养成良好的上网习惯，则能够很大程度上减少CSRF攻击的危害。</strong></p>
+<hr>
+<h2 id="SSRF攻击"><a href="#SSRF攻击" class="headerlink" title="SSRF攻击"></a>SSRF攻击</h2><p>ssrf：在服务器中放置一个脚本，用其作为跳板访问内外网和资料。</p>
+<p><img src="https://wx2.sinaimg.cn/mw690/007X8LnPgy1g6mjyaq93oj30og0ieacc.jpg" alt="img"> </p>
+<h2 id="上传文件漏洞："><a href="#上传文件漏洞：" class="headerlink" title="上传文件漏洞："></a>上传文件漏洞：</h2><p>由于文件上传功能实现代码没有严格限制用户上传的文件后缀以及文件类型，导致允许攻击者向某个可通过 Web 访问的目录上传任意 PHP 文件，并能够将这些文件传递给 PHP 解释器，就可以在远程服务器上执行任意 PHP 脚本。</p>
+<h4 id="成功攻击的条件"><a href="#成功攻击的条件" class="headerlink" title="成功攻击的条件"></a><img src="https://wx1.sinaimg.cn/orj360/007X8LnPgy1g6mk3cu77bj301c01cglg.jpg" alt="img">成功攻击的条件</h4><p>（1）可以上传任意脚本文件，且上传的文件能够被Web服务器解析执行，具体来说就是存放上传文件的目录要有执行脚本的权限。</p>
+<p>（2）用户能够通过Web访问这个文件。如果文件上传后，不能通过Web访问，那么也不能成功实施攻击。</p>
+<p>（3）知道文件上传到服务器后的存放路径和文件名称，因为许多Web应用都会修改上传文件的文件名称，那么这时就需要结合其他漏洞去获取到这些信息。如果不知道上传文件的存放路径和文件名称，即使你上传了也无法访问。</p>
+<h4 id="文件上传漏洞检测点"><a href="#文件上传漏洞检测点" class="headerlink" title="文件上传漏洞检测点"></a><img src="https://wx1.sinaimg.cn/orj360/007X8LnPgy1g6mk3cu77bj301c01cglg.jpg" alt="img">文件上传漏洞检测点</h4><p><u>A 客户端 javascript 检测 (通常为检测文件扩展名)</u></p>
+<p><u>B 服务端 MIME 类型检测 (检测 Content-Type 内容)</u></p>
+<p><u>C 服务端目录路径检测 (检测跟 path 参数相关的内容)</u></p>
+<p><u>D 服务端文件扩展名检测 (检测跟文件 extension 相关的内容)</u></p>
+<p><u>E 服务端文件内容检测 (检测内容是否合法或含有恶意代码)</u></p>
+<p>具体检测漏洞：</p>
+<h5 id="（1）客户端js检测"><a href="#（1）客户端js检测" class="headerlink" title="（1）客户端js检测"></a>（1）客户端js检测</h5><p><strong>检测方式：</strong></p>
+<p>这类检测通常在上传页面里含有专门检测文件上传的JavaScript代码，最常见的就是检测扩展名是否合法。</p>
+<p><strong>绕过方式：</strong></p>
+<p>a.在前端的JavaScript代码中白名单中添加需要上传的文件后缀</p>
+<p>b.删除掉调用的验证文件后缀的函数</p>
+<p>c.用抓包工具将可以上传的文件格式修改为需要上传的文件格式</p>
+<h5 id="（2）服务端-MIME-类型检测"><a href="#（2）服务端-MIME-类型检测" class="headerlink" title="（2）服务端 MIME 类型检测"></a>（2）服务端 MIME 类型检测</h5><p><strong>检测方式：</strong></p>
+<p>MIME类型与文档的后缀相关，因此服务器可以使用文档的后缀来区分不同文件的MIME类型。服务器在发送真正的数据之前，就要先发送标志数据的MIME类型的信息，这个信息使用Content-type关键字进行定义</p>
+<p><strong>绕过方式：</strong></p>
+<p>用抓包工具将数据包信息中Content-type关键字对应的文件格式进行修改。</p>
+<h5 id="（3）目录路径检测检测方式"><a href="#（3）目录路径检测检测方式" class="headerlink" title="（3）目录路径检测检测方式:"></a>（3）目录路径检测检测方式:</h5><p>目录路径检测，一般就检测路径是否合法绕过方法:a.用0x00进行截断b.在路径中设置一个.asp的文件，利用解析漏洞</p>
+<h5 id="（4）服务端文件扩展名检测"><a href="#（4）服务端文件扩展名检测" class="headerlink" title="（4）服务端文件扩展名检测"></a>（4）服务端文件扩展名检测</h5><p><strong>/1黑名单检测</strong></p>
+<p><strong>检测方式:</strong></p>
+<p>黑名单的安全性比白名单的安全性低很多，攻击手法自然也比白名单多。一般有个专门的blacklist文件，里面会包含常见的危险脚本文件扩展名，例如下图为fckeditor2.4.3或之前版本的黑名单。</p>
+<p><strong>绕过方式：</strong></p>
+<p><strong>a.文件名大小写绕过：</strong></p>
+<p>用像AsP， pHp之类的文件名绕过黑名单检测</p>
+<p><strong>b.名单列表绕过：</strong></p>
+<p>用黑名单里没有的名单进行攻击，比如黑名单里没有asa或cer之类</p>
+<p><strong>c.特殊文件名绕过：</strong></p>
+<p>比如发送的http包里把文件名改成test.asp. 或 test.asp_(下划线为空格)，这种命名方式在windows系统里是不被允许的，所以需要在burp之类里进行修改，然后绕过验证后，会 被windows系统自动去掉后面的点和空格，但要注意Unix/Linux系统没有这个特性。</p>
+<p><strong>d.0x00截断绕过：</strong></p>
+<p>扩展名检测这一块目前只遇到过asp的程序有这种漏洞，比如，上传的文件名叫test.asp.jpg(asp后面为0x00)，在gettype()函数里处理方式是从后往前扫描扩展名， 所以判断为jpg文件，但在保存文件时却是以0x00作为文件名截断，最后以test.asp存入路径里</p>
+<p><strong>e.htaccess文件攻击配合名单列表绕过：</strong></p>
+<p>上传一个自定义的.htaccess，就可以轻松绕过各种检测</p>
+<p><strong>f.解析调用/漏洞绕过:</strong> </p>
+<p>这类漏洞直接配合上传一个代码注入过的非黑名单文件即可，再利用解析调用/漏洞</p>
+<p><strong>/2白名单检测</strong></p>
+<p><strong>检测方法：</strong></p>
+<p>白名单检测只允许特定的文件扩展名才能上传，相对来说比黑名单安全一些，但也不见得就绝对安全。</p>
+<p><u>绕过方法：</u></p>
+<p>a.0x00截断绕过：</p>
+<p>用像 test.asp%00.jpg的方式进行截断，属于白名单文件，再利用服务端代码的检测逻辑 漏洞进行攻击，目前我只遇到过 asp的程序有这种漏洞</p>
+<p>b.解析调用/漏洞绕过: </p>
+<p>这类漏洞直接配合上传一个代码注入过的白名单文件即可，再利用解析调用漏洞</p>
+<h5 id="（5）服务端文件内容检测"><a href="#（5）服务端文件内容检测" class="headerlink" title="（5）服务端文件内容检测"></a>（5）服务端文件内容检测</h5><p>/1文件幻数检测</p>
+<p><strong>检测方法:</strong></p>
+<p>检测文件头，比如 ：jpg文件的文件头为：FF D8 FF E0 00 10 4A 46 49 46 gif文件的文件头为：47 49 46 38 39 61 png文件的文件头为：89 50 4E 47绕过方式:在文件幻数后面加上自己的一句话木马代码就行</p>
+<p>/2文件相关信息检测</p>
+<p><u><strong>检测方法:</strong></u></p>
+<p>图像文件相关信息检测常用的就是getimagesize()函数，只需要把文件头部分伪造好就ok了，就是在幻数的基础上加了一些文件信息绕过方式:在文件的首部加入 <strong>GIF89a</strong> 可绕过 </p>
+<p>/3文件加载检测</p>
+<p><strong>检测方法:</strong></p>
+<p>一般是调用API或函数去进行文件加载测试。常用的是图像渲染测试，或者进行二次渲染</p>
+<p>*<u><strong>绕过方式:</strong></u>*</p>
+<p>a.对渲染/加载测试的攻击方式代码注入绕过(在不破坏文件本身的渲染情况下找一个空白区进行填充代码，一般会是图片的注释区，对于渲染测试基本上都能绕过，毕竟本身的文件结构是完整的)</p>
+<p>b.对二次渲染的攻击方式二次渲染即文件上传时会被渲染，下载回来后还会被重新渲染，常见方式是攻击文件加载器自身(常见的是溢出攻击），上传自己的恶意文件后，服务器上的文件加载器会主动进行加载测试，加载测试时被溢出攻击执行shellcode </p>
+<h3 id="3-文件上传漏洞解决方案"><a href="#3-文件上传漏洞解决方案" class="headerlink" title="3.文件上传漏洞解决方案"></a>3.文件上传漏洞解决方案</h3><p>（1）检查是否判断了上传文件类型及后缀</p>
+<p>（2）定义上传文件类型白名单，即只允许上传的文件类型</p>
+<p>（3）文件上传目录禁止脚本解析</p>
+<p>（4）对上传后的文件使用随机数改名命令执行漏洞：</p>
+<p>应用程序有时需要调用一些执行系统命令的函数，如在PHP中，使用system.exec，shell_exec，passthru，passthru，popen，proc_popen等函数可以执行系统命令，当黑客能控制这些函数中的参数时，就可以将恶意的系统命令拼接到正常命令中，从而造成命令执行攻击，这就是命令执行漏洞。</p>
+<h2 id="NMAP的使用"><a href="#NMAP的使用" class="headerlink" title="NMAP的使用"></a>NMAP的使用</h2><h3 id="基础操作"><a href="#基础操作" class="headerlink" title="#基础操作"></a><img src="https://wx4.sinaimg.cn/orj360/007X8LnPgy1g6mk3gk2qaj301c01cmwx.jpg" alt="img">#基础操作</h3><p>~~ </p>
+<p>1.扫描单个ip</p>
+<p>Nmap 172.16.13.45</p>
+<p>2.扫描多个ip</p>
+<p>Nmap 172.16.13.45 172.16.13.49</p>
+<p>3.扫描一个范围的目标地址</p>
+<p>nmap  172.16.13.45-49   </p>
+<p>4.扫描一个范围内的目标地址</p>
+<p>5.扫描主机列表targets. txt中所有的目标地址</p>
+<p>nmap  -iL target.txt</p>
+<p>6.扫描除某一目标地址之外的所有目标地址</p>
+<p>nmap  172.16.1.100/24 -exclude 172.16.1.110</p>
+<p>7.扫描除某一文件中的目标地址之外的目标地址</p>
+<p>Nmap  172.16.1.100/24 –excludefile  targests.txt</p>
+<p>8.扫描除某一.目标地址的21、22、23、80端口</p>
+<p>Nmap  172.16.1.100 –p 21,22,23,80 | </p>
+<p>9.对目标地址进行路由追踪</p>
+<p>Nmap  –traceroute</p>
+<p>10.扫描目标地址所在C段的在线状态</p>
+<p>Nmap –sP  IP地址/24   </p>
+<p>11.目标地址的操作系统指纹识别</p>
+<p>Nmap –O</p>
+<p>12.目标地址提供的服务版本检测</p>
+<p>Nmap –sV</p>
+<p>13.探测防火墙状态</p>
+<p>nmap –sF –T4</p>
+<h3 id="进阶使用"><a href="#进阶使用" class="headerlink" title="## 进阶使用"></a><img src="https://wx4.sinaimg.cn/orj360/007X8LnPgy1g6mk37lbbyj301c01cwea.jpg" alt="img">## 进阶使用</h3><p>14.暴力破解攻击</p>
+<p>nmap –script=brute 172.16.13.76</p>
+<p>15.扫描常见漏洞</p>
+<p>nmap –script=vuln 172.16.13.76   </p>
+<p>16.利用ms17-010</p>
+<p>漏洞攻击：</p>
+<p>17.探测局域网内更多服务开启的情况</p>
+<p>Nmap –n –p 445 –script=broadcast  172.16.13.76</p>
+<ol start="18">
+<li>Whoi s解析</li>
+</ol>
+<p>Nmap –script external 172</p>
+<p>19.打开防火墙关闭icmp，使用nmap对其进行探测判断是否存活</p>
+<p>开防火墙之后</p>
+<p><img src="https://wx1.sinaimg.cn/mw690/007X8LnPgy1g6mjydbe7bj30rl0gs76x.jpg" alt="img"> </p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/09/03/WEB渗透/">
+    <time datetime="2019-09-03T01:10:43.475Z" class="entry-date">
+        2019-09-03
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+    
+        <span class="nav-next"><a href="/2019/08/26/PIX防火墙配置/" rel="next">(no title) <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/03/WEB渗透/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/26/PIX防火墙配置/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/26/GRE（Generic Routing Encapsulation 通用路由封装协议）-VPN/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/22/NAT/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/22/QoS技术/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2019 zwy
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
