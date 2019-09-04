@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://wx4.sinaimg.cn/orj360/007X8LnPgy1g6mk3gk2qaj301c01cmwx.jpg">
 <meta property="og:image" content="https://wx4.sinaimg.cn/orj360/007X8LnPgy1g6mk37lbbyj301c01cwea.jpg">
 <meta property="og:image" content="https://wx1.sinaimg.cn/mw690/007X8LnPgy1g6mjydbe7bj30rl0gs76x.jpg">
-<meta property="og:updated_time" content="2019-09-03T12:03:01.111Z">
+<meta property="og:updated_time" content="2019-09-04T01:08:58.801Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="zzzzzzzz">
 <meta name="twitter:description" content="SQL注入：基础：1． SQL注入的原理：SQL注入漏洞的产生需要满足以下两个条件。 • 参数用户可控：前端传给后端的参数内容是用户可以控制的。 • 参数代入数据库查询：传入的参数拼接到SQL语句，并且带入数据库查询。  2.MySQL与SQL注入相关的知识点：• 在MySQL5.0版本后，MySQL默认在数据库中存放一个‚information_schema‛的数据库，在该库中，我们需要记住三个">
@@ -89,7 +89,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/09/03/WEB渗透/" data-id="ck03sbjxa000a98o0lctbypi1" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/09/03/WEB渗透/" data-id="ck04kdky5000bmoo0ltvo299t" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -206,7 +206,7 @@
 <h4 id="利用流程"><a href="#利用流程" class="headerlink" title="利用流程"></a><img src="https://wx4.sinaimg.cn/orj360/007X8LnPgy1g6mk2qbjwyj301c01cdfn.jpg" alt="img">利用流程</h4><p><strong>a. 用firefox和chrome的右键菜单进入html编辑器或者直接查看网页源代码。</strong></p>
 <p><strong>b. 寻找输入点，在输入点输入特殊字符&lt;&gt;’’等，查看是否存在拦截，并且通过编辑器查看输入后存放的位置。</strong></p>
 <p><strong>c. 发现没有过滤特殊字符后，就要考虑如何构造payload进行xss攻击了。开始分析漏洞页面，构建payload。</strong></p>
-<p><strong>d. 弹窗或其他。构造<input type="text" value=" "><script>alert('xss')</script>“&gt;，所以需要输入”&gt;<script>alert('xss')</script>、<img src="1" onerror="alert(‘xss’)">、</strong></p>
+<p><strong>d. 弹窗或其他。构造`<input type="text" value=" "><script>alert('xss')</script>“，所以需要输入”&gt;<script>alert('xss')</script>、<img src="1" onerror="alert(‘xss’)">、</strong>`</p>
 <p><img src="https://wx4.sinaimg.cn/orj360/007X8LnPgy1g6mk2tok8lj301c01cq2q.jpg" alt="img">利用网站生成攻击语句获取cookie或其他。<a href="http://xsshs.cn" target="_blank" rel="noopener">http://xsshs.cn</a></p>
 <p><img src="https://wx4.sinaimg.cn/orj360/007X8LnPgy1g6mk2tok8lj301c01cq2q.jpg" alt="img">利用cookie：到burp抓包，修改cookie值后放包，可以无验证登录。</p>
 <p><img src="https://wx4.sinaimg.cn/orj360/007X8LnPgy1g6mk2tok8lj301c01cq2q.jpg" alt="img">常用语句：</p>
@@ -350,6 +350,8 @@
 <nav class="nav-single">
     <h3 class="assistive-text">文章导航</h3>
     
+        <span class="nav-previous"><a href="/2019/09/03/交换机工作原理及VLAN/" rel="prev"><span class="meta-nav">←</span> (no title)</a></span>
+    
     
         <span class="nav-next"><a href="/2019/08/26/PIX防火墙配置/" rel="next">(no title) <span class="meta-nav">→</span></a></span>
     
@@ -382,6 +384,10 @@
       <ul>
         
           <li>
+            <a href="/2019/09/03/交换机工作原理及VLAN/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2019/09/03/WEB渗透/">(no title)</a>
           </li>
         
@@ -395,10 +401,6 @@
         
           <li>
             <a href="/2019/08/22/NAT/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/22/QoS技术/">(no title)</a>
           </li>
         
       </ul>

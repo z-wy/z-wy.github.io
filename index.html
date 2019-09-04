@@ -66,6 +66,273 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
+    <article id="post-交换机工作原理及VLAN" class="post-交换机工作原理及VLAN post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/09/03/交换机工作原理及VLAN/" data-id="ck04kdkxr000amoo05sa0hbc1" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h1 id="交换机工作原理及VLAN"><a href="#交换机工作原理及VLAN" class="headerlink" title="交换机工作原理及VLAN"></a><strong>交换机工作原理及VLAN</strong></h1><h2 id="一、数据链路层与交换机"><a href="#一、数据链路层与交换机" class="headerlink" title="一、数据链路层与交换机"></a><strong>一、数据链路层与交换机</strong></h2><h3 id="1、数据链路层的功能"><a href="#1、数据链路层的功能" class="headerlink" title="1、数据链路层的功能"></a><strong>1、数据链路层的功能</strong></h3><p>数据链路层</p>
+<p>–位于网络层与物理层之间</p>
+<p><img src="https://wx3.sinaimg.cn/mw1024/007X8LnPgy1g6ml6ufqckj30h704pmxe.jpg" alt="img"> </p>
+<h3 id="2、以太网"><a href="#2、以太网" class="headerlink" title="2、以太网"></a><strong>2、</strong>以太网</h3><p>   以太网工作在数据链路层</p>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007X8LnPgy1g6ml6w9wq4j30lf04vdg7.jpg" alt="img"> </p>
+<h3 id="3、以太网MAC地址"><a href="#3、以太网MAC地址" class="headerlink" title="3、以太网MAC地址"></a><strong>3、</strong>以太网MAC地址</h3><p>   以太网地址用来识别一个以太网上的某个单独的设备或一组设备</p>
+<p>   MAC地址是由<strong>48位二进制数组成的</strong>，以<strong>十六进制数表示</strong>。前24位称为OUI（组织唯一标识符），后24位是厂商对网卡的唯一编号，第8位如果是0表示单播地址，是1表示组播地址。</p>
+<p>   交换机有一个基本MAC地址，每一个端口对应一个MAC地址</p>
+<p><img src="https://wx1.sinaimg.cn/mw1024/007X8LnPgy1g6ml6xz6ktj30gw0590sp.jpg" alt="img"> </p>
+<h3 id="4、以太网帧格式"><a href="#4、以太网帧格式" class="headerlink" title="4、以太网帧格式"></a><strong>4、</strong>以太网帧格式</h3><p><img src="https://wx4.sinaimg.cn/mw1024/007X8LnPgy1g6ml720khpj30io05z74d.jpg" alt="img"> </p>
+<p>​     类型长度：0x0800为IPV4地址</p>
+<p>​               0x86DD为IPV6地址</p>
+<p>​     FCS：帧校验序列</p>
+<h3 id="5、MAC子层与LLC子层"><a href="#5、MAC子层与LLC子层" class="headerlink" title="5、MAC子层与LLC子层"></a><strong>5、MAC子层与LLC子层</strong></h3><p>  <strong>介质访问控制（MAC）子层（802.3）</strong></p>
+<p>将上层交下来的数据封装成帧迚行发送(接收时迚行相反的过程，将帧拆卸)；</p>
+<p>实现和维护介质访访问控制协议，例如CSMA/CD；</p>
+<p>比特差错检测；</p>
+<p>MAC帧的寻址，即MAC帧由哪个站（源站）収出，被哪个站／哪些站接收（目的站）。</p>
+<p><strong>逻辑链路控制（LLC）子层（802.2）</strong></p>
+<p>建立和释放数据链路层的逻辑连接；</p>
+<p>提供不上层的接口；</p>
+<p>给帧加上序号。</p>
+<h3 id="6、以太网命名方法"><a href="#6、以太网命名方法" class="headerlink" title="6、以太网命名方法"></a><strong>6、以太网命名方法</strong></h3><p>​    <strong>N－信号－物理介质</strong></p>
+<p>N：以兆位为单位的数据速率，如10、100、1000</p>
+<p>信号：基带还是宽带</p>
+<p>物理介质：标识介质类型</p>
+<p><strong>举例：**</strong>100BASE-TX**</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>接口</th>
+<th>传输介质</th>
+<th>标准</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>标准以太网</td>
+<td>10Base-T</td>
+<td>双绞线</td>
+<td>IEEE 802.3</td>
+</tr>
+<tr>
+<td>10Base5</td>
+<td>粗同轴电缆</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10Base2</td>
+<td>细同轴电缆</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>快速以太网</td>
+<td>100Base-TX</td>
+<td>双绞线</td>
+<td>IEEE 802.3u</td>
+</tr>
+<tr>
+<td>100Base-FX</td>
+<td>光纤</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>千兆以太网</td>
+<td>1000Base-T</td>
+<td>双绞线</td>
+<td>IEEE 802.3abIEEE 802.3z</td>
+</tr>
+<tr>
+<td>1000Base-SX</td>
+<td>多模光纤</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1000Base-LX</td>
+<td>单模光纤</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>​    </p>
+<h3 id="7、以太网交换机"><a href="#7、以太网交换机" class="headerlink" title="7、以太网交换机"></a><strong>7、以太网交换机</strong></h3><p>交换机是用来连接局域网的主要设备。</p>
+<p>交换机能够根据以太网帧中目标地址智能的转发数据，因此交换机工作在数据链路层。</p>
+<p>交换机<strong>分割冲突域，实现全双工通信</strong>。</p>
+<h2 id="二、交换机的数据转发原理"><a href="#二、交换机的数据转发原理" class="headerlink" title="二、交换机的数据转发原理"></a><strong>二、</strong>交换机的数据转发原理</h2><h3 id="1、交换机的数据转发原理"><a href="#1、交换机的数据转发原理" class="headerlink" title="1、交换机的数据转发原理"></a><strong>1、交换机的数据转发原理</strong></h3><p><img src="https://wx2.sinaimg.cn/mw1024/007X8LnPgy1g6ml752gqmj30eu078mxy.jpg" alt="img"> </p>
+<p><strong>举例1：主机11给主机33发送一个数据帧</strong></p>
+<p><strong>交换机A：</strong>在接收到数据帧后，执行以下操作：</p>
+<p>交换机A查找MAC地址表</p>
+<p>交换机A学习主机11的MAC地址</p>
+<p>交换机A向其他所有端口发送广播</p>
+<p><strong>主 机22：</strong>查看数据包的目标MAC地址不是自己，丢弃数据包</p>
+<p><strong>交换机B：</strong>在接收到数据帧后，执行以下操作：</p>
+<p>交换机B查看MAC地址表</p>
+<p>交换机B学习源MAC地址和端口号</p>
+<p>交换机B向所有端口广播数据包</p>
+<p><strong>主 机33：</strong>接收到数据帧</p>
+<p><strong>主 机44：</strong>丢弃数据帧</p>
+<p><strong>在这个过程中，交换机的MAC地址表中没有需要的条目，交换机通过广播方式转发了数据帧</strong></p>
+<p><strong>举例2：主机44给主机11发送一个数据帧</strong></p>
+<p><strong>交换机B：</strong>在接收到数据帧后，执行以下操作：</p>
+<p>交换机B查看MAC地址表</p>
+<p>交换机B学习源MAC地址和端口号</p>
+<p>交换机B直接从端口1发送给交换A</p>
+<p><strong>交换机A：</strong>在接收到数据帧后，执行以下操作：</p>
+<p>交换机A查找MAC地址表</p>
+<p>交换机A学习源MAC地址和端口号</p>
+<p>交换机A直接向11转发数据</p>
+<p><strong>主 机11：</strong>接收到数据帧</p>
+<p><strong>在这个过程中，交换机的MAC地址表中已经学到了需要的条目，交换机通过单播的方式，转发了数据帧</strong></p>
+<p><strong>交换机的转发原理是：</strong></p>
+<p><strong>转发</strong></p>
+<p>   交换机根据MAC地址表单播转数据帧</p>
+<p><strong>学习</strong></p>
+<p>   MAC地址表是交换机通过学习接收的数据帧的源MAC地址来形成的</p>
+<p><strong>广播</strong></p>
+<p>   如果目标地址在MAC地址表中没有，交换机就向除接收到该数据帧的端口外的其他所有端口广播该数据帧</p>
+<p><strong>更新</strong></p>
+<p>   交换机MAC地址表的老时间是300秒</p>
+<p>   交换机如果发现一个帧的入端口和MAC地址表中源MAC地址的所在端口不同，交换机将MAC地址重新学习到新的端口。</p>
+<h3 id="2、单工、半双工与全双工"><a href="#2、单工、半双工与全双工" class="headerlink" title="2、单工、半双工与全双工"></a><strong>2、单工、半双工与全双工</strong></h3><p>单工：只有一个信道，传输方向只能是单向的</p>
+<p>半双工：只有一个信道，在同一时刻，只能是单向传输</p>
+<p>全双工：双信道，同时可以有双向数据传输</p>
+<h3 id="3、冲突与冲突域"><a href="#3、冲突与冲突域" class="headerlink" title="3、冲突与冲突域"></a><strong>3、冲突与冲突域</strong></h3><p>   集线器所有端口在一个冲突域，如果冲突过多，则传输效率就会降低</p>
+<p>   交换机分割冲突域，因为一个接口一个冲突域</p>
+<h3 id="4、冲突域与广播域"><a href="#4、冲突域与广播域" class="headerlink" title="4、冲突域与广播域"></a><strong>4、冲突域与广播域</strong></h3><p>   广播域指接收同样广播消息的节点的集合，如：在该集合中的任何一个节点传输一个广播帧，则所有其他能收到这个帧的节点都认为是广播帧的一部份。</p>
+<p>   交换机分割冲突域，但是不分割广播域，即交换机的所有端口属于同一个广播域。</p>
+<h2 id="三、交换机的基本配置"><a href="#三、交换机的基本配置" class="headerlink" title="三、交换机的基本配置"></a><strong>三、</strong>交换机的基本配置</h2><h3 id="1、交换机的访问方法"><a href="#1、交换机的访问方法" class="headerlink" title="1、交换机的访问方法"></a><strong>1、</strong>交换机的访问方法</h3><p><img src="https://wx4.sinaimg.cn/mw1024/007X8LnPgy1g6ml786tq8j306j01xjrg.jpg" alt="img"> </p>
+<h3 id="2、交换机的启动"><a href="#2、交换机的启动" class="headerlink" title="2、交换机的启动"></a><strong>2、</strong>交换机的启动</h3><h3 id="3、交换机的配置模式"><a href="#3、交换机的配置模式" class="headerlink" title="3、交换机的配置模式"></a><strong>3、</strong>交换机的配置模式</h3><p>用户模式：Switch&gt;</p>
+<p>特权模式：Switch&gt;enable</p>
+<p>Switch#</p>
+<p>全局配置模式：Switch#config terminal</p>
+<p>Switch(config)#</p>
+<p>接口配置模式： Switch(config)#interface fa0/1</p>
+<p>Switch(config-if)#</p>
+<p>Line模式：Switch(config)#line console 0</p>
+<p>Switch(config-line)#</p>
+<h3 id="4、端口安全"><a href="#4、端口安全" class="headerlink" title="4、端口安全"></a><strong>4、</strong>端口安全</h3><p>指对交换机的端口进行安全属性的配置，从而控制用户的安全接入。交换机端口安全主要有两种类型，一是限制<strong>交换机端口的最大连接数</strong>，从而控制交换机端口下连接的主机数，防止用户进行恶意的ARP（地址解析协议，即ARP【Address Resolution Protocol】）欺骗；二是<strong>针对交换机端口时行MAC地址、IP地址的绑定</strong>，从而实现对用户的严格控制。</p>
+<p>对安全违例的处理方式有以下3种。</p>
+<p>​    ① protect  当安全地址个数满后，安全端口将丢弃未知名的地址包</p>
+<p>​    ② restrict  当违例产生时，将发送一个Trap通知</p>
+<p>​    ③ shutdown 当违例产生时，将关闭端口并发送一个Trap通知</p>
+<p>​        trap，指被管理设备（代理）上报的陷阱报文，表明设备发生故障或变更的主动通知。</p>
+<p>交换机端口安全功能只能在Access接口进行配置</p>
+<p><strong>实验1  交换机**</strong>端口安全配置**</p>
+<p>switch&gt;enable</p>
+<p>switch#config terminal</p>
+<p>switch(config)#int fastethernet 0/1</p>
+<p>switch(config-if)#speed 100                 /设置fastethernet0/1端口速率为10Mbit/s</p>
+<p>switch(config-if)#duplex full               /设置fastethernet0/1端口为全双工</p>
+<p>switch(config-if)#no shutdown              /启用端口</p>
+<p>switch(config-if)#switchport mode access     /设置当前端口为Access</p>
+<p>Switch(config-if)#<strong>switchport port-security</strong>     /打开当前端口安全功能</p>
+<p>Switch(config-if)#switchport port-security <strong>maximum 1</strong>    /设置端口安全地址的最大个数</p>
+<p>Switch(config-if)#switchport port-security violation shutdown   /配置处理违例的方式</p>
+<p>Switch(config-if)#switchport port-security <strong>mac-address</strong> 0001.C7E9.6EC0   /配置安全地址</p>
+<p>Switch(config-if)#switchport port-security <strong>violation</strong> shutdown   /配置处理违例的方式</p>
+<h2 id="四、VLAN（虚拟局域网）概述"><a href="#四、VLAN（虚拟局域网）概述" class="headerlink" title="四、VLAN（虚拟局域网）概述"></a><strong>四、</strong>VLAN（虚拟局域网）概述</h2><p><img src="https://wx4.sinaimg.cn/mw1024/007X8LnPgy1g6ml7bnr58j30hj0a8jui.jpg" alt="img"> </p>
+<p>交换机的所有端口都在一个广播域，如果计算机数量增多会产生广播风暴。</p>
+<p>为了避免广播风暴，在交换机上可以采用<strong>虚拟局域网技术</strong>（Vlan）</p>
+<h4 id="VLAN配置"><a href="#VLAN配置" class="headerlink" title="VLAN配置"></a>VLAN配置</h4><p>一层楼交换机配置：</p>
+<p>划分Vlan：Switch#config </p>
+<p>​          Switch(config)#vlan 10</p>
+<p>Switch(config-vlan)#name xsb</p>
+<p>修改vlan名称：Switch(config)#vlan 40</p>
+<p>Switch(config-vlan)#name rsb</p>
+<p>将端口加入到vlan:Switch(config)#int f0/1</p>
+<p>Switch(config-if)#switchport mode access</p>
+<p>​                Switch(config-if)#switchport access vlan 10</p>
+<p>​                Switch(config)#int f0/2</p>
+<p>Switch(config-if)#sw mo acc</p>
+<p>Switch(config-if)#sw acc vlan 10</p>
+<p>同时选中多个端口:  Switch(config)#int range f0/3-4</p>
+<p>Switch(config-if-range)#sw mo acc</p>
+<p>Switch(config-if-range)#sw acc vlan 20</p>
+<h4 id="二层楼交换机配置"><a href="#二层楼交换机配置" class="headerlink" title="二层楼交换机配置"></a>二层楼交换机配置</h4><p>Switch(config)#int range f0/1-2</p>
+<p>Switch(config-if-range)#sw mo acc</p>
+<p>Switch(config-if-range)#sw acc vlan 10</p>
+<p>Switch(config-if-range)#exit</p>
+<p>Switch(config)#int range f0/3-4</p>
+<p>Switch(config-if-range)#sw mo acc</p>
+<p>Switch(config-if-range)#sw acc vlan 20</p>
+<p>查看vlan配置信息：Switch#sh vlan brief </p>
+<h2 id="五、vlan间通信"><a href="#五、vlan间通信" class="headerlink" title="五、vlan间通信"></a><strong>五、</strong>vlan间通信</h2><h3 id="1、trunk技术Trunk（中继模式）"><a href="#1、trunk技术Trunk（中继模式）" class="headerlink" title="1、trunk技术Trunk（中继模式）"></a><strong>1、</strong>trunk技术Trunk（中继模式）</h3><h4 id="（1）封装"><a href="#（1）封装" class="headerlink" title="（1）封装"></a><strong>（1）封装</strong></h4><p>​      ISL（思科私有）：是在数据帧前加26字节，尾加4字节</p>
+<p>​      802.1Q（工业标准）：是在数据帧中插入4字节，打标签</p>
+<p>​      802.1Q Native Vlan：默认vlan1不打标，作管理用</p>
+<h4 id="（2）模式"><a href="#（2）模式" class="headerlink" title="（2）模式"></a><strong>（2）模式</strong></h4><p>​      Mode          DTP send     DTP Response</p>
+<p>​    -———————————————–</p>
+<p>​     Access           -           -        普通模式</p>
+<p>​     Trunk            Y           Y       中继模式</p>
+<p>​     Desirable         Y           Y       企望    </p>
+<p>​     Auto             N           Y      自动</p>
+<p>​     Nonegotiate       N           N     不协商</p>
+<h4 id="（3）查看trunk信息"><a href="#（3）查看trunk信息" class="headerlink" title="（3）查看trunk信息"></a><strong>（3）查看trunk信息</strong></h4><p>Switch(config-if)#switchport mode trunk</p>
+<p>Switch#show interfaces trunk</p>
+<p>Switch(config-if)# switchport trunk allowed vlan 10</p>
+<p>Switch(config-if)# switchport trunk native vlan1</p>
+<h4 id="（4）不同交换机相同vlan间通信"><a href="#（4）不同交换机相同vlan间通信" class="headerlink" title="（4）不同交换机相同vlan间通信"></a><strong>（4）不同交换机相同vlan间通信</strong></h4><h4 id="（5）不同vlan间通信"><a href="#（5）不同vlan间通信" class="headerlink" title="（5）不同vlan间通信"></a><strong>（5）不同vlan间通信</strong></h4><p>使用三层交换机，起SVI接口，打开路由</p>
+<p>单臂路由 </p>
+<p><strong>①使用三层交换机实现不同vlan间通信</strong></p>
+<p>   第一步：trunk链路</p>
+<p>​           三层交换机：Switch(config-if)#switchport trunk encapsulation dot1q </p>
+<p>​     第二步：划分vlan</p>
+<p>​            三层交换机：Switch(config)#vlan 10</p>
+<p>Switch(config-vlan)#vlan 20</p>
+<p>​     第三步：开启SVI接口作为相应vlan客户端的网关</p>
+<p>​                Switch(config)#int vlan 10</p>
+<p>Switch(config-if)#ip add 192.168.10.254 255.255.255.0</p>
+<p>Switch(config-if)#no shutdown </p>
+<p>Switch(config)#int vlan 20</p>
+<p>​                Switch(config-if)#ip add 192.168.20.254 255.255.255.0</p>
+<p>Switch(config-if)#no shutdown</p>
+<p>Switch(config)#ip routing   开启路由功能 </p>
+<p>​        第四步：为客户机设置网关地址</p>
+<h2 id="六、VTP技术"><a href="#六、VTP技术" class="headerlink" title="六、VTP技术"></a><strong>六、VTP技术</strong></h2><p>1、VTP是将所有vlan信息打包并通过trunk链路进行传输使vlan同步。</p>
+<p>2、通过域（Domain）来同步的。</p>
+<p>3、password</p>
+<p>4、version</p>
+<p>5、模式           </p>
+<p>  -———————————————–</p>
+<p>  |              |  server |  client | Tranparent|</p>
+<p>  -———————————————–  </p>
+<p>  |增删改vlan信息    V          X         V</p>
+<p>  |转发VTP信息       V          V         V</p>
+<p>  |同步VTP           V          V         X </p>
+<p>  |保存在NVRAM中     V          X         V</p>
+<p><strong>在VTP中谁与谁同步，不是由角色决定，而是由版本号决定</strong></p>
+<p><strong>版本号大的vlan信息将完全覆盖版本号低的vlan信息</strong></p>
+<p><strong>在向网络中添加交换机时一定要注意版本号的大小，建议把模式改为透明模式</strong></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/09/03/交换机工作原理及VLAN/">
+    <time datetime="2019-09-03T12:14:55.360Z" class="entry-date">
+        2019-09-03
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
     <article id="post-WEB渗透" class="post-WEB渗透 post type-post status-publish format-standard hentry">
     <!---->
 
@@ -73,7 +340,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/09/03/WEB渗透/" data-id="ck03sbjxa000a98o0lctbypi1" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/09/03/WEB渗透/" data-id="ck04kdky5000bmoo0ltvo299t" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -190,7 +457,7 @@
 <h4 id="利用流程"><a href="#利用流程" class="headerlink" title="利用流程"></a><img src="https://wx4.sinaimg.cn/orj360/007X8LnPgy1g6mk2qbjwyj301c01cdfn.jpg" alt="img">利用流程</h4><p><strong>a. 用firefox和chrome的右键菜单进入html编辑器或者直接查看网页源代码。</strong></p>
 <p><strong>b. 寻找输入点，在输入点输入特殊字符&lt;&gt;’’等，查看是否存在拦截，并且通过编辑器查看输入后存放的位置。</strong></p>
 <p><strong>c. 发现没有过滤特殊字符后，就要考虑如何构造payload进行xss攻击了。开始分析漏洞页面，构建payload。</strong></p>
-<p><strong>d. 弹窗或其他。构造<input type="text" value=" "><script>alert('xss')</script>“&gt;，所以需要输入”&gt;<script>alert('xss')</script>、<img src="1" onerror="alert(‘xss’)">、</strong></p>
+<p><strong>d. 弹窗或其他。构造`<input type="text" value=" "><script>alert('xss')</script>“，所以需要输入”&gt;<script>alert('xss')</script>、<img src="1" onerror="alert(‘xss’)">、</strong>`</p>
 <p><img src="https://wx4.sinaimg.cn/orj360/007X8LnPgy1g6mk2tok8lj301c01cq2q.jpg" alt="img">利用网站生成攻击语句获取cookie或其他。<a href="http://xsshs.cn" target="_blank" rel="noopener">http://xsshs.cn</a></p>
 <p><img src="https://wx4.sinaimg.cn/orj360/007X8LnPgy1g6mk2tok8lj301c01cq2q.jpg" alt="img">利用cookie：到burp抓包，修改cookie值后放包，可以无验证登录。</p>
 <p><img src="https://wx4.sinaimg.cn/orj360/007X8LnPgy1g6mk2tok8lj301c01cq2q.jpg" alt="img">常用语句：</p>
@@ -342,7 +609,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/26/PIX防火墙配置/" data-id="ck03sbjvh000398o0nn8194m1" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/26/PIX防火墙配置/" data-id="ck04kdkx30002moo08l3gqdwl" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -480,7 +747,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/26/GRE（Generic Routing Encapsulation 通用路由封装协议）-VPN/" data-id="ck03sbjtp000098o01ne9xw3b" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/26/GRE（Generic Routing Encapsulation 通用路由封装协议）-VPN/" data-id="ck04kdkwt0000moo0kdxr6e1b" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -538,7 +805,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/22/NAT/" data-id="ck03sbjvd000198o07zzx1hjo" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/22/NAT/" data-id="ck04kdkx00001moo014v2nlp6" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -599,7 +866,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/22/QoS技术/" data-id="ck03sbjvk000598o06x8lyvos" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/22/QoS技术/" data-id="ck04kdkx60004moo0sbq6ibq9" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -745,7 +1012,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/21/PPP协议/" data-id="ck03sbjvp000798o0b71q63yt" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/21/PPP协议/" data-id="ck04kdkx40003moo0nkn1iue3" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -794,7 +1061,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/20/课后任务/" data-id="ck03sbjvq000898o0fzksl0on" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/20/课后任务/" data-id="ck04kdkxf0005moo0dbyakq1s" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -885,6 +1152,10 @@
       <ul>
         
           <li>
+            <a href="/2019/09/03/交换机工作原理及VLAN/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2019/09/03/WEB渗透/">(no title)</a>
           </li>
         
@@ -898,10 +1169,6 @@
         
           <li>
             <a href="/2019/08/22/NAT/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/22/QoS技术/">(no title)</a>
           </li>
         
       </ul>
