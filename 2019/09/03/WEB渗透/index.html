@@ -24,8 +24,9 @@
 <meta property="og:locale" content="ch">
 <meta property="og:image" content="https://s2.ax1x.com/2019/09/04/nVCA1K.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/09/04/nVCifx.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/09/04/nVCx8P.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/09/04/nVCB90.png">
-<meta property="og:updated_time" content="2019-09-04T05:04:32.621Z">
+<meta property="og:updated_time" content="2019-09-04T05:10:08.078Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="zzzzzzzz">
 <meta name="twitter:description" content="SQL注入： 基础：1． SQL注入的原理：SQL注入漏洞的产生需要满足以下两个条件。 • 参数用户可控：前端传给后端的参数内容是用户可以控制的。 • 参数代入数据库查询：传入的参数拼接到SQL语句，并且带入数据库查询。">
@@ -76,7 +77,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/09/03/WEB渗透/" data-id="ck04ssev3000amgo00g7m18em" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/09/03/WEB渗透/" data-id="ck04szqc7000a04o0pm30mq3p" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -201,8 +202,7 @@
 <p>利用网站生成攻击语句获取cookie或其他。<a href="http://xsshs.cn" target="_blank" rel="noopener">http://xsshs.cn</a></p>
 <p>!利用cookie：到burp抓包，修改cookie值后放包，可以无验证登录。</p>
 <p>常用语句：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;scrip&gt;alert(/xss/)&lt;/scrip&gt;</span><br><span class="line">&lt;img src=x onerror=alert(/xss/)&gt;</span><br><span class="line">&lt;svg onload=alert(xss/)&gt;</span><br><span class="line">&lt;a href=javascript:alert(/xss/)&gt;</span><br></pre></td></tr></table></figure>
-
+<p><a href="https://imgchr.com/i/nVCx8P" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/09/04/nVCx8P.png" alt="nVCx8P.png"></a></p>
 <h4 id="xss修复建议"><a href="#xss修复建议" class="headerlink" title="xss修复建议"></a>xss修复建议</h4><p>因为XSS漏洞涉及输入和输出两部分，所以其修复也分为两种。</p>
 <p><strong>（1）过滤输入的数据：包括<code>““” “&lt;“ “&gt;” “on”</code>等非法字符。</strong></p>
 <p><strong>（2）对输出到页面的数据进行相应的编码转换：包括HTML实体编码，JavaScript 编码等。</strong></p>
