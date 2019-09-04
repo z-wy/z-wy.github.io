@@ -15,12 +15,12 @@
   
   <title>zzzzzzzz</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="SQL注入：基础：1． SQL注入的原理：SQL注入漏洞的产生需要满足以下两个条件。 • 参数用户可控：前端传给后端的参数内容是用户可以控制的。 • 参数代入数据库查询：传入的参数拼接到SQL语句，并且带入数据库查询。  2.MySQL与SQL注入相关的知识点：• 在MySQL5.0版本后，MySQL默认在数据库中存放一个‚information_schema‛的数据库，在该库中，我们需要记住三个">
+  <meta name="description" content="SQL注入：基础：1． SQL注入的原理：SQL注入漏洞的产生需要满足以下两个条件。 • 参数用户可控：前端传给后端的参数内容是用户可以控制的。 • 参数代入数据库查询：传入的参数拼接到SQL语句，并且带入数据库查询。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="zzzzzzzz">
 <meta property="og:url" content="http://yoursite.com/2019/09/03/WEB渗透/index.html">
 <meta property="og:site_name" content="zzzzzzzz">
-<meta property="og:description" content="SQL注入：基础：1． SQL注入的原理：SQL注入漏洞的产生需要满足以下两个条件。 • 参数用户可控：前端传给后端的参数内容是用户可以控制的。 • 参数代入数据库查询：传入的参数拼接到SQL语句，并且带入数据库查询。  2.MySQL与SQL注入相关的知识点：• 在MySQL5.0版本后，MySQL默认在数据库中存放一个‚information_schema‛的数据库，在该库中，我们需要记住三个">
+<meta property="og:description" content="SQL注入：基础：1． SQL注入的原理：SQL注入漏洞的产生需要满足以下两个条件。 • 参数用户可控：前端传给后端的参数内容是用户可以控制的。 • 参数代入数据库查询：传入的参数拼接到SQL语句，并且带入数据库查询。">
 <meta property="og:locale" content="ch">
 <meta property="og:image" content="https://wx3.sinaimg.cn/mw690/007X8LnPgy1g6mjy8eb0hj30oh0dq429.jpg">
 <meta property="og:image" content="https://wx3.sinaimg.cn/orj360/007X8LnPgy1g6mk2m9x9jj301c01cjr6.jpg">
@@ -38,10 +38,10 @@
 <meta property="og:image" content="https://wx4.sinaimg.cn/orj360/007X8LnPgy1g6mk3gk2qaj301c01cmwx.jpg">
 <meta property="og:image" content="https://wx4.sinaimg.cn/orj360/007X8LnPgy1g6mk37lbbyj301c01cwea.jpg">
 <meta property="og:image" content="https://wx1.sinaimg.cn/mw690/007X8LnPgy1g6mjydbe7bj30rl0gs76x.jpg">
-<meta property="og:updated_time" content="2019-09-04T01:08:58.801Z">
+<meta property="og:updated_time" content="2019-09-04T03:26:00.450Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="zzzzzzzz">
-<meta name="twitter:description" content="SQL注入：基础：1． SQL注入的原理：SQL注入漏洞的产生需要满足以下两个条件。 • 参数用户可控：前端传给后端的参数内容是用户可以控制的。 • 参数代入数据库查询：传入的参数拼接到SQL语句，并且带入数据库查询。  2.MySQL与SQL注入相关的知识点：• 在MySQL5.0版本后，MySQL默认在数据库中存放一个‚information_schema‛的数据库，在该库中，我们需要记住三个">
+<meta name="twitter:description" content="SQL注入：基础：1． SQL注入的原理：SQL注入漏洞的产生需要满足以下两个条件。 • 参数用户可控：前端传给后端的参数内容是用户可以控制的。 • 参数代入数据库查询：传入的参数拼接到SQL语句，并且带入数据库查询。">
 <meta name="twitter:image" content="https://wx3.sinaimg.cn/mw690/007X8LnPgy1g6mjy8eb0hj30oh0dq429.jpg">
   
   
@@ -89,7 +89,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/09/03/WEB渗透/" data-id="ck04kdky5000bmoo0ltvo299t" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/09/03/WEB渗透/" data-id="ck04pacge000bc4o0xfkiovo2" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -98,6 +98,8 @@
         <h2 id="SQL注入："><a href="#SQL注入：" class="headerlink" title="SQL注入："></a>SQL注入：</h2><h3 id="基础："><a href="#基础：" class="headerlink" title="基础："></a>基础：</h3><h4 id="1．-SQL注入的原理："><a href="#1．-SQL注入的原理：" class="headerlink" title="1． SQL注入的原理："></a>1． SQL注入的原理：</h4><p>SQL注入漏洞的产生需要满足以下两个条件。</p>
 <p><strong>• 参数用户可控：前端传给后端的参数内容是用户可以控制的。</strong></p>
 <p><strong>• 参数代入数据库查询：传入的参数拼接到SQL语句，并且带入数据库查询。</strong></p>
+<a id="more"></a>
+
 <hr>
 <h4 id="2-MySQL与SQL注入相关的知识点："><a href="#2-MySQL与SQL注入相关的知识点：" class="headerlink" title="2.MySQL与SQL注入相关的知识点："></a>2.MySQL与SQL注入相关的知识点：</h4><p><strong>• 在MySQL5.0版本后，MySQL默认在数据库中存放一个‚information_schema‛的数据库，在该库中，我们需要记住三个表名，分别是schemata，tables，columns。</strong></p>
 <p><strong>• Schemata表存储的是该用户创建的所有数据库的库名，需要记住该表中记录数据库名的字段名为schema_name。</strong></p>

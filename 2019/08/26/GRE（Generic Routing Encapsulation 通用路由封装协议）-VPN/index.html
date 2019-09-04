@@ -25,7 +25,7 @@
 <meta property="og:image" content="https://wx4.sinaimg.cn/mw690/007X8LnPgy1g6cs98o6spj30dj0hjq3u.jpg">
 <meta property="og:image" content="https://wx3.sinaimg.cn/mw690/007X8LnPgy1g6cs9fns1qj30j6078gos.jpg">
 <meta property="og:image" content="https://wx1.sinaimg.cn/mw690/007X8LnPgy1g6cs958ry4j30j608675h.jpg">
-<meta property="og:updated_time" content="2019-08-26T01:05:27.467Z">
+<meta property="og:updated_time" content="2019-09-04T03:25:43.308Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="zzzzzzzz">
 <meta name="twitter:description" content="GRE（Generic Routing Encapsulation 通用路由封装协议）​      GRE是一种最传统的隧道协议，其根本功能就是要实现隧道功能，通过隧道连接的两个远程网络就如同直连，GRE在两个远程网络之间模拟出直连链路，从而使网络间达到直连的效果，为此，GRE需要完成多次封装，总共有3次，换句话说，就是在GRE隧道中传输的数据包都有3个包头，因为我们只谈IP协议，所以GRE中的I">
@@ -76,13 +76,16 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/26/GRE（Generic Routing Encapsulation 通用路由封装协议）-VPN/" data-id="ck04kdkwt0000moo0kdxr6e1b" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/26/GRE（Generic Routing Encapsulation 通用路由封装协议）-VPN/" data-id="ck04pacf30000c4o0r78la64k" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <h1 id="GRE（Generic-Routing-Encapsulation-通用路由封装协议）"><a href="#GRE（Generic-Routing-Encapsulation-通用路由封装协议）" class="headerlink" title="GRE（Generic Routing Encapsulation 通用路由封装协议）"></a>GRE（Generic Routing Encapsulation 通用路由封装协议）</h1><p>​      GRE是一种最传统的隧道协议，其根本功能就是要实现隧道功能，通过隧道连接的两个远程网络就如同直连，GRE在两个远程网络之间模拟出直连链路，从而使网络间达到直连的效果，为此，GRE需要完成多次封装，总共有3次，换句话说，就是在GRE隧道中传输的数据包都有3个包头，因为我们只谈IP协议，所以GRE中的IP数据包是一层套一层，总共有3个IP地址。GRE在实现隧道时，需要创建虚拟直连链路，GRE实现的虚拟直连链路可以认为是隧道，隧道是模拟链路，所以隧道两端也有IP地址，但隧道需要在公网中找到起点和终点，所以隧道的源和终点分别都以公网IP地址结尾，该链路是通过GRE协议来完成的，隧道传递数据包的过程分为3步：<br><strong>1．接收原始IP数据包当作乘客协议，原始IP数据包包头的IP地址为私有IP地址。</strong><br><strong>2．将原始IP数据包封装进GRE协议，GRE协议称为封装协议（Encapsulation Protocol），封装的包头IP地址为虚拟直连链路两端的IP地址。</strong><br><strong>3．将整个GRE数据包当作数据，在外层封装公网IP包头，也就是隧道的起源和终点，从而路由到隧道终点。</strong></p>
+        <h1 id="GRE（Generic-Routing-Encapsulation-通用路由封装协议）"><a href="#GRE（Generic-Routing-Encapsulation-通用路由封装协议）" class="headerlink" title="GRE（Generic Routing Encapsulation 通用路由封装协议）"></a>GRE（Generic Routing Encapsulation 通用路由封装协议）</h1><p>​      GRE是一种最传统的隧道协议，其根本功能就是要实现隧道功能，通过隧道连接的两个远程网络就如同直连，GRE在两个远程网络之间模拟出直连链路，从而使网络间达到直连的效果，为此，GRE需要完成多次封装，总共有3次，换句话说，就是在GRE隧道中传输的数据包都有3个包头，因为我们只谈IP协议，所以GRE中的IP数据包是一层套一层，总共有3个IP地址。GRE在实现隧道时，需要创建虚拟直连链路，GRE实现的虚拟直连链路可以认为是隧道，隧道是模拟链路，所以隧道两端也有IP地址，但隧道需要在公网中找到起点和终点，所以隧道的源和终点分别都以公网IP地址结尾，该链路是通过GRE协议来完成的，隧道传递数据包的过程分为3步：</p>
+<a id="more"></a>
+
+<p><strong>1．接收原始IP数据包当作乘客协议，原始IP数据包包头的IP地址为私有IP地址。</strong><br><strong>2．将原始IP数据包封装进GRE协议，GRE协议称为封装协议（Encapsulation Protocol），封装的包头IP地址为虚拟直连链路两端的IP地址。</strong><br><strong>3．将整个GRE数据包当作数据，在外层封装公网IP包头，也就是隧道的起源和终点，从而路由到隧道终点。</strong></p>
 <p>GRE隧道中传输的数据包格式如下：</p>
 <p><img src="https://wx4.sinaimg.cn/mw690/007X8LnPgy1g6cs98o6spj30dj0hjq3u.jpg" alt="img"> </p>
 <p>注：</p>

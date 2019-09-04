@@ -15,28 +15,17 @@
   
   <title>zzzzzzzz</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="PIX防火墙配置路由模式 R1(config)#int e1/0 R1(config-if)#ip add 192.168.1.1 255.255.255.0 R1(config-if)#n shu R1(config-if)#int e1/1 R1(config-if)#ip add 10.0.0.2 255.255.255.252 R1(config-if)#no shu R1(config-">
+  <meta name="description" content="PIX防火墙配置 路由模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="zzzzzzzz">
 <meta property="og:url" content="http://yoursite.com/2019/08/26/PIX防火墙配置/index.html">
 <meta property="og:site_name" content="zzzzzzzz">
-<meta property="og:description" content="PIX防火墙配置路由模式 R1(config)#int e1/0 R1(config-if)#ip add 192.168.1.1 255.255.255.0 R1(config-if)#n shu R1(config-if)#int e1/1 R1(config-if)#ip add 10.0.0.2 255.255.255.252 R1(config-if)#no shu R1(config-">
+<meta property="og:description" content="PIX防火墙配置 路由模式">
 <meta property="og:locale" content="ch">
-<meta property="og:image" content="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F0C.tmp.jpg">
-<meta property="og:image" content="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F2C.tmp.jpg">
-<meta property="og:image" content="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F2D.tmp.jpg">
-<meta property="og:image" content="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F2E.tmp.jpg">
-<meta property="og:image" content="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F2F.tmp.jpg">
-<meta property="og:image" content="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F30.tmp.jpg">
-<meta property="og:image" content="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F31.tmp.jpg">
-<meta property="og:image" content="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F32.tmp.jpg">
-<meta property="og:image" content="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F43.tmp.jpg">
-<meta property="og:image" content="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F44.tmp.jpg">
-<meta property="og:updated_time" content="2019-08-26T01:23:40.751Z">
+<meta property="og:updated_time" content="2019-09-04T03:25:23.464Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="zzzzzzzz">
-<meta name="twitter:description" content="PIX防火墙配置路由模式 R1(config)#int e1/0 R1(config-if)#ip add 192.168.1.1 255.255.255.0 R1(config-if)#n shu R1(config-if)#int e1/1 R1(config-if)#ip add 10.0.0.2 255.255.255.252 R1(config-if)#no shu R1(config-">
-<meta name="twitter:image" content="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F0C.tmp.jpg">
+<meta name="twitter:description" content="PIX防火墙配置 路由模式">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
@@ -83,13 +72,19 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/26/PIX防火墙配置/" data-id="ck04kdkx30002moo08l3gqdwl" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/26/PIX防火墙配置/" data-id="ck04pacfd0002c4o0q15kvn5h" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <h1 id="PIX防火墙配置"><a href="#PIX防火墙配置" class="headerlink" title="PIX防火墙配置"></a>PIX防火墙配置</h1><h3 id="路由模式"><a href="#路由模式" class="headerlink" title="路由模式"></a>路由模式</h3><p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F0C.tmp.jpg" alt="img"></p>
+        <p>PIX防火墙配置</p>
+<h3 id="路由模式"><a href="#路由模式" class="headerlink" title="路由模式"></a>路由模式</h3><a id="more"></a>
+
+
+
+
+
 <p><code>R1(config)#int e1/0</code></p>
 <p><code>R1(config-if)#ip add 192.168.1.1 255.255.255.0</code></p>
 <p><code>R1(config-if)#n shu</code></p>
@@ -146,16 +141,9 @@
 <p>  <code>interface  Specifies PAT using the IP address at the interface</code></p>
 <p><code>pixfirewall(config)# global (outside) 1 interface</code></p>
 <p>`` </p>
-<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F2C.tmp.jpg" alt="img"> </p>
 <p>外面PING不进去</p>
-<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F2D.tmp.jpg" alt="img"> </p>
-<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F2E.tmp.jpg" alt="img"> </p>
-<h3 id="透明模式配置"><a href="#透明模式配置" class="headerlink" title="透明模式配置"></a>透明模式配置</h3><p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F2F.tmp.jpg" alt="img"> </p>
-<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F30.tmp.jpg" alt="img"> </p>
-<p>配置地址后可以ping通网关</p>
-<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F31.tmp.jpg" alt="img"> </p>
-<p>路由表</p>
-<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F32.tmp.jpg" alt="img"> </p>
+<h3 id="透明模式配置"><a href="#透明模式配置" class="headerlink" title="透明模式配置"></a>透明模式配置</h3><p>配置地址后可以ping通网关</p>
+<p>路由表 </p>
 <p><code>R1(config-if)#int e1/1</code></p>
 <p><code>R1(config-if)#ip add 10.0.0.2 255.255.255.248</code></p>
 <p><code>R1(config-if)#no shu</code></p>
@@ -191,8 +179,6 @@
 <p><code>pixfirewall(config)# access-group aaa in interface inside//应用到端口</code></p>
 <p><code>pixfirewall(config)# access-group aaa in interface outside//应用到端口</code></p>
 <p>全网ping通，实现透明模式</p>
-<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F43.tmp.jpg" alt="img"> </p>
-<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps2F44.tmp.jpg" alt="img"> </p>
 
       
     </div><!-- .entry-content -->

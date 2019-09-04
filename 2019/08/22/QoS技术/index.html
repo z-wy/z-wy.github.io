@@ -23,7 +23,7 @@
 <meta property="og:description" content="1．QoS技术QoS（服务质量）是网络的一种安全机制, 是一种用于解决网络延迟和阻塞等问题的技术，包括传输的带宽、传送的时延、数据的丢包率等。在网络中可以通过保证传输的带宽、降低传送的时延、降低数据的丢包率以及时延抖动等措施来提高服务质量。正常情况下，假如网络只用于特定的无时间限制的应用系统，比如Web应用、FTP应用等，那么它不需要QoS。当网络过载或拥塞时，QoS 可以确保重要业务量不受延迟或">
 <meta property="og:locale" content="ch">
 <meta property="og:image" content="https://wx3.sinaimg.cn/mw690/007X8LnPgy1g68bgotds8j30h207dweq.jpg">
-<meta property="og:updated_time" content="2019-08-22T03:59:57.726Z">
+<meta property="og:updated_time" content="2019-09-04T03:25:52.393Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="zzzzzzzz">
 <meta name="twitter:description" content="1．QoS技术QoS（服务质量）是网络的一种安全机制, 是一种用于解决网络延迟和阻塞等问题的技术，包括传输的带宽、传送的时延、数据的丢包率等。在网络中可以通过保证传输的带宽、降低传送的时延、降低数据的丢包率以及时延抖动等措施来提高服务质量。正常情况下，假如网络只用于特定的无时间限制的应用系统，比如Web应用、FTP应用等，那么它不需要QoS。当网络过载或拥塞时，QoS 可以确保重要业务量不受延迟或">
@@ -74,13 +74,15 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/22/QoS技术/" data-id="ck04kdkx60004moo0sbq6ibq9" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/22/QoS技术/" data-id="ck04pacfg0004c4o0kkifmma6" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
         <h2 id="1．QoS技术"><a href="#1．QoS技术" class="headerlink" title="1．QoS技术"></a>1．QoS技术</h2><p>QoS（服务质量）是网络的一种安全机制, 是一种用于解决网络延迟和阻塞等问题的技术，包括传输的带宽、传送的时延、数据的丢包率等。在网络中可以通过保证传输的带宽、降低传送的时延、降低数据的丢包率以及时延抖动等措施来提高服务质量。<br>正常情况下，假如网络只用于特定的无时间限制的应用系统，比如Web应用、FTP应用等，那么它不需要QoS。当网络过载或拥塞时，QoS 可以确保重要业务量不受延迟或丢弃，同时可以保证网络的高效运行。</p>
+<a id="more"></a>
+
 <h2 id="2．QoS服务模型"><a href="#2．QoS服务模型" class="headerlink" title="2．QoS服务模型"></a>2．QoS服务模型</h2><p>① Best-Effort服务模型：网络尽最大的可能性来发送报文，对时延、可靠性等性能不提供任何保证。<br>② Int-Serv服务模型：明确区分并保证每一个业务流的服务质量，为网络提供最细粒度化的服务质量区分。<br>③ Diff-Serv服务模型：多服务模型，可以满足不同的QoS需求。与Int-Serv不同，它不需要通知网络为每个业务预留资源。Diff-Serv根据每个报文指定的QoS来提供特定的服务。报文的QoS指定方法有多种，如IP包优先级位、报文源地址和目的地址等，网络通过这些信息来进行报文的分类、流量整形、流量监管和排队。Diff-Serv主要用于为一些重要的应用提供端到端的QoS。</p>
 <h2 id="3．QoS的队列算法"><a href="#3．QoS的队列算法" class="headerlink" title="3．QoS的队列算法"></a>3．QoS的队列算法</h2><p>① FIFO：先进先出队列。FIFO不对报文进行分类，按报文到达接口的先后顺序进队，以进队的先后顺序出队。</p>
 <p>② CQ：自定义排队。当在某个端口上配置CQ时，系统将会为这个端口维护17个输出队列，编号为0的队列是系统队列，用户可以指定队列1～16。系统在1～16队列之间循环，每个循环都从当前队列中取出预配置的字节总数，并在移动到下一队列前将这些数据包发送出去。CQ的缺点：CQ是静态配置的，不能自动适应网络情况的不断变化。</p>
