@@ -15,17 +15,17 @@
   
   <title>zzzzzzzz</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="名词：  Extra Packages for Enterprise Linux  EPEL  企业Linux的额外套件 Yum(全称为 Yellow dog Updater, Modified)是一个在Fedora和RedHat以及CentOS中的Shell前端软件包管理器。基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包，无须繁">
+  <meta name="description" content="CENTOS7 Yum源配置 名词：**  Extra Packages for Enterprise Linux  EPEL  企业Linux的额外套件 Yum(全称为 Yellow dog Updater, Modified)是一个在Fedora和RedHat以及CentOS中的Shell前端软件包管理器。基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并">
 <meta property="og:type" content="article">
 <meta property="og:title" content="zzzzzzzz">
 <meta property="og:url" content="http://yoursite.com/2019/09/09/CENTOS 7 国内yum源配和epel源配置/index.html">
 <meta property="og:site_name" content="zzzzzzzz">
-<meta property="og:description" content="名词：  Extra Packages for Enterprise Linux  EPEL  企业Linux的额外套件 Yum(全称为 Yellow dog Updater, Modified)是一个在Fedora和RedHat以及CentOS中的Shell前端软件包管理器。基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包，无须繁">
+<meta property="og:description" content="CENTOS7 Yum源配置 名词：**  Extra Packages for Enterprise Linux  EPEL  企业Linux的额外套件 Yum(全称为 Yellow dog Updater, Modified)是一个在Fedora和RedHat以及CentOS中的Shell前端软件包管理器。基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并">
 <meta property="og:locale" content="ch">
-<meta property="og:updated_time" content="2019-09-09T01:05:14.227Z">
+<meta property="og:updated_time" content="2019-11-05T09:42:51.630Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="zzzzzzzz">
-<meta name="twitter:description" content="名词：  Extra Packages for Enterprise Linux  EPEL  企业Linux的额外套件 Yum(全称为 Yellow dog Updater, Modified)是一个在Fedora和RedHat以及CentOS中的Shell前端软件包管理器。基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包，无须繁">
+<meta name="twitter:description" content="CENTOS7 Yum源配置 名词：**  Extra Packages for Enterprise Linux  EPEL  企业Linux的额外套件 Yum(全称为 Yellow dog Updater, Modified)是一个在Fedora和RedHat以及CentOS中的Shell前端软件包管理器。基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
@@ -72,15 +72,18 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/09/09/CENTOS 7 国内yum源配和epel源配置/" data-id="ck2lnsefu0000gco0q72l4avm" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/09/09/CENTOS 7 国内yum源配和epel源配置/" data-id="ck2lo3xx40003u0o013cphrvp" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <p><strong>名词：</strong> </p>
+        <p>CENTOS7 Yum源配置</p>
+<p>名词：** </p>
 <p><strong>Extra Packages for Enterprise Linux  EPEL  企业Linux的额外套件</strong></p>
 <p><strong>Yum(全称为 Yellow dog Updater, Modified)是一个在Fedora和RedHat以及CentOS中的Shell前端软件包管理器。基于<a href="https://baike.so.com/doc/1772529-1874476.html" target="_blank" rel="noopener">RPM</a>包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包，无须繁琐地一次次下载、安装。</strong></p>
+<a id="more"></a>
+
 <hr>
 <h3 id="1-首先进入-etc-yum-repos-d-目录下，新建一个repo-bak目录，用于保存系统中原来的repo文件"><a href="#1-首先进入-etc-yum-repos-d-目录下，新建一个repo-bak目录，用于保存系统中原来的repo文件" class="headerlink" title="1.首先进入/etc/yum.repos.d/目录下，新建一个repo_bak目录，用于保存系统中原来的repo文件"></a><strong>1.首先进入</strong>/etc/yum.repos.d/目录下，新建一个repo_bak目录，用于保存系统中原来的repo文件</h3><p><code>[root@bogon ~]# cd /etc/yum.repos.d/</code></p>
 <p><code>[root@bogon yum.repos.d]# mkdir repo_bak</code></p>
