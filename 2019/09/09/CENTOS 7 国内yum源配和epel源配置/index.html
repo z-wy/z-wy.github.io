@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="每个眼神都只身荒野">
+  
+
+  
+  
+  
+  
+  
+  
+  <title>zzzzzzzz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="名词：  Extra Packages for Enterprise Linux  EPEL  企业Linux的额外套件 Yum(全称为 Yellow dog Updater, Modified)是一个在Fedora和RedHat以及CentOS中的Shell前端软件包管理器。基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包，无须繁">
+<meta property="og:type" content="article">
+<meta property="og:title" content="zzzzzzzz">
+<meta property="og:url" content="http://yoursite.com/2019/09/09/CENTOS 7 国内yum源配和epel源配置/index.html">
+<meta property="og:site_name" content="zzzzzzzz">
+<meta property="og:description" content="名词：  Extra Packages for Enterprise Linux  EPEL  企业Linux的额外套件 Yum(全称为 Yellow dog Updater, Modified)是一个在Fedora和RedHat以及CentOS中的Shell前端软件包管理器。基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包，无须繁">
+<meta property="og:locale" content="ch">
+<meta property="og:updated_time" content="2019-09-09T01:05:14.227Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="zzzzzzzz">
+<meta name="twitter:description" content="名词：  Extra Packages for Enterprise Linux  EPEL  企业Linux的额外套件 Yum(全称为 Yellow dog Updater, Modified)是一个在Fedora和RedHat以及CentOS中的Shell前端软件包管理器。基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包，无须繁">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src="//push.zhanzhang.baidu.com/push.js"></script>
+</head></html>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="zzzzzzzz" rel="home">zzzzzzzz</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">aaaaaaa</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-CENTOS 7 国内yum源配和epel源配置" class="post-CENTOS 7 国内yum源配和epel源配置 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/09/09/CENTOS 7 国内yum源配和epel源配置/" data-id="ck2lnsefu0000gco0q72l4avm" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p><strong>名词：</strong> </p>
+<p><strong>Extra Packages for Enterprise Linux  EPEL  企业Linux的额外套件</strong></p>
+<p><strong>Yum(全称为 Yellow dog Updater, Modified)是一个在Fedora和RedHat以及CentOS中的Shell前端软件包管理器。基于<a href="https://baike.so.com/doc/1772529-1874476.html" target="_blank" rel="noopener">RPM</a>包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包，无须繁琐地一次次下载、安装。</strong></p>
+<hr>
+<h3 id="1-首先进入-etc-yum-repos-d-目录下，新建一个repo-bak目录，用于保存系统中原来的repo文件"><a href="#1-首先进入-etc-yum-repos-d-目录下，新建一个repo-bak目录，用于保存系统中原来的repo文件" class="headerlink" title="1.首先进入/etc/yum.repos.d/目录下，新建一个repo_bak目录，用于保存系统中原来的repo文件"></a><strong>1.首先进入</strong>/etc/yum.repos.d/目录下，新建一个repo_bak目录，用于保存系统中原来的repo文件</h3><p><code>[root@bogon ~]# cd /etc/yum.repos.d/</code></p>
+<p><code>[root@bogon yum.repos.d]# mkdir repo_bak</code></p>
+<p><code>[root@bogon yum.repos.d]# mv *.repo repo_bak/</code></p>
+<h3 id="2-在CentOS中配置使用网易和阿里的开源镜像"><a href="#2-在CentOS中配置使用网易和阿里的开源镜像" class="headerlink" title="2.在CentOS中配置使用网易和阿里的开源镜像"></a><strong>2.在CentOS中配置使用网易和阿里的开源镜像</strong></h3><p>到网易和阿里开源镜像站点下载系统对应版本的repo文件</p>
+<p><code>[root@bogon yum.repos.d]# wget http://mirrors.aliyun.com/repo/Centos-7.repo</code></p>
+<p><code>[root@bogon yum.repos.d]# wget http://mirrors.163.com/.help/CentOS7-Base-163.repo</code></p>
+<p><code>[root@bogon yum.repos.d]# ls</code></p>
+<p><code>Centos-7.repo  CentOS-Base-163.repo  repo.bak</code></p>
+<h3 id="3-清除系统yum缓存并生成新的yum缓存"><a href="#3-清除系统yum缓存并生成新的yum缓存" class="headerlink" title="3. 清除系统yum缓存并生成新的yum缓存"></a><strong>3.</strong> <strong>清除系统yum缓存并生成新的yum缓存</strong></h3><p><code>[root@bogon yum.repos.d]# ls # 列出/etc/yum.repos.d/目录下的文件 Centos-7.repo CentOS-Base-163.repo repo.bak</code> </p>
+<p><code>[root@bogon yum.repos.d]# yum clean all # 清除系统所有的yum缓存</code></p>
+<p><code>[root@bogon yum.repos.d]# yum makecache # 生成yum缓存</code></p>
+<h3 id="4-安装epel源"><a href="#4-安装epel源" class="headerlink" title="4.安装epel源"></a><strong>4.安装epel源</strong></h3><p><code>[root@bogon yum.repos.d]# yum list | grep epel-release</code></p>
+<p><code>[root@bogon yum.repos.d]# yum install -y epel-release</code></p>
+<h3 id="5-使用阿里开源镜像提供的epel源"><a href="#5-使用阿里开源镜像提供的epel源" class="headerlink" title="5.使用阿里开源镜像提供的epel源"></a><strong>5.使用阿里开源镜像提供的epel源</strong></h3><p>[<code>root@bogon yum.repos.d]# wget -O /etc/yum.repos.d/epel-7.repo http://mirrors.aliyun.com/repo/epel-7.repo # 下载阿里开源镜像的epel源文件</code></p>
+<h3 id="6-再次清除系统yum缓存，并重新生成新的yum缓存"><a href="#6-再次清除系统yum缓存，并重新生成新的yum缓存" class="headerlink" title="6.再次清除系统yum缓存，并重新生成新的yum缓存"></a><strong>6.再次清除系统yum缓存，并重新生成新的yum缓存</strong></h3><p><code>[root@bogon yum.repos.d]# yum clean all</code></p>
+<p><code>[root@bogon yum.repos.d]# yum makecache</code></p>
+<h3 id="7-查看系统可用的yum源和所有的yum源"><a href="#7-查看系统可用的yum源和所有的yum源" class="headerlink" title="7.查看系统可用的yum源和所有的yum源"></a><strong>7.查看系统可用的yum源和所有的yum源</strong></h3><p><code>[root@bogon yum.repos.d]# yum repolist enabled</code></p>
+<p><code>[root@bogon yum.repos.d]# yum repolist all</code></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/09/09/CENTOS 7 国内yum源配和epel源配置/">
+    <time datetime="2019-09-09T00:57:53.068Z" class="entry-date">
+        2019-09-09
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2019/09/09/路由策略/" rel="prev"><span class="meta-nav">←</span> (no title)</a></span>
+    
+    
+        <span class="nav-next"><a href="/2019/09/06/路由重分布与路径控制/" rel="next">(no title) <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/28/网络基础/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/20/0723网页布局/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/09/路由策略/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/09/CENTOS 7 国内yum源配和epel源配置/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/06/路由重分布与路径控制/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2019 zwy
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>

@@ -66,6 +66,475 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
+    <article id="post-网络基础" class="post-网络基础 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/10/28/网络基础/" data-id="ck2lnsejj000dgco0ixsh5mxs" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h1 id="网络安全模块课程介绍"><a href="#网络安全模块课程介绍" class="headerlink" title="网络安全模块课程介绍"></a>网络安全模块课程介绍</h1><p>1.网络的协议(OSI,TCP\IP)<br>2.传输介质(有线传输介质和无线传输介质)<br>3.每一次的协议(TCP,IP,IMCP,ARP,stmp,pop,http,ftp,ssh等)<br>4.IP地址(划分、子网设计)<br>5.冗余网络设计(hsrp,vrrp等)<br>6.交换技术(VLAN,STP,vtp等)<br>7.路由技术(RIP,OSPF等)<br>8.安全(终端接入安全(端口安全，防arp欺骗，防dhcp flooding等))<br>9.链路安全ppp(点到点协议)(pap,chap)<br>10.安全设备(防火墙)怎么部署？功能？配置？<br>11.VPN(虚拟专用网)(PPTP,L2TP等)<br>GRE VPN IPsec VPN等</p>
+<h4 id="1-什么是网络？"><a href="#1-什么是网络？" class="headerlink" title="1.什么是网络？"></a>1.什么是网络？</h4><p>就是把不同地址位置的终端设备通过传输介质(有线/无线)和网络设备连接起来，实现资源贡献及通信。</p>
+<h4 id="2-网络的发展？"><a href="#2-网络的发展？" class="headerlink" title="2.网络的发展？"></a>2.网络的发展？</h4><p>经历了4个阶段：</p>
+<h5 id="1-远程联机系统"><a href="#1-远程联机系统" class="headerlink" title="1.远程联机系统"></a>1.远程联机系统</h5><p>20世纪60年代中期之前。<br>第一代计算机网络是以单个计算机为中心的远程联机系统。<br>典型应用是由一台计算机和全美范围内2 000多个终端组成的飞机订票系统。 </p>
+<h5 id="2-分组交换网络"><a href="#2-分组交换网络" class="headerlink" title="2.分组交换网络"></a>2.分组交换网络</h5><p>20世纪60年代中期至70年代 。<br>第二代计算机网络是以多个主机通过通信线路互联起来，为用户提供服务。<br>典型代表是美国国防部高级研究计划局协助开发的ARPANET（阿帕网）。 </p>
+<h5 id="3-开放式的标准化计算机网络"><a href="#3-开放式的标准化计算机网络" class="headerlink" title="3.开放式的标准化计算机网络"></a>3.开放式的标准化计算机网络</h5><p>20世纪70年代末至90年代。<br>第三代计算机网络是具有统一的网络体系结构并遵循国际标准的开放式和标准化的网络。<br>ARPANET兴起后，计算机网络发展迅猛，各大计算机公司相继推出自己的网络体系结构及实现这些结构的软硬件产品。但由于没有统一的标准，不同厂商的产品之间互联很困难。<br>1984年，ISO正式颁布了一个称为“开放系统互连基本参考模型”（OSI模型）的国际标准ISO7498。<br>在开放式网络中，所有的计算机和通信设备都遵循着共同认可的国际标准（OSI七层网络参考模型），从而可以保证不同厂商的网络产品可以在同一网络中顺利地进行通信。</p>
+<h6 id="tcp-ip和OSI哪个先提出？"><a href="#tcp-ip和OSI哪个先提出？" class="headerlink" title="tcp/ip和OSI哪个先提出？"></a>tcp/ip和OSI哪个先提出？</h6><p>​    1.OSI七层参考模型-1977年<br>​    2.TCP/IP四层协议-1969年<a href="https://www.baidu.com/s?wd=美国国防部高级研究计划局&tn=SE_PcZhidaonwhc_ngpagmjz&rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">美国国防部高级研究计划局</a>（DOD-ARPA）在研究ARPANET时提出了TCP/IP参考模型。</p>
+<h5 id="4-高速网络技术阶段"><a href="#4-高速网络技术阶段" class="headerlink" title="4.高速网络技术阶段"></a>4.高速网络技术阶段</h5><p>20世纪90年代末至今。<br>第四代计算机网络由于局域网技术发展越趋成熟，出现了光纤及高速网络技术，多媒体网络，智能网络等，整个网络就像一个对用户透明的大的计算机系统。<br>第四代计算机网络以Internet为代表的互联网。 </p>
+<p>网络的分类：<br>局域网(LAN)—无线局域网(WLAN)<br>广域网(WAN)<br>城域网(MAN)</p>
+<h4 id="2-OSI七层参考模型"><a href="#2-OSI七层参考模型" class="headerlink" title="2.OSI七层参考模型"></a>2.OSI七层参考模型</h4><h5 id="1-osi七层？"><a href="#1-osi七层？" class="headerlink" title="1.osi七层？"></a>1.osi七层？</h5><p>应用层              上面三层为高层，下面四层为低层<br>表示层<br>会话层<br>传输层<br>网络层<br>数据链路层<br>物理层</p>
+<h5 id="2-参考模型的优点？"><a href="#2-参考模型的优点？" class="headerlink" title="2.参考模型的优点？"></a>2.参考模型的优点？</h5><p>​    1.每次独立，防止对某一层所做的改动影响到其他的层,这样就有利于开发。<br>​    2.将网络的通信过程划分为小一些、简单一些的部件，因此有助于各个部件的开发、设计和故障排除。<br>​    3.通过网络组件的标准化，允许多个供应商进行开发。<br>​    4.通过定义在模型的每一层实现什么功能，鼓励产业的标准化。<br>​    5.允许各种类型的网络硬件和软件相互通信。</p>
+<h5 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h5><h5 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h5><p>物理层是OSI/RM的最低层。主要功能是完成相邻结点之间原始比特流的传输。<br>物理层的设计主要涉及物理接口的机械、电气、功能和规程特性。<br>机械特性：指明接口所用接线器的形状和尺寸、引线数目和排列、固定和锁定装置。<br>电气特性：指明接口电缆各条线上的电压范围。<br>功能特性：指明某条线上出现的某一电平的电压含义。<br>规程特性：指明对于不同功能的各种可能事件的出现顺序。 </p>
+<p>物理层的介质：<br>1.有线<br>光纤<br>同轴电缆<br>Copper Conductor铜导体plastic insulation 塑料绝缘层 braided copper shielding网状屏蔽层</p>
+<p>双绞线<br>2.无线<br>微波<br>无线电波<br>红外线等</p>
+<p>双绞线的线序排列：<br>TIA/EIA 568A标准：白绿、绿、白橙、蓝、白蓝、橙、白棕、棕<br>TIA/EIA 568B标准：白橙、橙、白绿、蓝、白蓝、绿、白棕、棕<br>建议：记住一个，另一个就是1-3，2-6对调</p>
+<p>双绞线的三种类型：<br>直通线（Straight-Through Cable）：两端使用相同标准制作的线缆，应用于异种设备的互联。<br>交叉线（Crossover Cable）：两端使用不同的标准制作的线缆，应用于同种设备的互联。<br>反转线（Rollover Cable）：一端使用568A或568B的线序制作，另一端使用568A或568B的全反线序制作的线缆。应用于本地配置设备使用。</p>
+<p>屏蔽双绞线：STP<br>非屏蔽双绞线：UTP</p>
+<p>光纤</p>
+<p>1.单模光纤</p>
+<p>单模光纤的纤芯较细，使光线能够直接发射到中心。建议距离较长时采用。</p>
+<p>另外，单模信号的距离损失比多模的小。在头3000英尺的距离下，多模光纤可能损失其LED光信号强度的50%，而单模在同样距离下只损失其激光信号的6.25%。</p>
+<p>2.多模光纤<br>传输的是光信号<br>传输距离10km+（远距离传输）<br>首先，设备要由支持接入的光模块<br>光纤多芯—</p>
+<p><strong>1、光源的区别：</strong>单模光纤，采用固体激光器做光源，多模光纤则采用发光二极管做光源。单模光纤只能允许一束光传播，而多模光纤允许多束光在光纤中同时传播。</p>
+<p><strong>2、外观颜色的区别：</strong>单模光纤一般用黄色表示，而多模光纤一般用橙色表示。</p>
+<p><strong>3、外护套标识的区别：</strong>光缆外护套标识，50/125、62.5/125为多模，9/125(G652)为单模。</p>
+<p><strong>4、传输距离的区别：</strong>单模光纤纤芯直径小，只有单一的传播路径，色散小，传输距离远；多模光纤纤芯直径大，有多种传播路径，色散大，传输距离近。</p>
+<p><strong>多模光纤和**</strong>单模光纤<strong><strong>的区别</strong></strong>：**主要在于光的传输方式不同，以及外观颜色、外护套标识和传输距离的不同。</p>
+<p>物理层的设备：<br>接收器、发送器、中继器、集线器等用于连接DTC和DCE<br>DTE：数据终端设备（PC）<br>DCE：数据通信设备（光猫、调制解调器等）</p>
+<h5 id="数据链路层："><a href="#数据链路层：" class="headerlink" title="数据链路层："></a>数据链路层：</h5><p>1.数据链路层的功能<br>成帧（帧同步）：为了能实现数据有效的差错控制，就采用了一种“帧”的数据块进行传输。而要采帧格式传输，就必须有相应的帧同步技术，这就是数据链路层的“成帧”（也称为“帧同步”）功能。<br>差错控制：在数据通信过程可能会因物理链路性能和网络通信环境等因素，难免会出现一些传送错误，但为了确保数据通信的准确，又必须使得这些错误发生的机率尽可能低。<br>流量控制：可以确保数据通信的有序进行，还可避免通信过程中不会出现因为接收方来不及接收而造成的数据丢失。<br>流量控制的三种方式：<br>        缓冲（Buffering）：<br>        窗口（Windowing）：<br>        避免拥塞（Congestion avoidance）：<br>链路管理：数据链路的建立、链路的维持和释放三个主要方面  </p>
+<p>数据链路层的设备：<br>网桥（Bridge）：网桥（Bridge）也称桥接器，是连接两个局域网的存储转发设备，用它可以完成具有相同或相似体系结构网络系统的连接。<br>交换机（Switch）<br>    交换机的功能？<br>    成帧<br>    流控<br>    差错控制<br>    数据转发功能<br>    隔离广播风暴</p>
+<h5 id="网络层："><a href="#网络层：" class="headerlink" title="网络层："></a>网络层：</h5><p>1  网络层的功能<br>定义与指定协议相关联的源和目标逻辑地址（IP地址）<br>定义通过网络的路径（寻址）<br>多链路连接（网络连接）</p>
+<p>2    网络层的设备——路由器<br>    路由器的功能?<br>        广播信息控制<br>        多点发送信息控制<br>        路径优化<br>        流量管制<br>        逻辑寻址<br>        提供WAN连接</p>
+<pre><code>路由器和交换机的区别？
+路由器工作在网络层，交换机工作在数据链路层
+路由器能够通过IP地址转发，而交换机是通过MAC地址转发
+路由器是根据路由表转发，而交换机是通过mac地址表转发</code></pre><h5 id="传输层："><a href="#传输层：" class="headerlink" title="传输层："></a>传输层：</h5><p>TCP  UDP SPX<br>SPX:序列分组交换协议:序列分组交换协议(Sequenced Packet Exchange，SPX)，是Novell早期传输层协议。<br>SPX运行在IPX之上，主要为Novell NetWare(NetWare 5.0之前)系统实现客户机/服务器上应用程序的通信服务，例如BTRIEVE（ISAM 管理器）。SPX与TCP实现同等功能。最新版本的NetWare运行在TCP/IP上。</p>
+<p>传输层的功能?<br>区分不同的上层应用<br>建立应用程序间的端到端连接<br>定义流量控制<br>为数据传输提供可靠或不可靠的连接服务</p>
+<h5 id="会话层："><a href="#会话层：" class="headerlink" title="会话层："></a>会话层：</h5><p>主要为两个会话层实体进行会话而进行的对话连接的管理服务。<br>会话层的主要功能：建立会话，拆除会话等会话管理服务。</p>
+<h5 id="表示层："><a href="#表示层：" class="headerlink" title="表示层："></a>表示层：</h5><p>主要功能是数据如何被表示。如文字、图形、声音的表示。<br>另外，数据压缩、数据加密等工作都是由表示层负责处理。</p>
+<h5 id="应用层（Application-Layer）："><a href="#应用层（Application-Layer）：" class="headerlink" title="应用层（Application Layer）："></a>应用层（Application Layer）：</h5><p>主要功能是完成用户与应用程序之间的接口。<br>如Telnet、HTTP、FTP等</p>
+<p>IEEE802局域网标准系列 </p>
+<p>电气和电子工程师协会（IEEE，全称是Institute of Electrical and Electronics Engineers）是一个美国的电子技术与信息科学工程师的协会</p>
+<p>IEEE802.3    CSMA/CD访问控制方法与物理层规范<br>IEEE802.3i    10Base-T访问控制方法与物理层规范<br>IEEE802.3u    100Base-T访问控制方法与物理层规范<br>IEEE802.11    无线局域网访问控制方法与物理层规范 </p>
+<p>IEEE802参考模型(了解)</p>
+<p><strong>局域网的类型</strong><br>    <strong>以太网（Ethernet）</strong><br>    <strong>光纤分布式数据接口（FDDI）</strong><br>    <strong>异步传输模式（ATM）</strong><br>    <strong>令牌环网（Token Ring）</strong> </p>
+<p>CSMA/CD：载波侦听多路访问/冲突检测<br>使用集线器组建局域网，接入集线器的设备越多，产生冲突的可能性越大。<br>CSMA/CD（载波侦听多路访问/冲突检测 ，carrier sense multiple access /collision detect）是用于避免和解决冲突产生的一种机制。</p>
+<p>TCP/IP协议</p>
+<h4 id="2-1-TCP-IP的历史"><a href="#2-1-TCP-IP的历史" class="headerlink" title="2.1        TCP/IP的历史"></a>2.1        TCP/IP的历史</h4><p>​    telnet：明文传输<br>​    ssh：加密传输<br>​    Internet 协议（IP）（又称 IPv4）被详细规定下来。IP 为端到端传递提供寻址和路由功能。</p>
+<h4 id="2-2-TCP-IP网络体系结构"><a href="#2-2-TCP-IP网络体系结构" class="headerlink" title="2.2        TCP/IP网络体系结构"></a>2.2        TCP/IP网络体系结构</h4><p>​    4层：<br>​    <strong>应用层</strong><br>​    <strong>传输层</strong><br>​    <strong>网际层</strong><br><strong>网际层的协议：</strong><br>IP（Internet Protocol，互联网协议）</p>
+<p>ICMP（Internet Control Message Protocol，互联网控制信息协议）<br>    Internet Control message Protocol，因特网控制信息协议）<br>ICMP（Internet Control Message Protocol）Internet控制报文协议。它是TCP/IP协议簇的一个子协议，用于在IP主机、路由器之间传递控制消息。控制消息是指网络通不通、主机是否可达、路由是否可用等网络本身的消息。这些控制消息虽然并不传输用户数据，但是对于用户数据的传递起着重要的作用。 [1] </p>
+<h5 id="ICMP工作原理："><a href="#ICMP工作原理：" class="headerlink" title="ICMP工作原理："></a>ICMP工作原理：</h5><p>发送设备才是出错报文的逻辑接受者。发送设备随后可根据ICMP报文确定发生错误的类型，并确定如何才能更好地重发失败的数据包。但是ICMP唯一的功能是报告问题而不是纠正错误，纠正错误的任务由发送方完成。<br>我们在网络中经常会使用到ICMP协议，比如我们经常使用的用于检查网络通不通的Ping命令（Linux和Windows中均有），这个“Ping”的过程实际上就是ICMP协议工作的过程。还有其他的网络命令如跟踪路由的Tracert命令也是基于ICMP协议的。<br>ICMP的类型</p>
+<p><a href="https://baike.baidu.com/item/ICMP#4" target="_blank" rel="noopener">https://baike.baidu.com/item/ICMP#4</a></p>
+<p>ARP（Address Resolution Protocol，地址解析协议）<br>将IP地址解析为MAC地址的过程</p>
+<p>RARP（Reverse Address Resolution Protocol ，逆向地址解析协议）</p>
+<p>将MAC地址解析为IP地址的过程</p>
+<p>DHCP （ Dynamic Host Configuration Protocol ，动态主机分配协议）<br>给客户端租约IP地址的一个服务<br>DHCP协议采用UDP作为传输协议，主机发送请求消息到DHCP服务器的68号端口，DHCP服务器回应应答消息给主机的67</p>
+<h5 id="DHCP的工作工程："><a href="#DHCP的工作工程：" class="headerlink" title="DHCP的工作工程："></a><strong>DHCP的工作工程：</strong></h5><p>1、DHCP Client以广播的方式发出DHCP Discover报文。 [4]<br>2、所有的DHCP Server都能够接收到DHCP Client发送的DHCP Discover报文，所有的DHCP Server都会给出响应，向DHCP Client发送一个DHCP Offer报文。 [4]<br>DHCP Offer报文中“Your(Client) IP Address”字段就是DHCP Server能够提供给DHCP Client使用的IP地址，且DHCP Server会将自己的IP地址放在“option”字段中以便DHCP Client区分不同的DHCP Server。DHCP Server在发出此报文后会存在一个已分配IP地址的纪录。 [4]<br>3、DHCP Client只能处理其中的一个DHCP Offer报文，一般的原则是DHCP Client处理最先收到的DHCP Offer报文。 [4]<br>DHCP Client会发出一个广播的DHCP Request报文，在选项字段中会加入选中的DHCP Server的IP地址和需要的IP地址。 [4]<br>4、DHCP Server收到DHCP Request报文后，判断选项字段中的IP地址是否与自己的地址相同。如果不相同，DHCP Server不做任何处理只清除相应IP地址分配记录；如果相同，DHCP Server就会向DHCP Client响应一个DHCP ACK报文，并在选项字段中增加IP地址的使用租期信息。 [4]<br>5、DHCP Client接收到DHCP ACK报文后，检查DHCP Server分配的IP地址是否能够使用。如果可以使用，则DHCP Client成功获得IP地址并根据IP地址使用租期自动启动续延过程；如果DHCP Client发现分配的IP地址已经被使用，则DHCP Client向DHCPServer发出DHCP Decline报文，通知DHCP Server禁用这个IP地址，然后DHCP Client开始新的地址申请过程。 [4]<br>6、DHCP Client在成功获取IP地址后，随时可以通过发送DHCP Release报文释放自己的IP地址，DHCP Server收到DHCP Release报文后，会回收相应的IP地址并重新分配。 [4] </p>
+<p>ipconfig/release  主动释放IP<br>ipconfig/renew  从新租约IP</p>
+<h5 id="最大传输单元（Maximum-Transmission-Unit，MTU）"><a href="#最大传输单元（Maximum-Transmission-Unit，MTU）" class="headerlink" title="最大传输单元（Maximum Transmission Unit，MTU）"></a>最大传输单元（Maximum Transmission Unit，MTU）</h5><p>是指一种通信协议的某一层上面所能通过的最大数据报大小（以字节为单位）。最大传输单元这个参数通常与通信接口有关（网络接口卡、串口等）。</p>
+<h6 id="IP包的分片"><a href="#IP包的分片" class="headerlink" title="IP包的分片"></a>IP包的分片</h6><p>数据包是被封装在物理帧中传输的，对于网络硬件来说，它们对一个物理帧的可传输数据量都规定了一个上限值，这个上限值就是最大传输单元，即数据包的MTU（maximum transfer unit）。<br>例如：源于令牌环网的数据包最大传输单元（MTU）为4500 字节、<strong>以太网的数据包最大传输单元为1500 字节、</strong>FDDI 的数据包最大传输单元为4770 字节。<br>如果数据包的大小比互联网中最大网络的MTU 要大，它是无法被封装到帧中去的；相反如果数据包的大小被限制为互连网中最小网络的MTU，这种做法也是很不经济的（因为在大MTU 的网络上，会造成带宽浪费） </p>
+<h5 id="网络接口层"><a href="#网络接口层" class="headerlink" title="网络接口层"></a><strong>网络接口层</strong></h5><p>传输层两大协议：<br>TCP<br>TCP（Transmission Control Protocol,传输控制协议)是一种面向连接的可靠协议。</p>
+<p>tcp传输协议需要建立TCP的三次握手：掌握<br>UDP    ：UDP（User Datagram Protocol,用户数报协议)是一种非面向连接的不可靠协议</p>
+<p>tcp和udp的区别？<br>tcp可靠面向对象，udp不可靠非面向<br>tcp传输有顺序号和确认号<br>udp没有顺序号和确认号</p>
+<p>端口号：<br>范围：0<del>65535<br>0</del>1023：公共端口<br>1024<del>49151：租约端口<br>49152</del>65535：动态端口</p>
+<p>ftp：20 21<br>dns：53<br>http：80<br>smtp：25<br>pop3：110<br>telnet：23<br>ssh：22<br>等</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/10/28/网络基础/">
+    <time datetime="2019-10-28T10:36:48.154Z" class="entry-date">
+        2019-10-28
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-0723网页布局" class="post-0723网页布局 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/10/20/0723网页布局/" data-id="ck2lnseg40001gco0tvamn1ms" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>0723网页布局</p>
+<p>目标：</p>
+<p>\1. 标签的学习</p>
+<p>\2. 布局：position（top,left,right,bottom）</p>
+<p>\3. 标签自带方法：oninput，onchange,onclick</p>
+<p>\4. 高级标签的学习：video，audio（做一个小说阅读器，用百度接口完成语音识别）</p>
+<p>接口：HTTP://tts.baidu.com/text2audio?lan=zh&amp;ie=UTF-8&amp;spd=6&amp;text=</p>
+        
+          <p class="article-more-link">
+            <a href="/2019/10/20/0723网页布局/#more" class="more-link">More <span class="meta-nav">→</span></a>
+          </p>
+        
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/10/20/0723网页布局/">
+    <time datetime="2019-10-20T06:55:13.190Z" class="entry-date">
+        2019-10-20
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-路由策略" class="post-路由策略 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/09/09/路由策略/" data-id="ck2lnseir0008gco0vta9x624" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p><strong>策略路由</strong></p>
+<p><strong>策略路由提供了一种根据网络管理者制定的策略来进行数据包转发的机制。基于策略的路由比传统路由能力更强，使用更灵活，它使用网络管理者不仅能够根据目的地址，而且能够根据协议类型、报文大小、应用或IP源地址来选择转发路径。策略由路由映射表来定义。</strong></p>
+<h3 id="实验一、基于源IP地址的策略路由配置"><a href="#实验一、基于源IP地址的策略路由配置" class="headerlink" title="实验一、基于源IP地址的策略路由配置"></a><strong>实验一、基于源IP地址的策略路由配置</strong></h3><p><strong>实验目的：</strong></p>
+<p>1、用route-map定义路由策略。</p>
+<p>2、在接口下应用路由策略。</p>
+<p>3、基于源IP地址的策略路由的配置和调试。</p>
+<p><strong>实验拓朴：</strong></p>
+<p><img src="https://s2.ax1x.com/2019/09/09/nJArDK.png" alt="nJArDK.png"> </p>
+<p><strong>实验步骤：</strong></p>
+<p>在路由器R1的f0/0接口应用IP策略路由CCNA，使得从主机PC2来的数据设置一跳地址为：172.16.12.2；从主机PC3来的数据设置下一跳地址为：172.16.21.2，所有其他的数据包正常转发，整个网络运行EIGRP路由协议。</p>
+<p><strong>配置ACL</strong></p>
+<p><code>R1(config)#access-list 1 permit 172.16.1.2</code></p>
+<p><code>R1(config)#access-list 2 permit 172.16.1.3</code></p>
+<p><strong>配置路由映射表</strong></p>
+<p><code>R1(config)#route-map CCNA permit 10</code></p>
+<p><code>R1(config-route-map)#match ip address 1</code></p>
+<p><code>R1(config-route-map)#set ip next-hop 172.16.12.2</code></p>
+<p><code>R1(config-route-map)#exit</code></p>
+<p><code>R1(config)#route-map CCNA permit 20</code></p>
+<p><code>R1(config-route-map)#match ip address 2</code></p>
+<p><code>R1(config-route-map)#set ip next-hop 172.16.21.2</code></p>
+<p><strong>应用策略路由</strong></p>
+<p><code>R1(config)#int f0/0</code></p>
+<p><code>R1(config-if)#ip policy route-map CCNA</code></p>
+<p><strong>实验调试：</strong></p>
+<p><strong>1、**</strong>查看路由路径**</p>
+<p><code>PC2#traceroute 172.16.2.2</code></p>
+<p><code>PC3#traceroute 172.16.2.2</code></p>
+<p><strong>2、**</strong>在R1上显示调试信息**</p>
+<p><code>R1#debug ip policy</code></p>
+<p><code>PC2：ping 172.16.2.2</code>  </p>
+<p><code>PC6:ping 172.16.2.2</code></p>
+<p><strong>3、显示在哪些接口上应用了策略路由</strong></p>
+<p><code>R1#sh ip policy</code></p>
+<p><strong>4、显示定义的所有路由策略及路由策略匹配的情况</strong></p>
+<h3 id="实验二、基于数据包长度的策略路由配置"><a href="#实验二、基于数据包长度的策略路由配置" class="headerlink" title="实验二、基于数据包长度的策略路由配置"></a><strong>实验二、基于数据包长度的策略路由配置</strong></h3><p><strong>实验目的：</strong></p>
+<p>1、用route-map定义路由策略。</p>
+<p>2、在接口下应用路由策略。</p>
+<p>3、基于数据包长度的策略路由的配置和调试。</p>
+<p><strong>实验拓朴：</strong></p>
+<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps95B2.tmp.jpg" alt="img"> </p>
+<p><strong>实验步骤：</strong></p>
+<p>在R1的f0/0接口应用IP策略路由CCNP，使得对大小为“64-100”字节的数据包设置出接口为s1/0;数据包大小“101-100”字节的数据包设置出接口为“f0/1”,所有其他的数据包正常转发，整个网络运行EIGRP路由协议。</p>
+<p><strong>配置路由映射表</strong></p>
+<p><code>R1(config)#route-map CCNP permit 10</code></p>
+<p><code>R1(config-route-map)#match length 64 100</code></p>
+<p><code>R1(config-route-map)#set interface s1/0</code></p>
+<p><code>R1(config)#route-map CCNP permit 20</code></p>
+<p><code>R1(config-route-map)#match length 101 1000</code></p>
+<p><code>R1(config-route-map)#set interface f0/1</code></p>
+<p><strong>应用策略路由</strong></p>
+<p><code>R1(config)#int f0/0</code></p>
+<p><code>R1(config-if)#ip policy route-map CCNP</code></p>
+<p><code>R1(config-if)#exit</code></p>
+<p><code>R1(config)#ip local policy route-map CCNP</code></p>
+<p><strong>实验调试：</strong></p>
+<p><strong>1.在主机上执行扩展ping命令，在R1上显示调试信息。</strong></p>
+<p><code>PC2：ping 172.16.2.2 repeat 1 size 90</code></p>
+<p><code>PC2：ping 172.16.2.2 repeat 1 size 300</code></p>
+<p><code>PC2：ping 172.16.2.2 repeat 1 size 1200</code></p>
+<p><code>**2、****显示在哪些接口上应用了策略路由**</code></p>
+<p><code>R1#sh ip policy</code></p>
+<p><strong>3、显示定义的所有路由策略及路由策略匹配的情况</strong></p>
+<p><code>R1#sh ip route-map CCNP</code></p>
+<h3 id="实验三、基于应用的策略路由配置"><a href="#实验三、基于应用的策略路由配置" class="headerlink" title="实验三、基于应用的策略路由配置"></a><strong>实验三、基于应用的策略路由配置</strong></h3><p><strong>实验目的：</strong></p>
+<p>1、用route-map定义路由策略。</p>
+<p>2、在接口下应用路由策略。</p>
+<p>3、基于数据包长度的策略路由的配置和调试。</p>
+<p><strong>实验拓朴：</strong></p>
+<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps95B3.tmp.jpg" alt="img"> </p>
+<p><strong>实验步骤：</strong></p>
+<p>在R1的f0/0接口应用IP策略路由CCIE，使得对HTTP数据包设置一跳地址为：172.16.12.2，并且设置IP数据包优先级为”flash”,为telnet数据包设置下一跳地址为：172.16.21.2，并且设置IP数据包优先级为：critical，所有其他的数据包正常转发，整个路由协议运行EIGRP。</p>
+<p><strong>配置R2的http与telnet访问</strong></p>
+<p>  <code>R2(config)#ip http server</code></p>
+<p><code>R2(config)#line vty 0 4</code></p>
+<p><code>R2(config-line)#no login</code></p>
+<p><code>R2(config-line)#privilege level 15</code></p>
+<p>`` </p>
+<p><strong>配置扩展ACL</strong></p>
+<p><code>R1(config)#ip access-list extended HTTP</code></p>
+<p><code>R1(config-ext-nacl)#permit tcp any any eq 80</code></p>
+<p><code>R1(config-ext-nacl)#exit</code></p>
+<p><code>R1(config)#ip access-list extended TELNET</code></p>
+<p><code>R1(config-ext-nacl)#permit tcp any any eq 23</code></p>
+<p>`` </p>
+<p><strong>配置路由映射表</strong></p>
+<p><code>R1(config)#route-map CCIE permit 10</code></p>
+<p><code>R1(config-route-map)#match ip address HTTP</code></p>
+<p><code>R1(config-route-map)#set ip precedence flash</code></p>
+<p><code>R1(config-route-map)#set ip next-hop 172.16.12.2</code></p>
+<p><code>R1(config)#route-map CCIE permit 20</code></p>
+<p><code>R1(config-route-map)#match ip address TELNET</code></p>
+<p><code>R1(config-route-map)#set ip precedence critical</code></p>
+<p><code>R1(config-route-map)#set ip next-hop 172.16.21.2</code></p>
+<p><strong>应用路由映射表</strong></p>
+<p><code>R1(config)#int f0/0</code></p>
+<p><code>R1(config-if)#ip policy route-map CCIE</code></p>
+<p><code>R1(config)#ip local policy route-map CCIE</code></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/09/09/路由策略/">
+    <time datetime="2019-09-09T01:09:53.525Z" class="entry-date">
+        2019-09-09
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-CENTOS 7 国内yum源配和epel源配置" class="post-CENTOS 7 国内yum源配和epel源配置 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/09/09/CENTOS 7 国内yum源配和epel源配置/" data-id="ck2lnsefu0000gco0q72l4avm" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p><strong>名词：</strong> </p>
+<p><strong>Extra Packages for Enterprise Linux  EPEL  企业Linux的额外套件</strong></p>
+<p><strong>Yum(全称为 Yellow dog Updater, Modified)是一个在Fedora和RedHat以及CentOS中的Shell前端软件包管理器。基于<a href="https://baike.so.com/doc/1772529-1874476.html" target="_blank" rel="noopener">RPM</a>包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包，无须繁琐地一次次下载、安装。</strong></p>
+<hr>
+<h3 id="1-首先进入-etc-yum-repos-d-目录下，新建一个repo-bak目录，用于保存系统中原来的repo文件"><a href="#1-首先进入-etc-yum-repos-d-目录下，新建一个repo-bak目录，用于保存系统中原来的repo文件" class="headerlink" title="1.首先进入/etc/yum.repos.d/目录下，新建一个repo_bak目录，用于保存系统中原来的repo文件"></a><strong>1.首先进入</strong>/etc/yum.repos.d/目录下，新建一个repo_bak目录，用于保存系统中原来的repo文件</h3><p><code>[root@bogon ~]# cd /etc/yum.repos.d/</code></p>
+<p><code>[root@bogon yum.repos.d]# mkdir repo_bak</code></p>
+<p><code>[root@bogon yum.repos.d]# mv *.repo repo_bak/</code></p>
+<h3 id="2-在CentOS中配置使用网易和阿里的开源镜像"><a href="#2-在CentOS中配置使用网易和阿里的开源镜像" class="headerlink" title="2.在CentOS中配置使用网易和阿里的开源镜像"></a><strong>2.在CentOS中配置使用网易和阿里的开源镜像</strong></h3><p>到网易和阿里开源镜像站点下载系统对应版本的repo文件</p>
+<p><code>[root@bogon yum.repos.d]# wget http://mirrors.aliyun.com/repo/Centos-7.repo</code></p>
+<p><code>[root@bogon yum.repos.d]# wget http://mirrors.163.com/.help/CentOS7-Base-163.repo</code></p>
+<p><code>[root@bogon yum.repos.d]# ls</code></p>
+<p><code>Centos-7.repo  CentOS-Base-163.repo  repo.bak</code></p>
+<h3 id="3-清除系统yum缓存并生成新的yum缓存"><a href="#3-清除系统yum缓存并生成新的yum缓存" class="headerlink" title="3. 清除系统yum缓存并生成新的yum缓存"></a><strong>3.</strong> <strong>清除系统yum缓存并生成新的yum缓存</strong></h3><p><code>[root@bogon yum.repos.d]# ls # 列出/etc/yum.repos.d/目录下的文件 Centos-7.repo CentOS-Base-163.repo repo.bak</code> </p>
+<p><code>[root@bogon yum.repos.d]# yum clean all # 清除系统所有的yum缓存</code></p>
+<p><code>[root@bogon yum.repos.d]# yum makecache # 生成yum缓存</code></p>
+<h3 id="4-安装epel源"><a href="#4-安装epel源" class="headerlink" title="4.安装epel源"></a><strong>4.安装epel源</strong></h3><p><code>[root@bogon yum.repos.d]# yum list | grep epel-release</code></p>
+<p><code>[root@bogon yum.repos.d]# yum install -y epel-release</code></p>
+<h3 id="5-使用阿里开源镜像提供的epel源"><a href="#5-使用阿里开源镜像提供的epel源" class="headerlink" title="5.使用阿里开源镜像提供的epel源"></a><strong>5.使用阿里开源镜像提供的epel源</strong></h3><p>[<code>root@bogon yum.repos.d]# wget -O /etc/yum.repos.d/epel-7.repo http://mirrors.aliyun.com/repo/epel-7.repo # 下载阿里开源镜像的epel源文件</code></p>
+<h3 id="6-再次清除系统yum缓存，并重新生成新的yum缓存"><a href="#6-再次清除系统yum缓存，并重新生成新的yum缓存" class="headerlink" title="6.再次清除系统yum缓存，并重新生成新的yum缓存"></a><strong>6.再次清除系统yum缓存，并重新生成新的yum缓存</strong></h3><p><code>[root@bogon yum.repos.d]# yum clean all</code></p>
+<p><code>[root@bogon yum.repos.d]# yum makecache</code></p>
+<h3 id="7-查看系统可用的yum源和所有的yum源"><a href="#7-查看系统可用的yum源和所有的yum源" class="headerlink" title="7.查看系统可用的yum源和所有的yum源"></a><strong>7.查看系统可用的yum源和所有的yum源</strong></h3><p><code>[root@bogon yum.repos.d]# yum repolist enabled</code></p>
+<p><code>[root@bogon yum.repos.d]# yum repolist all</code></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/09/09/CENTOS 7 国内yum源配和epel源配置/">
+    <time datetime="2019-09-09T00:57:53.068Z" class="entry-date">
+        2019-09-09
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-路由重分布与路径控制" class="post-路由重分布与路径控制 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/09/06/路由重分布与路径控制/" data-id="ck2lnseiv000agco0enkma441" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>路由重分布与路径控制</p>
+<h2 id="一、路由重分布概述"><a href="#一、路由重分布概述" class="headerlink" title="一、路由重分布概述"></a><strong>一、</strong>路由重分布概述</h2><p>路由重分布为在同一个互连网络中高效地支持多种路由协议提供了可能，执行路由重分布的路由器被称为边界路由器，因为它们位于两个或多个自治系统的边界上。</p>
+<p>路由重分布时度量标准和管理距离是必须要考虑的，在进行行重分布时必须转换试题标准，使得它们兼容。种子度量值（Seed Metric)是在路由生分布时定义的，它是一条通过外部重分布进来的路由的初始度量值。路由协议默认的种子度量值如下表：</p>
+<table>
+<thead>
+<tr>
+<th>路由重分布进和路由协议</th>
+<th>默认种子度量值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>RIP</td>
+<td>无限大</td>
+</tr>
+<tr>
+<td>EIGRP</td>
+<td>无限大</td>
+</tr>
+<tr>
+<td>OSPF</td>
+<td>BGP为1，其也为20</td>
+</tr>
+<tr>
+<td>IS-IS</td>
+<td>0</td>
+</tr>
+<tr>
+<td>BGP</td>
+<td>IGP的度量值</td>
+</tr>
+</tbody></table>
+<p>考虑的问题：</p>
+<p>1.路由反馈：双向重分布有可能把从一个自治系统学到的路由信息发送回该自治系统。</p>
+<p>2.路由信息的兼容：不同路由协议的度量标准是不同的</p>
+<p>3.收敛时间不一致</p>
+<h2 id="二、路径控制概述"><a href="#二、路径控制概述" class="headerlink" title="二、路径控制概述"></a><strong>二、</strong>路径控制概述</h2><p>为了保证网络的高效运行及在路由重分布的时候避免次优路由或者路由环路，有必要对路由更新进行控制，常用的方法有被动接口、默认路由、静态路由、路由映射表、分布列表、前缀列表、偏移列表、Cisco IOS IP服务等级协议（SLA）和策略路由。在进行路由控制时，可能是多种方法进行组合。</p>
+<h3 id="1、路由映射表（Route-Map）"><a href="#1、路由映射表（Route-Map）" class="headerlink" title="1、路由映射表（Route Map）"></a><strong>1、</strong>路由映射表（Route Map）</h3><p>可以比做复杂的访问控制列表，主要功能包括路由控制和策略路由等。</p>
+<h4 id="（1）定义路由映射表的格式如下："><a href="#（1）定义路由映射表的格式如下：" class="headerlink" title="（1）定义路由映射表的格式如下："></a><strong>（1）定义路由映射表的格式如下：</strong></h4><p><strong>定义路由映射表：</strong>route-map map-tag [permit | deny] [sequence-number]</p>
+<p><strong>条件匹配：</strong>macth（常用的匹配条件包括IP地址、接口、度量值、tag、路由类型以及数据包长度等）</p>
+<p>​         如果格式为：match ip address a b c     表示逻辑或，只要有一个条件满足即可</p>
+<p>​         如果格式为：match ip address a  </p>
+<p>match ip address b  </p>
+<p>match ip address c         表示逻辑与，必须同时满足所有条件</p>
+<p><strong>定义行为：set</strong>       </p>
+<table>
+<thead>
+<tr>
+<th><strong>Set行为</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>set ip next hop</td>
+<td>设定数据包的下一跳地址</td>
+</tr>
+<tr>
+<td>set interface</td>
+<td>设定数据包出接口</td>
+</tr>
+<tr>
+<td>set ip default next hop</td>
+<td>设置默认的下一跳地址，用于当路由表里没有达到目的地址路由条目的时候</td>
+</tr>
+<tr>
+<td>set ip tos</td>
+<td>设定IP数据包的TOS值</td>
+</tr>
+<tr>
+<td>set ip precedence</td>
+<td>设定IP数据包的优先级</td>
+</tr>
+<tr>
+<td>Set metric</td>
+<td>设置路由的度量值</td>
+</tr>
+<tr>
+<td>set tag</td>
+<td>设定路由的标记值</td>
+</tr>
+</tbody></table>
+<h4 id="（2）路由映射表有如下特征"><a href="#（2）路由映射表有如下特征" class="headerlink" title="（2）路由映射表有如下特征"></a><strong>（2）路由映射表有如下特征</strong></h4><p>A.一个route map末尾默认行为是“deny any”</p>
+<p>​    如执行策略路由时，没有匹配则正常转发</p>
+<p>​    如路由重分时，没有匹配则被过滤掉</p>
+<p>B.一个route map可以包含多个route map陈述，从上到下被执行，如route map陈述中没有math，则匹配所有。</p>
+<p>C.序列号指定了条件执行的顺序，不写默认为10，不会自动递增</p>
+<p>D.route map中不写permit deny默认为permit</p>
+<p>E.在删除route map时，没写编号则删除整个route map</p>
+<h3 id="2、策略路由"><a href="#2、策略路由" class="headerlink" title="2、策略路由"></a><strong>2、</strong>策略路由</h3><p>策略路由提供了一种根据网络管理者制定的策略来进行数据包转发的机制。基于策略的路由比传统路由能力更强，使用灵活，它使网络管理者不仅能够根据目的地址，而且能够根据协议类型、报文大小、应用或IP源地址来选择转发路径。策略由路由映射表来定义。</p>
+<h2 id="三、路由重分布实验"><a href="#三、路由重分布实验" class="headerlink" title="三、路由重分布实验"></a><strong>三、</strong>路由重分布实验</h2><p><strong>实验目的：</strong></p>
+<p>种子度量值的配置</p>
+<p>路由重分布参数的含义</p>
+<p>静态路由重分布</p>
+<p>直连路由重分布</p>
+<p>RIP与EIGRP的重分布</p>
+<p>EIGRP和OSPF的重分布</p>
+<p>重分布路由的查看和调试</p>
+<p><img src="https://s2.ax1x.com/2019/09/09/nJkBTg.png" alt="nJkBTg.png"></p>
+<p><strong>实验步骤：</strong></p>
+<p>1、配置路由协议</p>
+<p><img src="https://s2.ax1x.com/2019/09/09/nJkcpn.png" alt="nJkcpn.png"></p>
+<p>2、配置路由重分布与路由映射表</p>
+<p><img src="https://s2.ax1x.com/2019/09/09/nJkglq.png" alt="nJkglq.png"></p>
+<p><img src="https://s2.ax1x.com/2019/09/09/nJkRXV.png" alt="nJkRXV.png"></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/09/06/路由重分布与路径控制/">
+    <time datetime="2019-09-06T00:58:42.461Z" class="entry-date">
+        2019-09-06
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
     <article id="post-交换机工作原理及VLAN" class="post-交换机工作原理及VLAN post type-post status-publish format-standard hentry">
     <!---->
 
@@ -73,7 +542,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/09/03/交换机工作原理及VLAN/" data-id="ck04szqc2000904o0yrcsq9n6" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/09/03/交换机工作原理及VLAN/" data-id="ck2lnsejk000egco00dsphnyh" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -112,7 +581,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/09/03/WEB渗透/" data-id="ck04szqc7000a04o0pm30mq3p" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/09/03/WEB渗透/" data-id="ck2lnsejl000fgco06ba8jgkt" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -154,7 +623,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/26/PIX防火墙配置/" data-id="ck04szqbo000604o0d8sqmzfm" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/26/PIX防火墙配置/" data-id="ck2lnseg70003gco0p658xotf" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -194,7 +663,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/26/GRE（Generic Routing Encapsulation 通用路由封装协议）-VPN/" data-id="ck04szqbb000004o0to0ee5z0" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/26/GRE（Generic Routing Encapsulation 通用路由封装协议）-VPN/" data-id="ck2lnseg60002gco0masup252" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -233,7 +702,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/22/NAT/" data-id="ck04szqbl000404o0mbbt5lf5" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/22/NAT/" data-id="ck2lnsei30005gco0yu2kq4hx" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -270,84 +739,12 @@
 
 
   
-    <article id="post-QoS技术" class="post-QoS技术 post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/22/QoS技术/" data-id="ck04szqbq000704o0jtf7kwnc" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <h2 id="1．QoS技术"><a href="#1．QoS技术" class="headerlink" title="1．QoS技术"></a>1．QoS技术</h2><p>QoS（服务质量）是网络的一种安全机制, 是一种用于解决网络延迟和阻塞等问题的技术，包括传输的带宽、传送的时延、数据的丢包率等。在网络中可以通过保证传输的带宽、降低传送的时延、降低数据的丢包率以及时延抖动等措施来提高服务质量。<br>正常情况下，假如网络只用于特定的无时间限制的应用系统，比如Web应用、FTP应用等，那么它不需要QoS。当网络过载或拥塞时，QoS 可以确保重要业务量不受延迟或丢弃，同时可以保证网络的高效运行。</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/08/22/QoS技术/#more" class="more-link">More <span class="meta-nav">→</span></a>
-          </p>
-        
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2019/08/22/QoS技术/">
-    <time datetime="2019-08-22T03:59:53.513Z" class="entry-date">
-        2019-08-22
-    </time>
-</a>
-    
-    
-    </footer>
-</article>
-
-
-
-
-
-
   
-    <article id="post-PPP协议" class="post-PPP协议 post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/08/21/PPP协议/" data-id="ck04szqbi000204o0fpdgezgz" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <h1 id="session-1-PPP协议"><a href="#session-1-PPP协议" class="headerlink" title="session 1 PPP协议"></a><strong>session 1 PPP协议</strong></h1><h2 id="PPP-Point-to-Point-Protocol-RFC1661-RFC1662-RFC1663"><a href="#PPP-Point-to-Point-Protocol-RFC1661-RFC1662-RFC1663" class="headerlink" title="PPP ( Point-to-Point Protocol )(RFC1661,RFC1662,RFC1663)"></a>PPP ( Point-to-Point Protocol )(RFC1661,RFC1662,RFC1663)</h2><p>​      在80年代末，人们在串行链路协议（Serial Line Internet Protocol(SLIP)  ）基础上开収PPP协议来解决进程互联网连接问题。PPP是一种基于ISO的高级数据链路控制（ISO-HDLC）的WAN协议，工作在物理层和数据链接层。PPP基于开放式标准，并包括各种功能，这使它成为拨号连接和与用WAN连接的事实标准。能够控制数据链路的建立，能够对广域网的IP地址迚行分配和管理，允许同时采用多种网络层路由协议，能够配置和测试数据链路，能够有效迚行错误检测。不 SLIP类似，PPP经常也是用于低速的串行链路，PPP优于HDLC的特点在于有认证机制，可以保证数据传输的安全性。PPP应用于WAN低速链路。现在高速光纤链路一般是SDH（欧洲国际标准光纤技术）和SONET（美国标准光纤技术）。</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/08/21/PPP协议/#more" class="more-link">More <span class="meta-nav">→</span></a>
-          </p>
-        
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2019/08/21/PPP协议/">
-    <time datetime="2019-08-21T12:13:08.651Z" class="entry-date">
-        2019-08-21
-    </time>
-</a>
-    
-    
-    </footer>
-</article>
-
-
-
-
-
-
-  
+    <nav id="pagination">
+      <nav id="page-nav">
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      </nav>
+    </nav>
   
 
 </div></div>
@@ -371,23 +768,23 @@
       <ul>
         
           <li>
-            <a href="/2019/09/03/交换机工作原理及VLAN/">(no title)</a>
+            <a href="/2019/10/28/网络基础/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2019/09/03/WEB渗透/">(no title)</a>
+            <a href="/2019/10/20/0723网页布局/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2019/08/26/PIX防火墙配置/">(no title)</a>
+            <a href="/2019/09/09/路由策略/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2019/08/26/GRE（Generic Routing Encapsulation 通用路由封装协议）-VPN/">(no title)</a>
+            <a href="/2019/09/09/CENTOS 7 国内yum源配和epel源配置/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2019/08/22/NAT/">(no title)</a>
+            <a href="/2019/09/06/路由重分布与路径控制/">(no title)</a>
           </li>
         
       </ul>

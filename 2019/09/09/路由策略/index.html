@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="每个眼神都只身荒野">
+  
+
+  
+  
+  
+  
+  
+  
+  <title>zzzzzzzz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="策略路由 策略路由提供了一种根据网络管理者制定的策略来进行数据包转发的机制。基于策略的路由比传统路由能力更强，使用更灵活，它使用网络管理者不仅能够根据目的地址，而且能够根据协议类型、报文大小、应用或IP源地址来选择转发路径。策略由路由映射表来定义。 实验一、基于源IP地址的策略路由配置实验目的： 1、用route-map定义路由策略。 2、在接口下应用路由策略。 3、基于源IP地址的策略路由的配置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="zzzzzzzz">
+<meta property="og:url" content="http://yoursite.com/2019/09/09/路由策略/index.html">
+<meta property="og:site_name" content="zzzzzzzz">
+<meta property="og:description" content="策略路由 策略路由提供了一种根据网络管理者制定的策略来进行数据包转发的机制。基于策略的路由比传统路由能力更强，使用更灵活，它使用网络管理者不仅能够根据目的地址，而且能够根据协议类型、报文大小、应用或IP源地址来选择转发路径。策略由路由映射表来定义。 实验一、基于源IP地址的策略路由配置实验目的： 1、用route-map定义路由策略。 2、在接口下应用路由策略。 3、基于源IP地址的策略路由的配置">
+<meta property="og:locale" content="ch">
+<meta property="og:image" content="https://s2.ax1x.com/2019/09/09/nJArDK.png">
+<meta property="og:image" content="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps95B2.tmp.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps95B3.tmp.jpg">
+<meta property="og:updated_time" content="2019-09-09T01:12:14.189Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="zzzzzzzz">
+<meta name="twitter:description" content="策略路由 策略路由提供了一种根据网络管理者制定的策略来进行数据包转发的机制。基于策略的路由比传统路由能力更强，使用更灵活，它使用网络管理者不仅能够根据目的地址，而且能够根据协议类型、报文大小、应用或IP源地址来选择转发路径。策略由路由映射表来定义。 实验一、基于源IP地址的策略路由配置实验目的： 1、用route-map定义路由策略。 2、在接口下应用路由策略。 3、基于源IP地址的策略路由的配置">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/09/09/nJArDK.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src="//push.zhanzhang.baidu.com/push.js"></script>
+</head></html>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="zzzzzzzz" rel="home">zzzzzzzz</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">aaaaaaa</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-路由策略" class="post-路由策略 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/09/09/路由策略/" data-id="ck2lnseir0008gco0vta9x624" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p><strong>策略路由</strong></p>
+<p><strong>策略路由提供了一种根据网络管理者制定的策略来进行数据包转发的机制。基于策略的路由比传统路由能力更强，使用更灵活，它使用网络管理者不仅能够根据目的地址，而且能够根据协议类型、报文大小、应用或IP源地址来选择转发路径。策略由路由映射表来定义。</strong></p>
+<h3 id="实验一、基于源IP地址的策略路由配置"><a href="#实验一、基于源IP地址的策略路由配置" class="headerlink" title="实验一、基于源IP地址的策略路由配置"></a><strong>实验一、基于源IP地址的策略路由配置</strong></h3><p><strong>实验目的：</strong></p>
+<p>1、用route-map定义路由策略。</p>
+<p>2、在接口下应用路由策略。</p>
+<p>3、基于源IP地址的策略路由的配置和调试。</p>
+<p><strong>实验拓朴：</strong></p>
+<p><img src="https://s2.ax1x.com/2019/09/09/nJArDK.png" alt="nJArDK.png"> </p>
+<p><strong>实验步骤：</strong></p>
+<p>在路由器R1的f0/0接口应用IP策略路由CCNA，使得从主机PC2来的数据设置一跳地址为：172.16.12.2；从主机PC3来的数据设置下一跳地址为：172.16.21.2，所有其他的数据包正常转发，整个网络运行EIGRP路由协议。</p>
+<p><strong>配置ACL</strong></p>
+<p><code>R1(config)#access-list 1 permit 172.16.1.2</code></p>
+<p><code>R1(config)#access-list 2 permit 172.16.1.3</code></p>
+<p><strong>配置路由映射表</strong></p>
+<p><code>R1(config)#route-map CCNA permit 10</code></p>
+<p><code>R1(config-route-map)#match ip address 1</code></p>
+<p><code>R1(config-route-map)#set ip next-hop 172.16.12.2</code></p>
+<p><code>R1(config-route-map)#exit</code></p>
+<p><code>R1(config)#route-map CCNA permit 20</code></p>
+<p><code>R1(config-route-map)#match ip address 2</code></p>
+<p><code>R1(config-route-map)#set ip next-hop 172.16.21.2</code></p>
+<p><strong>应用策略路由</strong></p>
+<p><code>R1(config)#int f0/0</code></p>
+<p><code>R1(config-if)#ip policy route-map CCNA</code></p>
+<p><strong>实验调试：</strong></p>
+<p><strong>1、**</strong>查看路由路径**</p>
+<p><code>PC2#traceroute 172.16.2.2</code></p>
+<p><code>PC3#traceroute 172.16.2.2</code></p>
+<p><strong>2、**</strong>在R1上显示调试信息**</p>
+<p><code>R1#debug ip policy</code></p>
+<p><code>PC2：ping 172.16.2.2</code>  </p>
+<p><code>PC6:ping 172.16.2.2</code></p>
+<p><strong>3、显示在哪些接口上应用了策略路由</strong></p>
+<p><code>R1#sh ip policy</code></p>
+<p><strong>4、显示定义的所有路由策略及路由策略匹配的情况</strong></p>
+<h3 id="实验二、基于数据包长度的策略路由配置"><a href="#实验二、基于数据包长度的策略路由配置" class="headerlink" title="实验二、基于数据包长度的策略路由配置"></a><strong>实验二、基于数据包长度的策略路由配置</strong></h3><p><strong>实验目的：</strong></p>
+<p>1、用route-map定义路由策略。</p>
+<p>2、在接口下应用路由策略。</p>
+<p>3、基于数据包长度的策略路由的配置和调试。</p>
+<p><strong>实验拓朴：</strong></p>
+<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps95B2.tmp.jpg" alt="img"> </p>
+<p><strong>实验步骤：</strong></p>
+<p>在R1的f0/0接口应用IP策略路由CCNP，使得对大小为“64-100”字节的数据包设置出接口为s1/0;数据包大小“101-100”字节的数据包设置出接口为“f0/1”,所有其他的数据包正常转发，整个网络运行EIGRP路由协议。</p>
+<p><strong>配置路由映射表</strong></p>
+<p><code>R1(config)#route-map CCNP permit 10</code></p>
+<p><code>R1(config-route-map)#match length 64 100</code></p>
+<p><code>R1(config-route-map)#set interface s1/0</code></p>
+<p><code>R1(config)#route-map CCNP permit 20</code></p>
+<p><code>R1(config-route-map)#match length 101 1000</code></p>
+<p><code>R1(config-route-map)#set interface f0/1</code></p>
+<p><strong>应用策略路由</strong></p>
+<p><code>R1(config)#int f0/0</code></p>
+<p><code>R1(config-if)#ip policy route-map CCNP</code></p>
+<p><code>R1(config-if)#exit</code></p>
+<p><code>R1(config)#ip local policy route-map CCNP</code></p>
+<p><strong>实验调试：</strong></p>
+<p><strong>1.在主机上执行扩展ping命令，在R1上显示调试信息。</strong></p>
+<p><code>PC2：ping 172.16.2.2 repeat 1 size 90</code></p>
+<p><code>PC2：ping 172.16.2.2 repeat 1 size 300</code></p>
+<p><code>PC2：ping 172.16.2.2 repeat 1 size 1200</code></p>
+<p><code>**2、****显示在哪些接口上应用了策略路由**</code></p>
+<p><code>R1#sh ip policy</code></p>
+<p><strong>3、显示定义的所有路由策略及路由策略匹配的情况</strong></p>
+<p><code>R1#sh ip route-map CCNP</code></p>
+<h3 id="实验三、基于应用的策略路由配置"><a href="#实验三、基于应用的策略路由配置" class="headerlink" title="实验三、基于应用的策略路由配置"></a><strong>实验三、基于应用的策略路由配置</strong></h3><p><strong>实验目的：</strong></p>
+<p>1、用route-map定义路由策略。</p>
+<p>2、在接口下应用路由策略。</p>
+<p>3、基于数据包长度的策略路由的配置和调试。</p>
+<p><strong>实验拓朴：</strong></p>
+<p><img src="file:///C:%5CUsers%5Cjohn%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps95B3.tmp.jpg" alt="img"> </p>
+<p><strong>实验步骤：</strong></p>
+<p>在R1的f0/0接口应用IP策略路由CCIE，使得对HTTP数据包设置一跳地址为：172.16.12.2，并且设置IP数据包优先级为”flash”,为telnet数据包设置下一跳地址为：172.16.21.2，并且设置IP数据包优先级为：critical，所有其他的数据包正常转发，整个路由协议运行EIGRP。</p>
+<p><strong>配置R2的http与telnet访问</strong></p>
+<p>  <code>R2(config)#ip http server</code></p>
+<p><code>R2(config)#line vty 0 4</code></p>
+<p><code>R2(config-line)#no login</code></p>
+<p><code>R2(config-line)#privilege level 15</code></p>
+<p>`` </p>
+<p><strong>配置扩展ACL</strong></p>
+<p><code>R1(config)#ip access-list extended HTTP</code></p>
+<p><code>R1(config-ext-nacl)#permit tcp any any eq 80</code></p>
+<p><code>R1(config-ext-nacl)#exit</code></p>
+<p><code>R1(config)#ip access-list extended TELNET</code></p>
+<p><code>R1(config-ext-nacl)#permit tcp any any eq 23</code></p>
+<p>`` </p>
+<p><strong>配置路由映射表</strong></p>
+<p><code>R1(config)#route-map CCIE permit 10</code></p>
+<p><code>R1(config-route-map)#match ip address HTTP</code></p>
+<p><code>R1(config-route-map)#set ip precedence flash</code></p>
+<p><code>R1(config-route-map)#set ip next-hop 172.16.12.2</code></p>
+<p><code>R1(config)#route-map CCIE permit 20</code></p>
+<p><code>R1(config-route-map)#match ip address TELNET</code></p>
+<p><code>R1(config-route-map)#set ip precedence critical</code></p>
+<p><code>R1(config-route-map)#set ip next-hop 172.16.21.2</code></p>
+<p><strong>应用路由映射表</strong></p>
+<p><code>R1(config)#int f0/0</code></p>
+<p><code>R1(config-if)#ip policy route-map CCIE</code></p>
+<p><code>R1(config)#ip local policy route-map CCIE</code></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/09/09/路由策略/">
+    <time datetime="2019-09-09T01:09:53.525Z" class="entry-date">
+        2019-09-09
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2019/10/20/0723网页布局/" rel="prev"><span class="meta-nav">←</span> (no title)</a></span>
+    
+    
+        <span class="nav-next"><a href="/2019/09/09/CENTOS 7 国内yum源配和epel源配置/" rel="next">(no title) <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/28/网络基础/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/20/0723网页布局/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/09/路由策略/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/09/CENTOS 7 国内yum源配和epel源配置/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/06/路由重分布与路径控制/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2019 zwy
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>

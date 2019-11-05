@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="每个眼神都只身荒野">
+  
+
+  
+  
+  
+  
+  
+  
+  <title>zzzzzzzz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="0723网页布局 目标： \1. 标签的学习 \2. 布局：position（top,left,right,bottom） \3. 标签自带方法：oninput，onchange,onclick \4. 高级标签的学习：video，audio（做一个小说阅读器，用百度接口完成语音识别） 接口：HTTP://tts.baidu.com/text2audio?lan=zh&amp;amp;ie=UTF-8&amp;a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="zzzzzzzz">
+<meta property="og:url" content="http://yoursite.com/2019/10/20/0723网页布局/index.html">
+<meta property="og:site_name" content="zzzzzzzz">
+<meta property="og:description" content="0723网页布局 目标： \1. 标签的学习 \2. 布局：position（top,left,right,bottom） \3. 标签自带方法：oninput，onchange,onclick \4. 高级标签的学习：video，audio（做一个小说阅读器，用百度接口完成语音识别） 接口：HTTP://tts.baidu.com/text2audio?lan=zh&amp;amp;ie=UTF-8&amp;a">
+<meta property="og:locale" content="ch">
+<meta property="og:image" content="https://rescdn.qqmail.com/zh_CN/htmledition/images/webp/tg-chang1ea8a2.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/10/20/KKKyh4.png">
+<meta property="og:updated_time" content="2019-10-20T06:56:51.829Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="zzzzzzzz">
+<meta name="twitter:description" content="0723网页布局 目标： \1. 标签的学习 \2. 布局：position（top,left,right,bottom） \3. 标签自带方法：oninput，onchange,onclick \4. 高级标签的学习：video，audio（做一个小说阅读器，用百度接口完成语音识别） 接口：HTTP://tts.baidu.com/text2audio?lan=zh&amp;amp;ie=UTF-8&amp;a">
+<meta name="twitter:image" content="https://rescdn.qqmail.com/zh_CN/htmledition/images/webp/tg-chang1ea8a2.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src="//push.zhanzhang.baidu.com/push.js"></script>
+</head></html>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="zzzzzzzz" rel="home">zzzzzzzz</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">aaaaaaa</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-0723网页布局" class="post-0723网页布局 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2019/10/20/0723网页布局/" data-id="ck2lnseg40001gco0tvamn1ms" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>0723网页布局</p>
+<p>目标：</p>
+<p>\1. 标签的学习</p>
+<p>\2. 布局：position（top,left,right,bottom）</p>
+<p>\3. 标签自带方法：oninput，onchange,onclick</p>
+<p>\4. 高级标签的学习：video，audio（做一个小说阅读器，用百度接口完成语音识别）</p>
+<p>接口：HTTP://tts.baidu.com/text2audio?lan=zh&amp;ie=UTF-8&amp;spd=6&amp;text=</p>
+ <a id="more"></a>
+
+<p>一、HTML中的标签</p>
+<p>1.特点：</p>
+<p>（1）成对出现</p>
+<p>（2）最大化写法：标签名，属性名，方法名，内容</p>
+<p>​     最小化写法：只要基本内容中的一个或多个，标签名不可少</p>
+<p>​     特殊写法：不带尖括号，before</p>
+<p>（3）标签一般依赖于body标签</p>
+<p>2.常用标签</p>
+<p>标签整理</p>
+<p>\1. <div style="background-color:red ;"></div></p>
+<p>​            块级标签</p>
+<p>​            1.独占一行</p>
+<p>​            2.在没有内容时，没有行高</p>
+<p>​            3.没有边框</p>
+<p>​            4.position：属性会重写</p>
+<p>​            5.远点定位：左上角(top,left,right,bottom),基于远点的上下左右多远距离的意思，只作用于position后（position:定位属性</p>
+<p>​         1，相对：参考上一个同级容器，从一级容器开始定位</p>
+<p>​         2，绝对:参考body,相对于浏览器最左上角,嵌套DIV也是基于body）</p>
+<p>相对：参考同一级坐标来定位，如果没有同一级容器参考上一级原点</p>
+<p>​         绝对：参考body原点</p>
+<p>​         只有出现position：top,left,right,bottom才有作用</p>
+<p>​        </p>
+<p>\2. </p><p style="background-color: #FAEBD7;width: 100px;height: 100px;"></p>
+<p>​            段落标签1</p>
+<p>​            </p><p></p>
+<p>\3. <span style="background-color: #00FFFF;">节标签1</span><span>节标签2</span><span>节标签3</span></p>
+<p>​         &lt;!–</p>
+<p>​          特点：</p>
+<p>​          1.一行分为多个小节/小段</p>
+<p>​          2.方向为横向分段</p>
+<p>​          3.段的长度默认为0</p>
+<p>​          4.长度由内容定义，HTML4.01以前也可以width定义</p>
+<p>​          –&gt;</p>
+<p>\4. </p>
+<p>​        &lt;!– 表格标签</p>
+<p>​        th:表头，一组th表示一个单元格表头</p>
+<p>​        td:单元格</p>
+<p>​        tr:一行</p>
+<p>​         –&gt;</p>
+<p>\5. </p><h1>一号字</h1><p></p>
+<p>\6. 输入标签<input type="email"></p>
+<!-- input中的type
+
+​            text：文本
+
+​            button：按钮
+
+​            password：密码
+
+​            email：邮件
+
+​            date：日期输入框
+
+​            datetime：时间输入框
+
+​            datetime-local：日期+时间
+
+​            checkbox：复选框
+
+​            radio：单选框
+
+​            file：文件
+
+​             -->
+
+<p>\7. <button>独立按钮标签</button></p>
+<p><textarea maxlength="10">多行文本框，支持换行</textarea></p>
+ <select>
+
+<p>​                 <option value="a">1</option></p>
+<p>​                 <option>2</option></p>
+<p>​                 <option>3</option></p>
+ </select>
+
+<p><label>表示标注标签，可以与inputpeihe配合使用</label></p>
+<p><output>aaaaaaa输出结果</output></p>
+<p>\8. <!-- 格式标签 --></p>
+<p>​        <b>字体加粗</b></p>
+<p>​        <br><br><br></p>
+<p>​        <i>斜体</i></p>
+<p>​        <br></p>
+<p>​        <bdo dir="ltr">通过属性定位方向</bdo></p>
+<p>​        <bdo dir="rtl">通过属性定位方向</bdo></p>
+<p>​        <blockquote>快引用标签自动换行</blockquote></p>
+<p>​        <em>强调文本</em></p>
+<p>​        <font size="20" color="chartreuse">字体标签</font></p>
+<p>​        <del>删除标签</del></p>
+<p>​        <sub>文字下标</sub></p>
+<p>​        <sup>文字上标</sup></p>
+<p>​        <br></p>
+<p>​        <ruby></ruby></p>
+<p>​        中文拼音注释<rt>zhongwenpinyinzhushi</rt></p>
+<p>​        fanguolai<rt>反过来也可以</rt></p>
+<p>​        fanguolai<rt><a href="https://www.baidu.com" target="_blank" rel="noopener">做连接</a></rt></p>
+<p>​        </p>
+<p>​        <br></p>
+<p>​        <small>小号字体</small></p>
+<p>​        <br></p>
+<p>​        <strong>强调字体</strong><br></p>
+<p>​        <tt>打字机文本</tt><br></p>
+<p>​        <u>下划线</u><br></p>
+<p>\9. <!-- 框架 --></p>
+<p>​        <frame>框架最早的定义，框架区域或窗口<br></p>
+<p>​        <frameset>和上面一起被废弃</frameset><br></p>
+<p>\10. <!-- 图像标签 --></p>
+<p>​        <img src="https://rescdn.qqmail.com/zh_CN/htmledition/images/webp/tg-chang1ea8a2.png"></p>
+<p>​        <canvas>画布</canvas></p>
+<p>​        <map></map></p>
+<p>\11. <!-- 媒体标签 --></p>
+<pre><code>&lt;audio src=&quot;http://www.ytmp3.cn/down/60377.mp3&quot; controls=&quot;controls&quot;&gt;大碗宽面&lt;/audio&gt;&lt;br /&gt;
+
+&lt;video autoplay=&quot;&quot; controls=&quot;controls&quot;&gt;</code></pre><p>​            <source src>支持mp4/flv</p>
+<p>​        </p>
+<p>​        <track src="*.vtt">外部文本轨道</p>
+<p>\12. <!-- 链接 --></p>
+<p>​        <a href="javascript:;<!-- void(0) -->" target="_blank" rel="noopener">无返回状态链接</a></p>
+<p>​        <link href="css" rel="stylesheet">定义与外部资源的关系</p>
+<p>​        <nav>定义导航链接</nav>H5新标签</p>
+<p>​        <nav></nav></p>
+<p>​            <a href="http://www.baidu.com" target="_blank" rel="noopener"></a></p>
+<p>​                百度一下</p>
+<p>​            </p>
+<p>​        </p>
+<p>-moz:火狐</p>
+<p>JS的基本应用</p>
+<p><strong>Document：当前文本对象，有当前访问页面的所有标签</strong></p>
+<p>》出现密码没有加密的情况：</p>
+<p>输入时开始加密：</p>
+<p>\1. 用MD5（）（嵌套加密和加盐加密）：MD5(MD5()),MD5（MD5（密码）+自定义秘钥）</p>
+<p>\2. 障眼法加密：base64，encodeURI（）都可逆</p>
+<p>\3. 自定义加密算法</p>
+<p>btoa(document.getElementsByTagName(“input”)[1].value</p>
+<p><img src="https://s2.ax1x.com/2019/10/20/KKKyh4.png" alt="KKKyh4.png"> </p>
+<p>Btoa()函数</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/10/20/0723网页布局/">
+    <time datetime="2019-10-20T06:55:13.190Z" class="entry-date">
+        2019-10-20
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2019/10/28/网络基础/" rel="prev"><span class="meta-nav">←</span> (no title)</a></span>
+    
+    
+        <span class="nav-next"><a href="/2019/09/09/路由策略/" rel="next">(no title) <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/28/网络基础/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/20/0723网页布局/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/09/路由策略/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/09/CENTOS 7 国内yum源配和epel源配置/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/06/路由重分布与路径控制/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2019 zwy
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
